@@ -1,0 +1,21 @@
+%===================================== CHAP 1 =================================
+
+\chapter{Introduction}
+
+\section{Problem formulation}
+Autonomous surface vehicles (ASVs) operating in urban environments, including ferries, will need slightly different exteroceptive sensors than ASVs operating in the open sea. A lidar with a range of 100 meters may be more appropriate than a maritime radar with range of several kilometers. Furthermore, the complexity of the environment means that the rich information from optical cameras will be more important. In order to build a coherent world image, which, e.g., collision avoidance decisions can be based on, the data from these sensors must be fused, together with data from interoceptive sensor systems such as an inertial navigation system (INS).\smallskip \\
+The goal of the specialization project is to prepare the processing pipeline leading to camera-lidar fusion. A comparison of detections of interesting objects in the camera data with interesting objects in the lidar data will be performed, and suitable detection models for camera and lidar will be analyzed \todo{Hvis tid}.\smallskip \\
+The following subtasks are proposed for the project:
+\begin{enumerate}
+    \item Installation of Velodyne lidar together with camera, and recording of time-synchronized data from both sensors.
+    \item Calibration of the sensors, including specification of world-frame-to-sensor-frame measurement models for both sensors.
+    \item Implementation of a detector based on a convolutional neural network (CNN) for the detection of boats in camera data.
+    \item Implementation of a detector based on intensity of reflected signal strength for the lidar.
+    \item Analysis of the extent to which lidar detections correspond to camera detections and vice versa.
+    \item Analysis of suitable detection models for lidar and camera.
+\end{enumerate}
+
+\section{Report outline}
+Describe what each chapter (section) presents
+
+\cleardoublepage

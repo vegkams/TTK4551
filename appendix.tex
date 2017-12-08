@@ -1,0 +1,137 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Geometric Camera Calibration}
+\label{app:cam_calibration}
+Camera calibration is a necessary step in computer vision applications in order to extract metric information from 2D images. The intrinsic and extrinsic parameters of a camera can be estimated from the image positions of scene features whose geometry in 3D space is known with very good precision \cite{modernCV}. The calibration setup usually consists of two or three orthogonal planes with a known calibration pattern (such as a chessboard). In fact, if the 3D reference points lie in the same plane, calibration will not work \cite{3dvision}. This setup, however, requires an expensive calibration apparatus, and an elaborate setup. Zhang proposed an alternative, flexible approach that doesn't require knowledge of the 3D space geometry of the calibration setup \cite{flexCal}. The technique described by Zhang only requires the camera to observe a planar pattern shown at at least two different orientations. The calibration procedure performed in this project is based on this work, and a introduction to the theory is presented in this section. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Perspective Projection between the Model Plane and Its Image}
+In order to be consistent with the notation used in Zhang's paper, let's rewrite equation \ref{eq:extrinsics} as
+\begin{equation}
+\label{eq:flexcalnotation}
+    s\tilde{\mathbf{m}}=\mathbf{A}\begin{bmatrix}\mathcal{R} & \mathbf{t}\end{bmatrix}\tilde{\mathbf{M}}, \quad \text{where}\quad\mathbf{A}=\begin{bmatrix} \alpha & \gamma & u_0 \\ 0 & \beta & v_0\\0 & 0 & 1\end{bmatrix}
+\end{equation}
+where $\tilde{\mathbf{m}}=\begin{bmatrix}u &v&1\end{bmatrix}^T$ is the image plane coordinates, $\tilde{\mathbf{M}}=\begin{bmatrix}X & Y & Z & 1\end{bmatrix}^T$ as the 3D point coordinates expressed in the world frame, $s$ is an arbitrary scale factor,$\begin{bmatrix}u_0 & v_0\end{bmatrix}^T$ describe the position of the image center in pixel units, $\alpha$ and $\beta$ are the scale factors in the $u$ and $v$ axes, and $\gamma$ describes the skew between the two image axes. Now, without loss of generality, assume that the model plane is located at $Z=0$, and let $\mathbf{r}_i$ denote the $i$th column of $\mathcal{R}$. Equation \ref{eq:flexcalnotation} can then be expressed as
+\begin{equation}
+    s\begin{bmatrix}u\\v\\1\end{bmatrix}=\mathbf{A}\begin{bmatrix}\mathbf{r}_1 & \mathbf{r}_2 & \mathbf{r}_3 & \mathbf{t}\end{bmatrix}\begin{bmatrix}X\\Y\\0\\1\end{bmatrix} =\mathbf{A}\begin{bmatrix}\mathbf{r}_1 & \mathbf{r}_2 & \mathbf{t}\end{bmatrix}\begin{bmatrix}X\\Y\\1\end{bmatrix}
+\end{equation}
+By slight abuse of notation, let $\tilde{\mathbf{M}}$ still represent a point on the model plane, but since $Z$ is always zero, we write $\tilde{\mathbf{M}}=\begin{bmatrix}X\\Y\\1\end{bmatrix}$. With this, a point on the model plane and its corresponding image coordinates are related by a projective transformation (also known as a \textit{homography}) matrix $\mathbf{H}$:
+\begin{equation}
+\label{eq:homography}
+    s\tilde{\mathbf{m}}=\mathbf{H}\tilde{\mathbf{M}},\quad\text{where}\quad \mathbf{H}=\mathbf{A}\begin{bmatrix}\mathbf{r}_1 & \mathbf{r}_2 & \mathbf{t}\end{bmatrix}
+\end{equation}
+The $3\times3$ matrix $\mathbf{H}$ is only defined up to a scale factor. Denoting $\mathbf{H}=\begin{bmatrix}\mathbf{h}_1 & \mathbf{h}_2 & \mathbf{h}_3\end{bmatrix}$, and knowing that since $\mathbf{r}_1^T\mathbf{r}_2=0$, we have
+\begin{equation}
+\label{eq:intrinsic_constraints}
+    \mathbf{h}_1^T(\mathbf{A}^{-1})^T\mathbf{A}^{-1}\mathbf{h}_2=0
+\end{equation}
+and
+\begin{equation}
+    \mathbf{h}_1^T(\mathbf{A}^{-1})^T\mathbf{A}^{-1}\mathbf{h}_1=\mathbf{h}_2^T(\mathbf{A}^{-1})^T\mathbf{A}^{-1}\mathbf{h}_2
+\end{equation}
+These equations are the two basic constraints on the intrinsic parameters, given a single projective transformation. Due to the fact that a projective transformation has 8 degrees of freedom, and there are six extrinsic parameters, one can only obtain two constraints on the intrinsic parameters \cite{flexCal}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Solving the Calibration Problem}
+Let
+\begin{multline}
+    \mathbf{B}=(\mathbf{A}^{-1})^T\mathbf{A}^{-1}=\begin{bmatrix}B_{11} & B_{12} & B_{13} \\ B_{12} & B_{22} & B_{23} \\ B_{13} & B_{23} & B_{33}\end{bmatrix}\\
+    =\begin{bmatrix}\frac{1}{\alpha^2} & -\frac{\gamma}{\alpha^2\beta} & \frac{v_0\gamma-u_0\beta}{\alpha^2\beta}\\
+    -\frac{\gamma}{\alpha^2\beta} & \frac{\gamma^2}{\alpha^2\beta^2}+\frac{1}{\beta^2} & -\frac{\gamma(v_0\gamma-u_0\beta)}{\alpha^2\beta^2}-\frac{v_0}{\beta^2} \\
+    \frac{v_0\gamma-u_0\beta}{\alpha^2\beta} & -\frac{\gamma(v_0\gamma-u_0\beta)}{\alpha^2\beta^2}-\frac{v_0}{\beta^2} & \frac{(v_0\gamma-u_0\beta)^2}{\alpha^2\beta^2}+\frac{v_0^2}{\beta^2}+1\end{bmatrix}
+\end{multline}
+$\mathbf{B}$ is symmetric, defined by a 6D vector
+\begin{equation}
+    \mathbf{b}=\begin{bmatrix}B_{11} & B_{12} & B_{22} & B_{13} & B_{23} & B_{33} \end{bmatrix}^T
+\end{equation}
+Defining the $i^{\text{th}}$ column vector of $\mathbf{H}$ as $\mathbf{h}_i=\begin{bmatrix}h_{i1} & h_{i2} & h_{i3}\end{bmatrix}^T$, we can rewrite equation \ref{eq:intrinsic_constraints} as
+\begin{equation}
+    \mathbf{h}_i^T\mathbf{B}\mathbf{h}_j=\mathbf{v}_{ij}^T\mathbf{b}
+\end{equation}
+where
+\begin{equation}
+\begin{split}
+    \mathbf{v}_{ij}=&[h_{i1}h_{j1} \;\; h_{i1}h_{j2}+h_{i2}h_{j1} \;\; h_{i2}h_{j2} \\
+     & h_{i3}h_{j1}+h_{i1}h_{j3} \;\; h_{i3}h_{j2}+h_{i2}h_{j3} \;\; h_{i3}h_{j3}]^T
+\end{split}
+\end{equation}
+The two constraints on the intrinsic parameters can then be written as two homogeneous equations in $\mathbf{b}$ as
+\begin{equation}
+\label{eq:homogeneous_constraints}
+    \begin{bmatrix}\mathbf{v}_{12}^T\\
+    (\mathbf{v}_{11}-\mathbf{v}_{22})^T\end{bmatrix}\mathbf{b}=\mathbf{0}
+\end{equation}
+If $n$ images of the model plane are observed, we can stack $n$ equations as equation \ref{eq:homogeneous_constraints} and get
+\begin{equation}
+\label{eq:analytic_calib}
+    \mathbf{Vb}=\mathbf{0}
+\end{equation}
+where $\text{dim}(\mathbf{V})=2n\times6$. For $n\geq3$ we will generally have a unique solution $b$ given as the eigenvector og $\mathbf{V}^T\mathbf{V}$ associated with the smallest eigenvalue, defined up to a scale factor. Once $\mathbf{b}$ is estimated, one can find all the intrinsic parameters in $\mathbf{A}$ from $\mathbf{b}$ by
+\begin{equation}
+    \begin{split}
+    v_0&=\frac{B_{12}B_{13}-B_{11}B_{23}}{B_{11}B{22}-B_{12}^2}\\
+    \lambda &=B_{33}-\frac{B_{13}^2+v_0(B_{12}B_{13}-B_{11}B_{23})}{B_{11}}\\
+    \alpha &=\sqrt{\frac{\lambda}{B_{11}}}\\
+    \beta &=\sqrt{\frac{\lambda B_{11}}{B_{11}B{22}-B_{12}^2}}\\
+    \gamma &=-\frac{B_{12}\alpha^2\beta}{\lambda}\\
+    u_0 &=\frac{\gamma v_0}{\alpha}-\frac{B_{13}\alpha^2}{\lambda}
+    \end{split}
+\end{equation}
+Now that $\mathbf{A}$ is known, the extrinsic parameters can easily be computed from equation \ref{eq:homography} as
+\begin{equation}
+    \begin{split}
+        \mathbf{r}_1 &=\lambda\mathbf{A}^{-1}\mathbf{h}_1\\
+        \mathbf{r}_2&=\lambda\mathbf{A}^{-1}\mathbf{h}_2\\
+        \mathbf{r}_3&=\mathbf{r}_1\times\mathbf{r}_2\\
+        \mathbf{t}&=\lambda\mathbf{A}^{-1}\mathbf{h}_3
+    \end{split}
+\end{equation}
+where $\lambda=1/||\mathbf{A}^{-1}\mathbf{h}_1||$. The parameters can be further refined through maximum likelihood inference. Assuming that the image points are corrupted by independent and identically distibuted (i.i.d.) noise, the maximum likelihood estimate can be obtained by minimizing 
+\begin{equation}
+\label{eq:max_likelihood_calib}
+    \sum_{j=1}^{n}\sum_{i=1}^{m}||\mathbf{m}_{ij}-\hat{\mathbf{m}}(\mathbf{A},\mathcal{R}_i,\mathbf{t}_i,\mathbf{M}_j)||^2
+\end{equation}
+where $\hat{\mathbf{m}}(\mathbf{A},\mathcal{R}_i,\mathbf{t}_i,\mathbf{M}_j)$ is the projection of point $\mathbf{M}_j$ in image $i$ as described in equation \ref{eq:homography}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Radial Lens Distortion}
+In the previous sections lens distortion models has not been discussed. A typical camera, however, will to a varying degree exhibit lens distortion, especially radial distortion. Figure \ref{fig:distortion} illustrates positive and negative radial distortion, known as barrel distortion and pincushion distortion, respectively. Zhang only considered radial distortion in his work, the argument being that more elaborate models not only did not improve the result, but could also produce numerical instability \cite{zhangTech}.
+The interested reader is referred to \cite{wengCalibration, weiCalibration, Brown71close-rangecamera} for a more thorough description of distortion models considering effects as decentering and thin prism distortion in addition to radial distortion.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{fig/distortion_examples.png}
+    \caption{Examples of radial distortion. \protect\footnotemark}
+    \label{fig:distortion}
+\end{figure}
+\footnotetext{Image courtesy: https://docs.opencv.org/2.4.13.2/modules/calib3d/doc/camera\_calibration\_and\_3d\_reconstruction.html}
+Considering only radial distortion, let $(u,v)$ represent the ideal (distortion-free) pixel image coordinates, and $(\check{u},\check{v})$ the corresponding observed real coordinates. Then, using equation \ref{eq:flexcalnotation} and assuming $\gamma = 0$, we have \cite{zhangTech}
+\begin{equation}
+\label{eq:dist_u}
+    \check{u}=u+(u-u_0)[k_1(x^2+y^2)+k_2(x^2+y^2)^2]
+\end{equation}
+\begin{equation}
+\label{eq:dist_v}
+    \check{v}=v+(v-v_0)[k_1(x^2+y^2)+k_2(x^2+y^2)^2]
+\end{equation}
+where $k_1$ and $k_2$ are coefficients of the radial distortion. This can be rewritten as 
+\begin{equation}
+    \begin{bmatrix}(u-u_0)(x^2+y^2) & (u-u_0)(x^2+y^2)^2\\ (v-v_0)(x^2+y^2) & (v-v_0)(x^2+y^2)^2\end{bmatrix}\begin{bmatrix}k_1\\k_2\end{bmatrix}=\begin{bmatrix}\check{u}-u\\\check{v}-v\end{bmatrix}
+\end{equation}
+In a similar fashion as for equation \ref{eq:analytic_calib}, for $m$ points in $n$ images, this can be stacked to obtain $2mn$ equations in matrix form as $\mathbf{Dk}=\mathbf{d}$, $\mathbf{k}=\begin{bmatrix}k_1 & k_2\end{bmatrix}^T$. The linear least-squares solution is given by
+\begin{equation}
+    \label{eq:lin_leastsquares}
+    \mathbf{k}=(\mathbf{D}^T\mathbf{D})^{-1}\mathbf{D}^T\mathbf{d}
+\end{equation}
+Once $k_1$ and $k_2$ are estimated, equation \ref{eq:max_likelihood_calib} can be extended to estimate the complete set of parameters including $k_1$ and $k_2$ by minimizing
+\begin{equation}
+\label{eq:max_likelihood_distorted}
+    \sum_{j=1}^{n}\sum_{i=1}^{m}||\mathbf{m}_{ij}-\mathbf{\check{m}}(\mathbf{A},k_1,k_2,\mathcal{R}_i,\mathbf{t}_i,\mathbf{M}_j)||^2
+\end{equation}
+where $\mathbf{\check{m}}(\mathbf{A},k_1,k_2,\mathcal{R}_i,\mathbf{t}_i,\mathbf{M}_j)$ is the projection of the point $\mathbf{M}_j$ in image $j$ according to equation \ref{eq:homography}, followed by distortion according to equations \ref{eq:dist_u} and \ref{eq:dist_v}. This is a nonlinear minimization problem, which is solved by the Levenberg-Marquardt algorithm\todo{kilde på dette?}. This requires an initial guess for $\mathbf{A}$ and $\mathcal{R}_i,\mathbf{t}_i,\; i=1\dots n$ which can be obtained by solving equation \ref{eq:analytic_calib}. $k_1$ and $k_2$ can be estimated by solving \ref{eq:lin_leastsquares}, or simply set to 0 initially \cite{zhangTech}. Typically, the rotation matrix $\mathcal{R}$ returned from this procedure will not be a true rotation matrix (where the rows and columns are orthogonal unit vectors) due to image noise. A method for estimating the best rotation matrix from a general $3\times3$ matrix is given in \cite{zhangTech}.
+\subsection{Calibration Procedure}
+In Zhang's paper, the recommended calibration procedure is summarized as \cite{flexCal}:
+\begin{enumerate}
+    \item Print a calibration pattern and attach it to a planar surface
+    \item Take a few images of the model plane under different orientations by moving either the plane or the camera
+    \item Detect the feature points in the images
+    \item Estimate the five intrinsic parameters and all the extrinsic parameters using the solution of equation \ref{eq:analytic_calib}
+    \item Estimate the coefficients of the radial distortion by solving equation \ref{eq:lin_leastsquares}
+    \item Refine all parameters by minimizing equation \ref{eq:max_likelihood_distorted}
+\end{enumerate}

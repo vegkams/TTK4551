@@ -1,0 +1,58 @@
+%===================================== CHAP 3 =================================
+
+\chapter{Theory}
+\section{Sensor Fusion}
+Robots and autonomous vehicles, be it a car or a ship, operate in unstructured environments, environments that are unpredictable. While robots working on a assembly line work in very structured, predictable environments, a vessel attempting to atonomously navigate a busy shipping lane has to rely on sensor inputs in order to make sense of its environment, and navigate safely. In sensing its environment, a vessel might use various sensors, such as radar(s), cameras, sonars or laser range finders. The different sensors typically give a incomplete and imperfect view of the surrounding world. Sensor data fusion is the process of combining such mutually complementary sensor information in such a way that a better understanding of the surroundings can be achieved \cite{sensorFusion1}.
+The U.S. Joint Directors of Laboratories (JDL) Data Fusion Working Group developed a process model in 1985 for characterizing hierarchical levels of fusion processing, categorized fusion functions, and candidate algorithm approaches, and is the most widely used system for categorizing data fusion-related functions \cite{JDLFusion}. The model is illustrated in figure \ref{fig:jdl_fusion}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\linewidth]{fig/JDLfusion.png}
+    \caption{The Joint Directors of Laboratories data fusion model.}
+    \label{fig:jdl_fusion}
+\end{figure}
+The JDL model defines the fusion levels as follows:
+\begin{itemize}
+    \item Level 0: \textit{Subobject assessment}. Preconditioning data to correct biases, perform spatial and temporal alignment, and standardize inputs.
+    \item Level 1: \textit{Object assessment}. Association of data (including products of prior fusion) to estimate an object or entitys position, kinematics, or attributes (including identity).
+    \item Level 2: \textit{Situation assessment}. Aggregation of objects/events to perform relational analysis and estimation of their relationships in the context of the operational environment.
+    \item Level 3: \textit{Impact assessment}. Projection of the current situation to perform event prediction, threat intent estimation, own force vulnerability, and consequence analysis.
+    \item Level 4: \textit{Process refinement}. Evaluation of the ongoing fusion process to provide user advisories and adaptive fusion control or to request additional sensor/source data.
+\end{itemize}
+The models different levels do not represent a process flow, but rather provides a structured and integrated view on the complete functional chain from distributed sensors, data bases, and human reports to the users and their option to act including various feedback loops at different levels. Although the model was developed with military applications in mind, it remains valid in civilian applications. Koch \cite{sensorFusion1} identifies two characteristic features of sensor data fusion:
+\begin{enumerate}
+    \item The available sensor data and context knowledge to be fused typically provide incomplete and imperfect pieces of information. The reasons for this are manifold, and are unavoidable in real-world applications. For dealing with these deficiencies, sophisticated mathematical methodologies and reasoning formalisms are applied.
+    \item Sensor data fusion is closely related to the practical design of surveillance and reconnaissance components for information systems. In implementing fundamental theoretical concepts, a systematic way of finding reasonable compromises between mathematical exactness and pragmatic realization issues, as well as suitable approximation methodologies are therefore inevitable. System aspects such as robustness and reliability even in case of unforeseeable nuisance phenomena, priority management, and graceful degradation are of particular importance in view of practicability.
+\end{enumerate}This project aims to prepare the processing pipeline leading to fusion of measurements from a lidar with measurements from a camera. A lidar provides excellent range information, but has limits with regard to object recognition. A camera, on the other hand, is good for object recognition but has limits to the high resolution range information. The two sensors exhibit complementary properties, and combining (fusing) the measurements from both sensors can achieve more specific inferences about the surroundings than using a single, independent sensor. In order to associate measurements from the lidar and the camera to the external world, fusion with an INS is necessary, to be able to associate the (moving) coordinate frames of the sensors with a common world frame. Moreover, to be able to associate measurements from one sensor with the other, they need to be synchronized in time (temporally calibrated).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Computer Vision}
+Computer vision is a field of engineering and science concerned with extracting useful information from images. This has proved to be a challenging task, and it is still today an active field of research. Visual data is very complex, and the same object represented by two different images could be perceived very differently by a computer based on variations such as changes in illumination, partial occlusion of objects, changes in orientation, deformation and so on. Such variations are illustrated in figure \ref{fig:cv_challenges}. Despite these challenges, the recent advancements made within the field of deep learning, and deep convolutional neural nets in particular, has significantly improved the ability of computers to recognize objects in images. The ImageNet Large Scale Visual Recognition Challenge has been run annually since 2010, and is a benchmark in object category classification and detection on hundreds of object categories and millions of images \cite{ILSVRC15}. The results of the top 5 classification errors from the challenges up until 2016 is shown in figure \ref{fig:imagenet_top_5}. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\linewidth]{fig/challenges.jpeg}
+    \caption{Challenges related to object classification in images.\protect\footnotemark}
+    \label{fig:cv_challenges}
+\end{figure}
+\footnotetext{Image courtesy: http://cs231n.github.io/classification/}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.8\linewidth]{fig/imagenet_top_5.png}
+    \caption{ImageNet top 5 errors over time.\protect\footnotemark}
+    \label{fig:imagenet_top_5}
+\end{figure}
+\footnotetext{Image courtesy: https://www.dsiac.org/resources/journals/dsiac/winter-2017-volume-4-number-1/real-time-situ-intelligent-video-analytics}
+As seen in figure \ref{fig:imagenet_top_5}, deep learning algorithms dominate the field of object category classification and detection, even outperforming humans with state-of-the-art deep convolutional neural nets. This section will introduce some necessary basic image processing operations, and give a brief introduction to convolutional neural nets used for image object classification and detection.
+\subsection{Spatial image filtering}
+The term spatial in spatial image filtering refer to the image plane itself, and spatial image processing involves direct manipulation of the pixels themselves in the image, in contrast to other methods operating in a transform domain such as the frequency plane. A spatial filter consists of a \textit{neighborhood} (also called a mask, kernel, template or window) (typically rectangular), and a \textit{predefined operation} that is performed on the pixels in the image encompassed by the neighborhood \cite{digImage}. Filtering the image creates a new pixel with coordinates equal to the center of the neighborhood, with value given by the predefined operation performed on the pixels in the neighborhood. Spatial filtering of an image of size $M\times N$ with a filter of size $m\times n$ is given by
+\begin{equation}
+\label{eq:spatial_filt}
+    g(x,y)=\sum^{a}_{s=-a}\sum^{b}_{t=-b}w(s,t)f(x+s,y+t)
+\end{equation}
+where $m=2a+1$ and $n=2b+1$, $w(s,t)$ is the filter mask, with its center at $w(0,0)$ aligned with the pixel at location $(x,y)$. $g(x,y)$ is the response of the filter at location $(x,y)$. $x$ and $y$ are varied such that each pixel in the image is visited. The observant reader will notice that equation \ref{eq:spatial_filt} corresponds to correlation between the image $f(x,y)$ and the filter mask $w(x,y)$.
+\subsection{Convolutional Neural Nets for Object Recognition}
+What is a neural net, brief description of convolutional neural nets.
+\section{Target tracking}
+Necessary? Will not implement tracking at this stage anyway.
+\subsection{Clustering}
+\subsection{PDAF (or other tracking method)}
+
+\cleardoublepage
