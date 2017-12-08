@@ -12,18 +12,20 @@ The physical sensor setup used in the data collection is illustrated in figure \
 The camera used to gather image data is a commercial off-the-shelf action camera by Muvi, named Veho K2 Sport. The reasoning for using such a camera was the affordable price, relatively high resolution, and a wide angle of view. A serious drawback with such a camera for computer vision applications, however, is the fact that it only sends images as a steady stream over its HDMI interface, with little options for the user to control the capture of individual frames. Moreover, HDMI is not \todo{Kilde på at hdmi suger for real time CV} \\
 \vspace{2mm}\\
 \noindent The specifications of the computer used in the data gathering is listed in table \ref{tab:comp_specs_laptop}.
-\begin{tabular}[H]{|c|c|}
-\label{tab:comp_specs_laptop}
-\centering
-\hline
-Model & HP zbook 15\\
-CPU & Intel Core i7-4800MQ 8$\times$2.7 GHz \\
-Memory & 8 GB RAM \\
-Graphics & lala \\
-Storage & 250 GB Solid State HDD \\
-Operating System & Linux Ubuntu 16.04 LTS (Xenial)\\
-\hline
-\end{tabular}
+\begin{table}[H]
+	\centering
+	\begin{tabular}[H]{|c|c|}\hline
+	Model & HP zbook 15\\\hline
+	CPU & Intel Core i7-4800MQ 8$\times$2.7 GHz \\\hline
+	Memory & 8 GB RAM \\\hline
+	Graphics & lala \\\hline
+	Storage & 250 GB Solid State HDD \\\hline
+	Operating System & Linux Ubuntu 16.04 LTS (Xenial)\\
+	\hline
+	\end{tabular}
+	\caption{Computer specifications.}
+	\label{tab:comp_specs_laptop}
+\end{table}
 Overview of the sensor setup, hardware used, and signal flow through the system.
 \section{Faster R-CNN}
 Introduce the framework of Faster R-CNN
@@ -57,22 +59,77 @@ An overview of the implemented sensor driver and data processing nodes is illust
     \caption{ROS nodes and topic flow.}
     \label{fig:ros_nodes}
 \end{figure}
-The lidar nodes, camera node and IMU node are all based on open-source ROS packages freely available from the ROS community. The camera driver used is the \lstinline[basicstyle=\ttfamily]{libuvc_camera} driver. This node reads the image stream from the camera over the USB port, providing a ROS interface for cameras meeting the USB Video Class standard \cite{libuvc_camera}. This node publishes messages of the \lstinline[basicstyle=\ttfamily]{sensor_msgs/CompressedImage}-class (among others) native to ROS, where one message correspond to one video frame, with a time stamp corresponding to the arrival time of the image frame over USB. The source code is available at the ROS device drivers repository \cite{ros_drivers}.\\
+The lidar nodes, camera node and IMU node are all based on open-source ROS packages freely available from the ROS community. The camera driver used is the \\\lstinline[basicstyle=\ttfamily]{libuvc_camera} driver. This node reads the image stream from the camera over the USB port, providing a ROS interface for cameras meeting the USB Video Class standard \cite{libuvc_camera}. This node publishes messages containing an image corresponding to a single frame of the video stream, with a time stamp corresponding to the arrival time of the image frame over USB. The source code is available at the ROS device drivers repository \cite{ros_drivers}.\\
 \vspace{2mm}\\
-\noindent The lidar nodes are in the \lstinline[basicstyle=\ttfamily]{velodyne_driver}-package from the ROS device drivers repository \cite{ros_drivers}. This package provides two nodes, the first is \lstinline[basicstyle=\ttfamily]{/velodyne_driver} for collecting all TCP packages sendt over ethernet from the lidar and publishing a message containing the raw data from a full 360-degree scan from the lidar. The message is of the \lstinline[basicstyle=\ttfamily]{velodyne_msgs/VelodyneScan}-class provided in the driver package. The second node, \lstinline[basicstyle=\ttfamily]{/velodyne_cloud}, transforms the raw data into a point cloud given in the frame of reference the user chooses (default \lstinline[basicstyle=\ttfamily]{/velodyne}, the sensor frame) in XYZ-coordinates. In addition to the coordinates of each point, the corresponding intensity of the reflected signal strength and the ring data is published \cite{velodyne_driver}.\\ 
+\noindent The lidar nodes are in the \lstinline[basicstyle=\ttfamily]{velodyne_driver}-package from the ROS device drivers repository \cite{ros_drivers}. This package provides two nodes, the first is \lstinline[basicstyle=\ttfamily]{/velodyne_driver} for collecting all TCP packages sendt over ethernet from the lidar and publishing a message containing the raw data from a full 360-degree scan from the lidar. The second node, \lstinline[basicstyle=\ttfamily]{/velodyne_cloud}, transforms the raw data into a point cloud given in the frame of reference the user chooses (default \lstinline[basicstyle=\ttfamily]{/velodyne}, the sensor frame) in XYZ-coordinates. In addition to the coordinates of each point, the corresponding intensity of the reflected signal strength and the ring data is published \cite{velodyne_driver}.\\ 
 \vspace{2mm}\\
-\noindent The point cloud is then published as a message of the \lstinline[basicstyle=\ttfamily]{sensor_msgs/PointCloud2}-class native to ROS. In addition to the coordinates of each point, the corresponding intensity of the reflected signal strength and the ring data is also included in this message \cite{velodyne_driver}.\\
+\noindent The point cloud is then published as a ROS message. In addition to the coordinates of each point, the corresponding intensity of the reflected signal strength and the ring data is also included in this message \cite{velodyne_driver}.\\
 \vspace{2mm}\\
-\noindent The driver for the IMU is the \lstinline[basicstyle=\ttfamily]{xsens_driver} package \cite{xsens_driver}, which communicates with the Xsens IMU over USB, and publishes messages containing the measurements from the IMU as a message of the \lstinline[basicstyle=\ttfamily]{sensor_msgs/Imu}-class native to ROS, and GNSS position measurements as a message of the \lstinline[basicstyle=\ttfamily]{sensor_msgs/NavSatFix}-class, also native to ROS \cite{xsens_driver}.\\
+\noindent The driver for the IMU is the \lstinline[basicstyle=\ttfamily]{xsens_driver} package \cite{xsens_driver}, which communicates with the Xsens IMU over USB, and publishes messages containing the measurements from the IMU and GNSS position measurements \cite{xsens_driver}.\\
 \vspace{2mm}\\
-\noindent The dummy AIS nodes in figure \ref{fig:ros_nodes} are nodes for receiving and processing GNSS-information received over the internet from a mobile phone, developed at NTNU by the Autosea-project \todo{siter autosea et eller annet}. These nodes are used for receiving and storing the position ground truth for the vessel used in the experiments along with all the other data. They provide raw data as an NMEA-0183 sentence, which is a standard defined by the National Maritime Electronics Association for communication between marine electronics as a \lstinline[basicstyle=\ttfamily]{nmea_msgs/Sentence} message, as well as speed over ground and GNSS position data as \lstinline[basicstyle=\ttfamily]{geometry_msgs/TwistStamped} and \lstinline[basicstyle=\ttfamily]{sensor_msgs/NavSatFix} messages, respectively.
-The details of messages passed between nodes in the system is given in table
-\begin{tabular}[H]{|c|c|c|c|c|}
+\noindent The dummy AIS nodes in figure \ref{fig:ros_nodes} are nodes for receiving and processing GNSS-information received over the internet from a mobile phone, developed at NTNU by the Autosea-project \todo{siter autosea et eller annet}. These nodes are used for receiving and storing the position ground truth for the vessel used in the experiments along with all the other data. They provide raw data as an NMEA-0183 sentence, which is a standard defined by the National Maritime Electronics Association for communication between marine electronics, as well as speed over ground and GNSS position data.
+The details of messages passed between nodes in the system is given in table \ref{tab:topics}.
+\begin{table}[H]
 	\centering
-	\hline
-	Topic & Class & Content & Publisher & Subscriber
-\end{tabular}
+	\begin{tabularx}{\linewidth}{|c|L|}\hline
+		\textbf{Topic} & \textbf{Content} \\\hline
+		\lstinline[basicstyle=\ttfamily]{nmea\_msgs/Sentence} & GNSS Data as a String representing a NMEA0183 sentence \\\hline
+		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/NavSatFix} & Navigation Satellite fix specified using WGS 84 ellipsoid\\\hline
+		\lstinline[basicstyle=\ttfamily]{geometry\_msgs/TwistStamped} & Linear and angular velocity\\\hline
+		\lstinline[basicstyle=\ttfamily]{autosea\_msgs/AisDynamic} & AIS message generated from GNSS data\\\hline
+		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/TimeReference} & External time reference not actively synchronized with system time (i.e. GNSS time) \\\hline
+		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/PointCloud2} & Message containing point cloud data from the lidar \\\hline
+		\lstinline[basicstyle=\ttfamily]{velodyne\_msgs/VelodyneScan} & Message containing raw data from a 360$\deg$ lidar scan \\\hline
+		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/CompressedImage} & Message containing a compressed image in .JPEG format\\\hline
+		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/Imu} & Message containing raw measurements from the IMU\\\hline
+		\end{tabularx}
+	\caption{ROS Topics used in data collection.}
+	\label{tab:topics}
+\end{table}
+
 Perhaps not necessary with separate subsections for the drivers. Explain briefly what each node does (perhaps a really brief introduction to ROS).
+\section{Camera Calibration}
+As explained in section \ref{section:intrinsic_params}, one needs the cameras intrinsic parameters in order to associate pixel coordinates with world coordinates. MATLABs Computer Vision System Toolbox includes the Camera Calibrator application, which was used in calibrating the camera. The Camera Calibrator application implements the calibration routine by Zhang \cite{flexCal}, described in appendix \ref{app:cam_calibration} \cite{camera_calibrator}. The steps taken for calibrating the camera using this application can be summarized as follows:
+\begin{enumerate}
+	\item Prepare a checkerboard calibration pattern with known dimensions.
+	\item Capture 20-40 images of the checkerboard with the camera, from varying orientations.
+	\item Initiate the calibration.
+	\item Evaluate calibration accuracy.
+	\item Adjust parameters to improve accuracy (if necessary).
+	\item Export parameters as a cameraParameters object.
+\end{enumerate}
+The accuracy in the calibration routine can be improved by removing outlier images, which contribute more to the reprojection errors than others. Figure \ref{fig:calib_outlier} shows an example of a blurred image, which due to the error introduced to keypoint detection by the blurryness of the image causes a larger reprojection error.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{outlier_calibration.PNG}
+	\caption{Camera Calibration app showing an outlier image.}
+	\label{fig:calib_outlier}
+\end{figure}
+The outliers can be removed by adjusting the threshold for mean pixel reprojection error shown in the upper right corner of figure \ref{fig:calib_outlier}. The calibration app also computes the extrinsic parameters and displays the calibration pattern planes in 3D, as seen in the lower right corner in figure \ref{fig:calib_outlier}.
+Having calibrated the camera, the radial distortion in the images can be removed, as seen in figure \ref{fig:distortion}, where a unprocessed image with the calibration pattern key points overlaid can be seen next to the undistorted version.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{fig/calibration_distorted.PNG}
+		\caption{Distorted image.}
+		\label{fig:sub_distort1}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{fig/calibration_undistorted.PNG}
+		\caption{Undistorted image.}
+		\label{fig:sub_distort2}
+	\end{subfigure}
+	\caption{Distorted checkerboard image, along with the undistorted version.}
+	\label{fig:distortion}
+\end{figure}
+The numerical values for the intrinsic matrix was found using this routine as
+\begin{equation}
+\mathcal{K}=\begin{bmatrix}\alpha & -\alpha\cot{\theta} & x_0\\0 & \frac{\beta}{\sin{\theta}} & y_0\\0 & 0 & 1\end{bmatrix}=\begin{bmatrix}
+1068.7558 & -1.9413 & 893.7339 \\ 0 & 1066.6539 &516.2405\\ 0 & 0 & 1
+\end{bmatrix}
+\end{equation}  
 \subsection{Time Synchronization}
-Time delay between camera and imu, Kalibr calibration routine. 
+Time delay between camera and imu, Kalibr calibration routine.
 \cleardoublepage

@@ -1,0 +1,634 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{sensorFusion1}{book}{}
+    \name{author}{1}{}{%
+      {{hash=KW}{%
+         family={Koch},
+         familyi={K\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{KW1}
+    \strng{fullhash}{KW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Tracking and Sensor Data Fusion: Methodological Framework and
+  Selected Applications}
+    \field{year}{2014}
+  \endentry
+
+  \entry{JDLFusion}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=SA}{%
+         family={Steinberg},
+         familyi={S\bibinitperiod},
+         given={A.N.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BC}{%
+         family={Bowman},
+         familyi={B\bibinitperiod},
+         given={C.L.},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \name{editor}{3}{}{%
+      {{hash=LME}{%
+         family={Liggins},
+         familyi={L\bibinitperiod},
+         given={M.\bibnamedelima E.},
+         giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=HDL}{%
+         family={Hall},
+         familyi={H\bibinitperiod},
+         given={D.\bibnamedelima L.},
+         giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Llinas},
+         familyi={L\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {CRC Press}%
+    }
+    \strng{namehash}{SABC1}
+    \strng{fullhash}{SABC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Handbook of Multisensor Data Fusion - Theory and
+  Practice}
+    \field{chapter}{3}
+    \field{pages}{45\bibrangedash 66}
+    \field{title}{Revisions to the JDL Data Fusion Model}
+    \field{year}{2008}
+  \endentry
+
+  \entry{ILSVRC15}{article}{}
+    \name{author}{12}{}{%
+      {{hash=RO}{%
+         family={Russakovsky},
+         familyi={R\bibinitperiod},
+         given={Olga},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Deng},
+         familyi={D\bibinitperiod},
+         given={Jia},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SH}{%
+         family={Su},
+         familyi={S\bibinitperiod},
+         given={Hao},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=KJ}{%
+         family={Krause},
+         familyi={K\bibinitperiod},
+         given={Jonathan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Satheesh},
+         familyi={S\bibinitperiod},
+         given={Sanjeev},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Ma},
+         familyi={M\bibinitperiod},
+         given={Sean},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HZ}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Zhiheng},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Karpathy},
+         familyi={K\bibinitperiod},
+         given={Andrej},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Khosla},
+         familyi={K\bibinitperiod},
+         given={Aditya},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Bernstein},
+         familyi={B\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BAC}{%
+         family={Berg},
+         familyi={B\bibinitperiod},
+         given={Alexander\bibnamedelima C.},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=FFL}{%
+         family={Fei-Fei},
+         familyi={F\bibinitperiod-F\bibinitperiod},
+         given={Li},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RODJSH+1}
+    \strng{fullhash}{RODJSHKJSSMSHZKAKABMBACFFL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1007/s11263-015-0816-y
+    \endverb
+    \field{number}{3}
+    \field{pages}{211\bibrangedash 252}
+    \field{title}{{ImageNet Large Scale Visual Recognition Challenge}}
+    \field{volume}{115}
+    \field{journaltitle}{International Journal of Computer Vision (IJCV)}
+    \field{year}{2015}
+  \endentry
+
+  \entry{digImage}{book}{}
+    \name{author}{2}{}{%
+      {{hash=GRC}{%
+         family={Gonzalez},
+         familyi={G\bibinitperiod},
+         given={R.\bibnamedelima C.},
+         giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=WRE}{%
+         family={Woods},
+         familyi={W\bibinitperiod},
+         given={R.\bibnamedelima E.},
+         giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Pearson}%
+    }
+    \strng{namehash}{GRCWRE1}
+    \strng{fullhash}{GRCWRE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Digital Image Processing}
+    \field{year}{2008}
+  \endentry
+
+  \entry{modernCV}{book}{}
+    \name{author}{2}{}{%
+      {{hash=FM}{%
+         family={Forsyth},
+         familyi={F\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PJ}{%
+         family={Ponce},
+         familyi={P\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Pearson}%
+    }
+    \strng{namehash}{FMPJ1}
+    \strng{fullhash}{FMPJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Computer Vision, A Modern Approach}
+    \field{year}{2012}
+  \endentry
+
+  \entry{CValg}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SR}{%
+         family={Szeliski},
+         familyi={S\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SR1}
+    \strng{fullhash}{SR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Computer Vision, Algorithms and Applications}
+    \field{year}{2011}
+  \endentry
+
+  \entry{bayer1976color}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=BB}{%
+         family={Bayer},
+         familyi={B\bibinitperiod},
+         given={B.E.},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Google Patents}%
+    }
+    \strng{namehash}{BB1}
+    \strng{fullhash}{BB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{US Patent 3,971,065}
+    \field{title}{Color imaging array}
+    \verb{url}
+    \verb https://www.google.com/patents/US3971065
+    \endverb
+    \field{year}{1976}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{modsim}{book}{}
+    \name{author}{2}{}{%
+      {{hash=EO}{%
+         family={Egeland},
+         familyi={E\bibinitperiod},
+         given={O.},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=GJT}{%
+         family={Gravdahl},
+         familyi={G\bibinitperiod},
+         given={J.\bibnamedelima T.},
+         giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Marine Cybernetics}%
+    }
+    \strng{namehash}{EOGJT1}
+    \strng{fullhash}{EOGJT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Modeling and Simulation for Automatic Control}
+    \field{year}{2002}
+  \endentry
+
+  \entry{kinematics}{book}{}
+    \name{author}{1}{}{%
+      {{hash=WJ}{%
+         family={Wittenburg},
+         familyi={W\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{WJ1}
+    \strng{fullhash}{WJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Kinematics: Theory and Applications}
+    \field{year}{2016}
+  \endentry
+
+  \entry{geometry}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BDS}{%
+         family={Bernstein},
+         familyi={B\bibinitperiod},
+         given={D.\bibnamedelima S.},
+         giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Princeton University Press}%
+    }
+    \strng{namehash}{BDS1}
+    \strng{fullhash}{BDS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Geometry, Kinematics, Statics and Dynamics}
+    \field{year}{2012}
+  \endentry
+
+  \entry{SpieLidar}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MP}{%
+         family={McManamon},
+         familyi={M\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {SPIE}%
+    }
+    \strng{namehash}{MP1}
+    \strng{fullhash}{MP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Field Guide to Lidar}
+    \field{year}{2015}
+  \endentry
+
+  \entry{programming_ros}{book}{}
+    \name{author}{3}{}{%
+      {{hash=QM}{%
+         family={Quigley},
+         familyi={Q\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GB}{%
+         family={Gerkey},
+         familyi={G\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SWD}{%
+         family={Smart},
+         familyi={S\bibinitperiod},
+         given={W.\bibnamedelima D.},
+         giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {O'Reilly}%
+    }
+    \strng{namehash}{QMGBSWD1}
+    \strng{fullhash}{QMGBSWD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Programming Robots with ROS}
+    \field{year}{2015}
+  \endentry
+
+  \entry{BSD}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{https://opensource.org/licenses/BSD-3-Clause}}
+    \field{note}{Accessed: 2017-12-06}
+    \field{title}{The 3-Clause BSD License}
+  \endentry
+
+  \entry{libuvc_camera}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=FOSR}{%
+         family={Foundation},
+         familyi={F\bibinitperiod},
+         given={Open Source\bibnamedelima Robotics},
+         giveni={O\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim
+  R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FOSR1}
+    \strng{fullhash}{FOSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{http://wiki.ros.org/libuvc_camera?distro=kinetic}}
+    \field{note}{Accessed: 2017-12-06}
+    \field{title}{libuvc\_camera - ROS Wiki}
+  \endentry
+
+  \entry{ros_drivers}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{https://github.com/ros-drivers}}
+    \field{note}{Accessed: 2017-12-06}
+    \field{title}{ROS device drivers}
+  \endentry
+
+  \entry{velodyne_driver}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=FOSR}{%
+         family={Foundation},
+         familyi={F\bibinitperiod},
+         given={Open Source\bibnamedelima Robotics},
+         giveni={O\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim
+  R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FOSR1}
+    \strng{fullhash}{FOSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{http://wiki.ros.org/velodyne?distro=kinetic}}
+    \field{note}{Accessed: 2017-12-06}
+    \field{title}{velodyne - ROS Wiki}
+  \endentry
+
+  \entry{xsens_driver}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=FOSR}{%
+         family={Foundation},
+         familyi={F\bibinitperiod},
+         given={Open Source\bibnamedelima Robotics},
+         giveni={O\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim
+  R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FOSR1}
+    \strng{fullhash}{FOSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{http://wiki.ros.org/xsens_driver}}
+    \field{note}{Accessed: 2017-12-06}
+    \field{title}{xsens\_driver - ROS Wiki}
+  \endentry
+
+  \entry{flexCal}{article}{}
+    \name{author}{1}{}{%
+      {{hash=ZZ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Zhengyou},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZZ1}
+    \strng{fullhash}{ZZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{1330\bibrangedash 1334}
+    \field{title}{A Flexible New Technique for Camera Calibration}
+    \field{volume}{22}
+    \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}
+    \field{year}{2000}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{camera_calibrator}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=MI}{%
+         family={MathWorks},
+         familyi={M\bibinitperiod},
+         given={Inc},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MI1}
+    \strng{fullhash}{MI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{https://se.mathworks.com/help/vision/ref/cameracalibrator-app.html}}
+    \field{note}{Accessed: 2017-12-08}
+    \field{title}{Estimate geometric parameters of a single camera - MATLAB}
+  \endentry
+
+  \entry{3dvision}{book}{}
+    \name{author}{1}{}{%
+      {{hash=FO}{%
+         family={Faugeras},
+         familyi={F\bibinitperiod},
+         given={O.},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The MIT Press}%
+    }
+    \strng{namehash}{FO1}
+    \strng{fullhash}{FO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Three-Dimensional Computer Vision: A Geometric Viewpoint}
+    \field{year}{1993}
+  \endentry
+
+  \entry{zhangTech}{report}{}
+    \name{author}{1}{}{%
+      {{hash=ZZ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Zhengyou},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZZ1}
+    \strng{fullhash}{ZZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{A Flexible New Technique for Camera Calibration}}
+    \list{institution}{1}{%
+      {Microsoft Corporation}%
+    }
+    \field{type}{techreport}
+    \field{month}{12}
+    \field{year}{1998}
+  \endentry
+
+  \entry{wengCalibration}{article}{}
+    \name{author}{3}{}{%
+      {{hash=WJ}{%
+         family={Weng},
+         familyi={W\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CP}{%
+         family={Cohen},
+         familyi={C\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Herniou},
+         familyi={H\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WJCPHM1}
+    \strng{fullhash}{WJCPHM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{10}
+    \field{pages}{965\bibrangedash 980}
+    \field{title}{Camera Calibration with Distortion Models and Accuracy
+  Evaluation}
+    \field{volume}{14}
+    \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}
+    \field{year}{1992}
+  \endentry
+
+  \entry{weiCalibration}{article}{}
+    \name{author}{2}{}{%
+      {{hash=WG}{%
+         family={Wei},
+         familyi={W\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=DMS}{%
+         family={De\bibnamedelima Ma},
+         familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WGDMS1}
+    \strng{fullhash}{WGDMS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{5}
+    \field{pages}{469\bibrangedash 480}
+    \field{title}{Implicit and Explicit Camera Calibration: Theory and
+  Experiments}
+    \field{volume}{16}
+    \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}
+    \field{year}{1994}
+  \endentry
+
+  \entry{Brown71close-rangecamera}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BDC}{%
+         family={Brown},
+         familyi={B\bibinitperiod},
+         given={Duane\bibnamedelima C.},
+         giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BDC1}
+    \strng{fullhash}{BDC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{8}
+    \field{pages}{855\bibrangedash 866}
+    \field{title}{Close-range camera calibration}
+    \field{volume}{37}
+    \field{journaltitle}{PHOTOGRAMMETRIC ENGINEERING}
+    \field{year}{1971}
+  \endentry
+\enddatalist
+\endinput

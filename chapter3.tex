@@ -98,6 +98,7 @@ Using homogeneous coordinates, the same transformation can be written as
 where $^a\mathbf{P}$ and $^b\mathbf{P}$ are now vectors in $\mathbb{R}^4$. There are several ways to parameterize the rotation matrix $\mathcal{R}$, such as by Euler angles or quaternions. There are many textbooks which go into great detail on parameterizations and properties of rotation matrices, some examples being \cite{modsim}, \cite{kinematics} and \cite{geometry}. Going into such details is beyond the scope of this text.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Intrinsic Parameters}
+\label{section:intrinsic_params}
 Using homogeneous coordinates, equation \ref{eq:perspectiveproj} can be rewritten as
 \begin{equation}
 \label{eq:homo}
@@ -170,7 +171,7 @@ The intrinsic parameters are typically found through a calibration routine, whil
 A lidar is an \textit{active} electro-optical sensor that sends out a laser pulse, and subsequently measures the parameters of the return signal bounced off some object. The lidar is known under several names, some examples being ladar, lidar, LIDAR, LADAR or laser radar. The term lidar is the most common, and will be used throughout this report. Lidars have seen a growing range of applications in recent years, with the current drive towards autonomous, driverless cars as a significant driving factor. In a lidar, a waveform generator generates a laser waveform. Depending on the type of lidar, the setup can include a single laser or a master oscillator with multiple lasers or laser amplifiers. There are many types of lidars, however this report focuses on a particular type of 3D lidar with a rotating detector array, which measures azimuth and elevation angle, and range. An example of such a lidar is shown in figure \ref{fig:vlp_16}. The measurement is performed by the laser pulse being guided through transmit optics, traversing some medium, typically atmosphere, to a target. The laser pulse bounces off the target, and traverses the media again until receive optics captures the reflected pulse, guiding it to a detector or a detector array \cite{SpieLidar}. The laser and detector arrays rotate, taking multiple measurements as it scans the full 360 degree field of view. The range to a target can be determined based on the travel time of the laser pulse by $R=\frac{c}{2}(t_{rx}-t_{tx})$, where $c$ is the speed of light in the intervening medium, $t_{tx}$ and $t_{rx}$ is the transmission and reception time of the laser pulse, respectively. The laser travels twice the distance to the target between transmission and reception time, hence the resulting range is halved. Relativistic effects are assumed negligible. The range resolution is determined by $\Delta R=\frac{c}{2B}$, where $B$ is the system bandwidth, typically given by the transmit signal bandwidth.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png}
+    \includegraphics[width=.7\linewidth]{fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png}
     \caption{The Velodyne VLP-16 lidar.}
     \label{fig:vlp_16}
 \end{figure}
@@ -178,21 +179,21 @@ A lidar is an \textit{active} electro-optical sensor that sends out a laser puls
 A lidar is an optical detector, similar to a digital camera in that it responds to the intensity of the light hitting the detector, generating a voltage equal to the square of the intensity of the impinging light \cite{SpieLidar}. A rotating 3D lidar returns the intensity of the measured signal along with the range calculated from the travel time, as well as the azimuth (rotation) angle and the vertical angle of the point. The lidar has its own reference frame (in sperical coordinates), and it keeps track of its own orientation, giving the azimuth angle of a point relative to some reference angle (typically determined by the manufacturer), and the vertical angle is referenced to the horizontal plane in the lidar frame of reference. The coordinates of a point in the lidar frame therefore consists of two angles, $\alpha$ and $\beta$, as well as the distance $R$ from the lidar to the point. Figure \ref{fig:lidar_spherical} illustrates this.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\linewidth]{fig/sperical_to_cartesian.png}
+    \includegraphics[width=.7\linewidth]{fig/sperical_to_cartesian.png}
     \caption{Lidar spherical coordinate system, with equivalent cartesian coordinates.}
     \label{fig:lidar_spherical}
 \end{figure}
 In figure \ref{fig:lidar_spherical}, $\alpha$ is the azimuth angle, relative to the y-axis. $\beta$ is the vertical/elevation angle, and $R$ is the distance from the lidar to the point $P$.
-From figure \ref{fig:lidar_spherical}, it's easy to see that the transformation from spherical to cartesian coordinates is given by
+From figure \ref{fig:lidar_spherical}, using basic trigonometry, we get that the transformation from spherical to cartesian coordinates is given by
 \begin{equation}
     \begin{split}
-        X&=R\cos{\beta}\sin{\alpha}\\
-        Y&=R\cos{\beta}\cos{\alpha}\\
+        X&=P'\sin{\alpha}=R\cos{\beta}\sin{\alpha}\\
+        Y&=P'\cos{\alpha}=R\cos{\beta}\cos{\alpha}\\
         Z&=R\sin{\beta}
     \end{split}
 \end{equation}
 \subsubsection{Lidar Sensor Model}
-The range returned by the lidar is measured along a beam... 
+The range returned by the lidar is measured along a beam... Withil Flåten Brekke PDAF. 
 Standard measurement model, multiple measurements per target. In the lidar case one will (almost always) have more than one measurement per target.
 \subsection{Lidar Calibration}
 Mainly coordinate transformations. Point cloud gives spherical coordinates in the lidar frame, to be transformed to world frame (NED frame?). Velodyne is calibrated, refer to manual.

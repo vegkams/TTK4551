@@ -45,9 +45,16 @@ As seen in figure \ref{fig:imagenet_top_5}, deep learning algorithms dominate th
 The term spatial in spatial image filtering refer to the image plane itself, and spatial image processing involves direct manipulation of the pixels themselves in the image, in contrast to other methods operating in a transform domain such as the frequency plane. A spatial filter consists of a \textit{neighborhood} (also called a mask, kernel, template or window) (typically rectangular), and a \textit{predefined operation} that is performed on the pixels in the image encompassed by the neighborhood \cite{digImage}. Filtering the image creates a new pixel with coordinates equal to the center of the neighborhood, with value given by the predefined operation performed on the pixels in the neighborhood. Spatial filtering of an image of size $M\times N$ with a filter of size $m\times n$ is given by
 \begin{equation}
 \label{eq:spatial_filt}
-    g(x,y)=\sum^{a}_{s=-a}\sum^{b}_{t=-b}w(s,t)f(x+s,y+t)
+    g(x,y)=w(x,y)*f(x,y)=\sum^{a}_{s=-a}\sum^{b}_{t=-b}w(s,t)f(x-s,y-t)
 \end{equation}
-where $m=2a+1$ and $n=2b+1$, $w(s,t)$ is the filter mask, with its center at $w(0,0)$ aligned with the pixel at location $(x,y)$. $g(x,y)$ is the response of the filter at location $(x,y)$. $x$ and $y$ are varied such that each pixel in the image is visited. The observant reader will notice that equation \ref{eq:spatial_filt} corresponds to correlation between the image $f(x,y)$ and the filter mask $w(x,y)$.
+where $a=\frac{m-1}{2}$ and $b=\frac{n-1}{2}$, $w(s,t)$ is the filter mask, with its center at $w(0,0)$ aligned with the pixel at location $(x,y)$. $g(x,y)$ is the response of the filter at location $(x,y)$. $*$ denotes the convolution operator. $x$ and $y$ are varied such that each pixel in the image is visited. In other words, spatial filtering of an image with a mask of size $m\times n$ corresponds to convolving the image with the mask. The filter and the corresponding image pixels for a given $(x,y)$ are illustrated in figure \ref{fig:spatial_filter}. The filter mask used in this illustration is $3\times3$ pixels.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{fig/digimageproc.png}
+	\caption{}
+	\label{fig:spatial_filter}
+\end{figure}
+Convolution between the image and the filter mask corresponds to correlating the image and the filter mask rotated 180 degrees.
 \subsection{Convolutional Neural Nets for Object Recognition}
 What is a neural net, brief description of convolutional neural nets.
 \section{Target tracking}

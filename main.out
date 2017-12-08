@@ -1,0 +1,45 @@
+\BOOKMARK [0][-]{section*.1}{Summary}{}% 1
+\BOOKMARK [0][-]{section*.2}{Preface}{}% 2
+\BOOKMARK [0][-]{chapter*.3}{Table of Contents}{}% 3
+\BOOKMARK [0][-]{chapter*.4}{List of Tables}{}% 4
+\BOOKMARK [0][-]{chapter*.5}{List of Figures}{}% 5
+\BOOKMARK [0][-]{section*.6}{Abbreviations}{}% 6
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 7
+\BOOKMARK [1][-]{section.1.1}{Problem formulation}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.2}{Report outline}{chapter.1}% 9
+\BOOKMARK [0][-]{chapter.2}{Theory}{}% 10
+\BOOKMARK [1][-]{section.2.1}{Sensor Fusion}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.2}{Computer Vision}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.1}{Spatial image filtering}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.2}{Convolutional Neural Nets for Object Recognition}{section.2.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Target tracking}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.3.1}{Clustering}{section.2.3}% 16
+\BOOKMARK [2][-]{subsection.2.3.2}{PDAF \(or other tracking method\)}{section.2.3}% 17
+\BOOKMARK [0][-]{chapter.3}{Sensor Models}{}% 18
+\BOOKMARK [1][-]{section.3.1}{Image Formation}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.1.1}{The Pinhole Camera Model}{section.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.1.2}{Digital Image Aquisition}{section.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.1.3}{Intrinsic and Extrinsic Parameters}{section.3.1}% 22
+\BOOKMARK [1][-]{section.3.2}{Lidar}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.2.1}{Lidar Measurement Model}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.2}{Lidar Calibration}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.3}{The lidar point cloud}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.4}{Velodyne VLP-16 lidar}{section.3.2}% 27
+\BOOKMARK [0][-]{chapter.4}{Method}{}% 28
+\BOOKMARK [1][-]{section.4.1}{Sensors, Hardware and Processing Pipeline}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{Faster R-CNN}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Training and validation data}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{Implementation Aspects}{section.4.2}% 32
+\BOOKMARK [1][-]{section.4.3}{ROS Implementation}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.4}{Camera Calibration}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.4.1}{Time Synchronization}{section.4.4}% 35
+\BOOKMARK [0][-]{chapter.5}{Experiments}{}% 36
+\BOOKMARK [0][-]{chapter.6}{Analysis}{}% 37
+\BOOKMARK [0][-]{chapter.7}{Discussion}{}% 38
+\BOOKMARK [0][-]{chapter.8}{Conclusion}{}% 39
+\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 40
+\BOOKMARK [1][-]{section.A.1}{Geometric Camera Calibration}{appendix.A}% 41
+\BOOKMARK [2][-]{subsection.A.1.1}{Perspective Projection between the Model Plane and Its Image}{section.A.1}% 42
+\BOOKMARK [2][-]{subsection.A.1.2}{Solving the Calibration Problem}{section.A.1}% 43
+\BOOKMARK [2][-]{subsection.A.1.3}{Radial Lens Distortion}{section.A.1}% 44
+\BOOKMARK [2][-]{subsection.A.1.4}{Calibration Procedure}{section.A.1}% 45

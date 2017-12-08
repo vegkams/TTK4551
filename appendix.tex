@@ -92,13 +92,13 @@ where $\lambda=1/||\mathbf{A}^{-1}\mathbf{h}_1||$. The parameters can be further
 where $\hat{\mathbf{m}}(\mathbf{A},\mathcal{R}_i,\mathbf{t}_i,\mathbf{M}_j)$ is the projection of point $\mathbf{M}_j$ in image $i$ as described in equation \ref{eq:homography}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Radial Lens Distortion}
-In the previous sections lens distortion models has not been discussed. A typical camera, however, will to a varying degree exhibit lens distortion, especially radial distortion. Figure \ref{fig:distortion} illustrates positive and negative radial distortion, known as barrel distortion and pincushion distortion, respectively. Zhang only considered radial distortion in his work, the argument being that more elaborate models not only did not improve the result, but could also produce numerical instability \cite{zhangTech}.
+In the previous sections lens distortion models has not been discussed. A typical camera, however, will to a varying degree exhibit lens distortion, especially radial distortion. Figure \ref{fig:distortion_illustration} illustrates positive and negative radial distortion, known as barrel distortion and pincushion distortion, respectively. Zhang only considered radial distortion in his work, the argument being that more elaborate models not only did not improve the result, but could also produce numerical instability \cite{zhangTech}.
 The interested reader is referred to \cite{wengCalibration, weiCalibration, Brown71close-rangecamera} for a more thorough description of distortion models considering effects as decentering and thin prism distortion in addition to radial distortion.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{fig/distortion_examples.png}
     \caption{Examples of radial distortion. \protect\footnotemark}
-    \label{fig:distortion}
+    \label{fig:distortion_illustration}
 \end{figure}
 \footnotetext{Image courtesy: https://docs.opencv.org/2.4.13.2/modules/calib3d/doc/camera\_calibration\_and\_3d\_reconstruction.html}
 Considering only radial distortion, let $(u,v)$ represent the ideal (distortion-free) pixel image coordinates, and $(\check{u},\check{v})$ the corresponding observed real coordinates. Then, using equation \ref{eq:flexcalnotation} and assuming $\gamma = 0$, we have \cite{zhangTech}

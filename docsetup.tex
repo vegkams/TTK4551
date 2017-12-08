@@ -12,6 +12,8 @@
 \usepackage[Lenny]{fncychap}
 \usepackage[pdftex,bookmarks=true]{hyperref}
 \usepackage[pdftex]{hyperref}
+\usepackage{tabularx}
+	\newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \hypersetup{
     colorlinks,%
     citecolor=black,%
@@ -25,8 +27,8 @@
 %\usepackage[intoc]{nomencl}
 %\renewcommand{\nomname}{List of Abbreviations}
 %\makenomenclature
-\usepackage[style=ieee]{biblatex}
-\addbibresource{mylib.bib}
+\usepackage[backend=bibtex8,style=ieee]{biblatex}
+\bibliography{mylib}
 \usepackage{url}
 \usepackage{float}
 \usepackage[toc,page]{appendix}
