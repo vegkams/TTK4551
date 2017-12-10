@@ -79,6 +79,7 @@ which gives the following relation between the normalized plane coordinates $^n\
 \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Homogeneous Coordinates and Rigid Transformations}
+\label{section:transformations}
 Homogeneous coordinates are convenient for representing geometric transformations by a matrix product.
 Consider a point $P$ in some right-handed coordinate frame with origin $O$ and the $x$, $y$ and $z$ axis given by the unit vectors $\mathbf{i}$, $\mathbf{j}$ and $\mathbf{k}$ respectively. The point can be specified by
 \begin{equation}
@@ -138,7 +139,7 @@ The matrix $\mathcal{K}$ is called the \textit{calibration matrix} of the camera
 \label{eq:intrinsics}
     ^i\mathbf{p}=\frac{1}{Z}\mathcal{K}\begin{bmatrix}\mathbf{I}^{3\times3} & \mathbf{0}^{3\times1}\end{bmatrix}^c\mathbf{P}=\frac{1}{Z}\mathcal{M}^c\mathbf{P},\quad \text{where}\quad \mathcal{M}\overset{\text{def}}{=}\begin{bmatrix}\mathcal{K} & \mathbf{0}^{3\times1}\end{bmatrix}
 \end{equation}
-The parameters $\alpha$, $\beta$, $\theta$, $x_0$ and $y_0$ are called the \textit{intrinsic parameters} of the camera, typically obtained through a calibration procedure like the one described in section \ref{section:cam_calibration}.
+The parameters $\alpha$, $\beta$, $\theta$, $x_0$ and $y_0$ are called the \textit{intrinsic parameters} of the camera, typically obtained through a calibration procedure like the one described in section \ref{app:cam_calibration}.
 \subsubsection{Extrinsic Parameters}
 Describe relation between camera coordinate frame and (some) world frame.
 Equation \ref{eq:intrinsics} is written in a coordinate frame rigidly attached to the camera. However, for applications like autonomous vehicles, where the vehicle itself moves in some inertial coordinate system, we can express equation \ref{eq:intrinsics} in some world coordinate system using a rigid homogeneous transformation. The change of coordinates between the camera frame and the world frame can be expressed as presented in equation \ref{eq:homo_trans}:
@@ -168,50 +169,116 @@ The intrinsic parameters are typically found through a calibration routine, whil
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LIDAR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lidar}
-A lidar is an \textit{active} electro-optical sensor that sends out a laser pulse, and subsequently measures the parameters of the return signal bounced off some object. The lidar is known under several names, some examples being ladar, lidar, LIDAR, LADAR or laser radar. The term lidar is the most common, and will be used throughout this report. Lidars have seen a growing range of applications in recent years, with the current drive towards autonomous, driverless cars as a significant driving factor. In a lidar, a waveform generator generates a laser waveform. Depending on the type of lidar, the setup can include a single laser or a master oscillator with multiple lasers or laser amplifiers. There are many types of lidars, however this report focuses on a particular type of 3D lidar with a rotating detector array, which measures azimuth and elevation angle, and range. An example of such a lidar is shown in figure \ref{fig:vlp_16}. The measurement is performed by the laser pulse being guided through transmit optics, traversing some medium, typically atmosphere, to a target. The laser pulse bounces off the target, and traverses the media again until receive optics captures the reflected pulse, guiding it to a detector or a detector array \cite{SpieLidar}. The laser and detector arrays rotate, taking multiple measurements as it scans the full 360 degree field of view. The range to a target can be determined based on the travel time of the laser pulse by $R=\frac{c}{2}(t_{rx}-t_{tx})$, where $c$ is the speed of light in the intervening medium, $t_{tx}$ and $t_{rx}$ is the transmission and reception time of the laser pulse, respectively. The laser travels twice the distance to the target between transmission and reception time, hence the resulting range is halved. Relativistic effects are assumed negligible. The range resolution is determined by $\Delta R=\frac{c}{2B}$, where $B$ is the system bandwidth, typically given by the transmit signal bandwidth.
+A lidar is an \textit{active} electro-optical sensor that sends out a laser pulse, and subsequently measures the parameters of the return signal bounced off some object. The lidar is known under several names, some examples being ladar, lidar, LIDAR, LADAR or laser radar. The term lidar is the most common, and will be used throughout this report. Lidars have seen a growing range of applications in recent years, with the current drive towards autonomous, driverless cars as a significant driving factor. In a lidar, a waveform generator generates a laser waveform. Depending on the type of lidar, the setup can include a single laser or a master oscillator with multiple lasers or laser amplifiers. There are many types of lidars, however this report focuses on a particular type of 3D lidar with a rotating detector array, which measures azimuth and elevation angle, and range. An example of such a lidar is shown in figure \ref{fig:vlp_16}. 
+
+The measurement is performed by the laser pulse being guided through transmit optics, traversing some medium, typically atmosphere, to a target. The laser pulse bounces off the target, and traverses the media again until receive optics captures the reflected pulse, guiding it to a detector or a detector array \cite{SpieLidar}. The laser and detector arrays rotate, taking multiple measurements as it scans the full 360 degree field of view. The range to a target can be determined based on the travel time of the laser pulse by $R=\frac{c}{2}(t_{rx}-t_{tx})$, where $c$ is the speed of light in the intervening medium, $t_{tx}$ and $t_{rx}$ is the transmission and reception time of the laser pulse, respectively. The laser travels twice the distance to the target between transmission and reception time, hence the resulting range is halved. Relativistic effects are assumed negligible. The range resolution is determined by $\Delta R=\frac{c}{2B}$, where $B$ is the system bandwidth, typically given by the transmit signal bandwidth.
 \begin{figure}[H]
     \centering
     \includegraphics[width=.7\linewidth]{fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png}
     \caption{The Velodyne VLP-16 lidar.}
     \label{fig:vlp_16}
 \end{figure}
-\subsection{Lidar Measurement Model}
+
+\subsection{Velodyne VLP-16 Lidar Specifications}
+The lidar used in this project is the Velodyne VLP-16, which is a small, real-time rotating lidar which steams data over a TCP/IP connection when it is powered up. The lidar has multiple return modes, where it can report either the strongest return signal, the last return signal, or both. The default return mode is to report the strongest return, and this mode is what is used in this project. The Velodyne VLP-16 features 16 laser/detector pairs mounted in a rotating housing, rapidly spinning to produce 360$\degree$ 3D image.\smallskip \\
+Some features of the VLP-16 are \cite{velodyne_vlp16}:
+\begin{itemize}
+	\item Horizontal FOV of 360$\degree$.
+	\item Weight of 830 grams.
+	\item Rotational speed of 5-20 RPS (adjustable).
+	\item Vertical FOV of 30$\degree$ (+15$\degree$ to -15$\degree$).
+	\item Vertical angular resolution of 2\degree.
+	\item Horizontal angular resolution of 0.1$\degree$-0.4$\degree$.
+	\item Range of up to 100 meters (range depends on application).
+	\item Accuracy $\pm3$ cm (typical).
+	\item 903 nm wavelength laser.
+\end{itemize}
+
+\subsection{Lidar Sensor Model}
 A lidar is an optical detector, similar to a digital camera in that it responds to the intensity of the light hitting the detector, generating a voltage equal to the square of the intensity of the impinging light \cite{SpieLidar}. A rotating 3D lidar returns the intensity of the measured signal along with the range calculated from the travel time, as well as the azimuth (rotation) angle and the vertical angle of the point. The lidar has its own reference frame (in sperical coordinates), and it keeps track of its own orientation, giving the azimuth angle of a point relative to some reference angle (typically determined by the manufacturer), and the vertical angle is referenced to the horizontal plane in the lidar frame of reference. The coordinates of a point in the lidar frame therefore consists of two angles, $\alpha$ and $\beta$, as well as the distance $R$ from the lidar to the point. Figure \ref{fig:lidar_spherical} illustrates this.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.7\linewidth]{fig/sperical_to_cartesian.png}
+    \includegraphics[width=.6\linewidth]{fig/sperical_to_cartesian.png}
     \caption{Lidar spherical coordinate system, with equivalent cartesian coordinates.}
     \label{fig:lidar_spherical}
 \end{figure}
 In figure \ref{fig:lidar_spherical}, $\alpha$ is the azimuth angle, relative to the y-axis. $\beta$ is the vertical/elevation angle, and $R$ is the distance from the lidar to the point $P$.
 From figure \ref{fig:lidar_spherical}, using basic trigonometry, we get that the transformation from spherical to cartesian coordinates is given by
 \begin{equation}
+\label{eq:spheric_to_cartesian}
     \begin{split}
         X&=P'\sin{\alpha}=R\cos{\beta}\sin{\alpha}\\
         Y&=P'\cos{\alpha}=R\cos{\beta}\cos{\alpha}\\
         Z&=R\sin{\beta}
     \end{split}
 \end{equation}
-\subsubsection{Lidar Sensor Model}
-The range returned by the lidar is measured along a beam... Withil Flåten Brekke PDAF. 
-Standard measurement model, multiple measurements per target. In the lidar case one will (almost always) have more than one measurement per target.
+The range returned by the Velodyne VLP-16 lidar is measured along a beam at known azimuth angles $\alpha$, and the 16 laser/detector pairs are mounted vertically at equidistant angles from -15$\degree$ to 15$\degree$. When the lidar is rotating at a frequency of 10 Hz the lasers fire at every $0.2\degree$, with a total of $1800$ laser firings for a full rotation. The theoretical maximum number of range measurements for a full $360\degree$ scan is therefore $\frac{360}{0.2}\times16=28800$ measurements, where every single laser beam is reflected and detected at the lidar.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{fig/lidar_side.png}
+		\caption{Side view.}
+		\label{fig:sub_lidarframe}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{fig/lidar_top.png}
+		\caption{Top view.}
+		\label{fig:sub_lidarframe2}
+	\end{subfigure}
+	\caption{The lidar cartesian coordinate frame, with angles from the spherical coordinate frame drawn in.}
+	\label{fig:lidar_frames}
+\end{figure}
+
+A single reflection from the lidar can be represented in a cartesian coordinate frame centered in the lidar, shown in figure \ref{fig:lidar_frames}, using the transformation given in equation \ref{eq:spheric_to_cartesian} as:
+\begin{equation}
+\mathbf{P}^{l}_{ij}=\begin{bmatrix}
+R_{ij}\cos{\beta_i}\sin{\alpha_j}\\
+R_{ij}\cos{\beta_i}\cos{\alpha_j}\\
+R_{ij}\sin{\beta_i}
+\end{bmatrix}
+\end{equation}
+Here, $\alpha_j$ is the $j^{\text{th}}$ azimuth angle in the scan, and $\beta_i$ is the angle of the $i^{\text{th}}$ vertical laser. The superscript $l$ denotes the cartesian frame centered in the lidar. $R_{ij}$ is the range measured at the given azimuth and elevation angle. The measurement from the lidar also includes a measure of the returned signal strengt, given as an integer in the range 0-255. If we denote the returned signal strength for the $ij^{\text{th}}$ measurement as $\rho_{ij} = [0, 255]\in \mathbb{N}$, and augment the measurement vector with the returned signal strength, we can write a single measurement as
+\begin{equation}
+\mathbf{z}^l_{ij}\overset{\text{def}}{=}\begin{bmatrix}
+\mathbf{P}^{l}_{ij}\\\rho_{ij}
+\end{bmatrix}=\begin{bmatrix}
+R_{ij}\cos{\beta_i}\sin{\alpha_j}\\
+R_{ij}\cos{\beta_i}\cos{\alpha_j}\\
+R_{ij}\sin{\beta_i}\\
+\rho_{ij}
+\end{bmatrix}
+\end{equation}
+where the \textit{measurement} $\mathbf{z}^l_{ij}$ denotes the position of the reflection point $\mathbf{P}^{l}_{ij}$ along with the strength of the reflected signal. This model assumes that the range measurement $R_{ij}$ reported by the lidar is exact, as well as that the angles $\beta_i$ and $\alpha_j$ are known with perfect accuracy, which is not the case. There is uncertainty in the measurements, but this is assumed negligible in order to have a tractable measurement model.
 \subsection{Lidar Calibration}
-Mainly coordinate transformations. Point cloud gives spherical coordinates in the lidar frame, to be transformed to world frame (NED frame?). Velodyne is calibrated, refer to manual.
-\subsection{The lidar point cloud}
-What kind of data does it give? Maybe unnecessary to use a separate subsection for this.
-\subsection{Velodyne VLP-16 lidar}
-\todo{Maybe move to next chapter? Keep this as a theory chapter}
-The Velodyne VLP-16 features 16 laser/detector pairs mounted in a rotating housing, rapidly spinning to produce 360\degree 3D image.\smallskip \\
-Some features of the VLP-16 are \todo{siter velodyne manual}:
-\begin{itemize}
-    \item Horizontal FOV of 360\degree
-    \item Rotational speed of 5-20 RPS (adjustable)
-    \item Vertical FOV of 30\degree (+15\degree to -15\degree)
-    \item Vertical angular resolution of 2\degree
-    \item Horizontal angular resolution of 0.1\degree-0.4\degree
-    \item Range of up to 100 meters (range depends on application)
-    \item Accuracy $\pm3$ cm (typical)
-    \item 903 nm wavelength laser
-\end{itemize}
+In order to use the measurements in conjunction with other measurements, such as those from a camera, they must be transformed to some common coordinate frame. As described in section \ref{section:transformations}, the measurement from the lidar can be transformed to another frame of reference by a rotation followed by a translation. If a navigation system gives the translation $\mathbf{t}^{w}_{wl}$ and the rotation $\mathcal{R}^{w}_{l}$ from the lidar frame to the world frame, the lidar measurement can be written in the world frame as
+\begin{equation}
+\mathbf{z}^w_{ij} = \begin{bmatrix}
+\mathbf{t}^w_{wl}+\mathcal{R}^{w}_{l}\mathbf{P}^{l}_{ij}\\
+\rho_{ij}
+\end{bmatrix}
+\end{equation}
+which is the lidar measurement model for a single point reflection, giving the 3D point coordinates alongside the returned signal strength as a $4\times 1$ vector.
+
+The returned signal strength is a measure of the reflectivity of the surface of the object reflecting the laser beam, and the Velodyne VLP-16 lidar is factory-calibrated using commercially available reflectivity standards and retro-reflectors \cite{velodyne_vlp16}. The calibration data is stored in a calibration table within the FPGA in the VLP-16. Figure \ref{fig:lidar_reflectortypes} illustrates the different reflector types used in the calibration.
+\begin{figure}
+	\centering
+	\includegraphics[width=.7\linewidth]{fig/vlp16_calibration.png}
+	\caption{Reflector types used in calibrating the VLP-16 lidar. Image taken from \cite{velodyne_vlp16}.}
+	\label{fig:lidar_reflectortypes}
+\end{figure}
+\subsection{The Lidar Point Cloud}
+For an entire 360$\degree$ scan, the measurement returned by the lidar can be represented as an aggregation of single point measurements as
+\begin{equation}
+\mathbf{Z}^w=\begin{bmatrix}
+\mathbf{z}^{w}_{11} & \mathbf{z}^{w}_{12} & \dots & \mathbf{z}^{w}_{1j}\\
+\mathbf{z}^{w}_{21} & \mathbf{z}^{w}_{22} & \dots & \mathbf{z}^{w}_{2j}\\
+\vdots & \vdots & \ddots & \vdots \\
+\mathbf{z}^{w}_{i1} & \mathbf{z}^{w}_{i2} & \dots & \mathbf{z}^{w}_{ij}
+\end{bmatrix}
+\end{equation}
+where, as before, $i$ denotes the index of the vertical laser (from 1 to 16 for the velodyne VLP-16), and $j$ is the index of the asimuth angle in the right-open interval $\interval[open right]{0\degree}{360\degree}$. When the Velodyne VLP-16 rotates at 10 Hz, $j$ ranges from 1 to 1800. $\mathbf{Z}^w$ represents a \textit{point cloud} made by a full rotation of the lidar, decomposed in the cartesian world frame.
+
 
 \cleardoublepage

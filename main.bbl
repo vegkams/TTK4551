@@ -361,6 +361,31 @@
     \field{year}{2015}
   \endentry
 
+  \entry{velodyne_vlp16}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=VLI}{%
+         family={Velodyne\bibnamedelima LiDAR},
+         familyi={V\bibinitperiod\bibinitdelim L\bibinitperiod},
+         given={Inc.},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {English}%
+    }
+    \list{organization}{1}{%
+      {Velodyne LiDAR, Inc.}%
+    }
+    \strng{namehash}{VLI1}
+    \strng{fullhash}{VLI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pagetotal}{49}
+    \field{pubstate}{March, 2016}
+    \field{title}{User Manual and Programming Guide, VLP-16}
+    \field{version}{63-9243 Rev B Mar 16}
+  \endentry
+
   \entry{programming_ros}{book}{}
     \name{author}{3}{}{%
       {{hash=QM}{%
@@ -462,6 +487,13 @@
     \field{howpublished}{\url{http://wiki.ros.org/xsens_driver}}
     \field{note}{Accessed: 2017-12-06}
     \field{title}{xsens\_driver - ROS Wiki}
+  \endentry
+
+  \entry{rosbag}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{http://wiki.ros.org/rosbag}}
+    \field{note}{Accessed: 2017-12-09}
+    \field{title}{rosbag - ROS Wiki}
   \endentry
 
   \entry{flexCal}{article}{}

@@ -26,21 +26,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Lidar spherical coordinate system, with equivalent cartesian coordinates.\relax }}{18}{figure.3.6}
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The lidar cartesian coordinate frame, with angles from the spherical coordinate frame drawn in.\relax }}{19}{figure.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Sensor setup with physical connections.\relax }}{21}{figure.4.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Roscore and its connection to other nodes in the system.\relax }}{23}{figure.4.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces ROS nodes and topic flow.\relax }}{24}{figure.4.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Camera Calibration app showing an outlier image.\relax }}{26}{figure.4.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Distorted checkerboard image, along with the undistorted version.\relax }}{27}{figure.4.5}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Reflector types used in calibrating the VLP-16 lidar. Image taken from \cite {velodyne_vlp16}.\relax }}{20}{figure.3.8}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sensor setup with physical connections.\relax }}{23}{figure.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Roscore and its connection to other nodes in the system.\relax }}{25}{figure.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces ROS nodes and topic flow.\relax }}{26}{figure.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Camera Calibration app showing an outlier image.\relax }}{29}{figure.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Distorted checkerboard image, along with the undistorted version.\relax }}{29}{figure.4.5}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -48,4 +48,8 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Examples of radial distortion. \footnotemark \relax }}{42}{figure.A.1}
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Examples of radial distortion. \footnotemark \relax }}{44}{figure.A.1}

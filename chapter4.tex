@@ -51,7 +51,7 @@ In ROS, \lstinline[basicstyle=\ttfamily]{roscore} is a service that provides con
 \end{figure}
 The ephemeral connection between nodes and \lstinline[basicstyle=\ttfamily]{roscore} is illustrated by dashed lines, indicating periodic calls to \lstinline[basicstyle=\ttfamily]{roscore} to find peers, while the peer-to-peer message passing is illustrated by the solid line between the nodes.
 The main ROS client libraries are geared towards a UNIX/Linux platform, mainly due to the dependency on large collections of open-source software dependencies \todo{kilde}. Ubuntu Linux is a supported distribution, while others, such as Fedora Linux, Mac OS, and Windows, are designated as experimental and are supported by the community. Due to the simplicity of installation and "out-of-the-box" functionality of ROS on Ubuntu Linux, the most recent long-term supported version of ROS, ROS Kinetic, was installed on a laptop running Ubuntu 16.04 LTS, which was used as a platform for running the various sensor drivers and collecting the data.
-\subsubsection{ROS Nodes and Data Flow}
+\subsection{ROS Nodes and Data Flow}
 An overview of the implemented sensor driver and data processing nodes is illustrated in figure \ref{fig:ros_nodes}.
 \begin{figure}[H]
     \centering
@@ -86,8 +86,14 @@ The details of messages passed between nodes in the system is given in table \re
 	\caption{ROS Topics used in data collection.}
 	\label{tab:topics}
 \end{table}
-
-Perhaps not necessary with separate subsections for the drivers. Explain briefly what each node does (perhaps a really brief introduction to ROS).
+\subsection{Rosbag}
+ROS provides a built-in set of tools for recording and playing back ROS topics, \lstinline[basicstyle=\ttfamily]{rosbag} \cite{rosbag}. This toolset stores the topics of interest, specified as parameters in the command-line, to a file of the ROS bag format, with extension .bag. This toolset provides a simple method for storing data from experiments, and the playback function provides the option to simulate sensor inputs to the system without actually reading sensors. A basic use case, where for example two topics named \lstinline[basicstyle=\ttfamily]{/imu_data} and \lstinline[basicstyle=\ttfamily]{/camera/image} are to be recorded, the proper command line input is 
+\begin{lstlisting}[basicstyle=\ttfamily]
+	$ rosbag record -o filename /imu_data /camera/image
+\end{lstlisting}
+where \lstinline[basicstyle=\ttfamily]{filename} is the user-specified filename for the .bag file. ROS appends the filename with the system time automatically. Rosbag was used in recording all experimental data.
+\subsection{MATLAB implementation}
+MATLAB provides ROS interfaces via the Robotics System Toolbox, making it possible to use ROS topics directly in MATLAB. 
 \section{Camera Calibration}
 As explained in section \ref{section:intrinsic_params}, one needs the cameras intrinsic parameters in order to associate pixel coordinates with world coordinates. MATLABs Computer Vision System Toolbox includes the Camera Calibrator application, which was used in calibrating the camera. The Camera Calibrator application implements the calibration routine by Zhang \cite{flexCal}, described in appendix \ref{app:cam_calibration} \cite{camera_calibrator}. The steps taken for calibrating the camera using this application can be summarized as follows:
 \begin{enumerate}
