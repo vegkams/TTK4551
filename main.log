@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.8)  10 DEC 2017 18:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.8)  11 DEC 2017 16:22
 entering extended mode
 **./main.tex
 (main.tex
@@ -1088,6 +1088,11 @@ Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl
 
 Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'lecun-89e':
+(biblatex)                - Invalid format of field 'month'.
+
+
+Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                with 'bayer1976color':
 (biblatex)                - Invalid format of field 'month'.
 
@@ -1197,60 +1202,58 @@ l.21 \cleardoublepage
 l.21 \cleardoublepage
                       [2]) (chapter2.tex
 Chapter 2.
-<fig/JDLfusion.png, id=359, 851.18pt x 372.39125pt>
+<fig/JDLfusion.png, id=371, 851.18pt x 372.39125pt>
 File: fig/JDLfusion.png Graphic file (type png)
 <use fig/JDLfusion.png>
-Package pdftex.def Info: fig/JDLfusion.png  used on input line 9. on input line
- 9.
+Package pdftex.def Info: fig/JDLfusion.png  used on input line 10. on input lin
+e 10.
 Package pdftex.def Info: Requested size: 286.80487pt x 125.4749pt on input line
- 9.
+ 10.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
-[3
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3
 
 
- <./fig/JDLfusion.png>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 15.
+]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 16.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 15.
-<fig/challenges.jpeg, id=373, 978.65625pt x 348.30125pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+ [4 <./fig/JDLfusion.png>]
+<fig/challenges.jpeg, id=392, 978.65625pt x 348.30125pt>
 File: fig/challenges.jpeg Graphic file (type jpg)
 <use fig/challenges.jpeg>
-Package pdftex.def Info: fig/challenges.jpeg  used on input line 31. on input l
-ine 31.
+Package pdftex.def Info: fig/challenges.jpeg  used on input line 32. on input l
+ine 32.
 Package pdftex.def Info: Requested size: 286.80487pt x 102.07301pt on input lin
-e 31.
- [4]
-<fig/imagenet_top_5.png, id=383, 803.0pt x 364.36125pt>
+e 32.
+<fig/imagenet_top_5.png, id=395, 803.0pt x 364.36125pt>
 File: fig/imagenet_top_5.png Graphic file (type png)
 <use fig/imagenet_top_5.png>
-Package pdftex.def Info: fig/imagenet_top_5.png  used on input line 38. on inpu
-t line 38.
+Package pdftex.def Info: fig/imagenet_top_5.png  used on input line 39. on inpu
+t line 39.
 Package pdftex.def Info: Requested size: 286.80487pt x 130.1414pt on input line
- 38.
- [5 <./fig/challenges.jpeg> <./fig/imagenet_top_5.png>]
+ 39.
+ [5 <./fig/challenges.jpeg>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
-<fig/digimageproc.png, id=397, 1035.87pt x 862.22125pt>
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+<fig/digimageproc.png, id=407, 1035.87pt x 862.22125pt>
 File: fig/digimageproc.png Graphic file (type png)
 <use fig/digimageproc.png>
-Package pdftex.def Info: fig/digimageproc.png  used on input line 53. on input 
-line 53.
+Package pdftex.def Info: fig/digimageproc.png  used on input line 54. on input 
+line 54.
 Package pdftex.def Info: Requested size: 286.80487pt x 238.72324pt on input lin
-e 53.
+e 54.
+ [6 <./fig/imagenet_top_5.png>] [7 <./fig/digimageproc.png>] [8]) (chapter3.tex
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6]
-[7 <./fig/digimageproc.png>] [8
-
-]) (chapter3.tex
 Chapter 3.
-<fig/pinhole.png, id=423, 668.35297pt x 352.09944pt>
+<fig/pinhole.png, id=447, 668.35297pt x 352.09944pt>
 File: fig/pinhole.png Graphic file (type png)
 <use fig/pinhole.png>
 Package pdftex.def Info: fig/pinhole.png  used on input line 12. on input line 
@@ -1259,15 +1262,16 @@ Package pdftex.def Info: Requested size: 358.50473pt x 188.8683pt on input line
  12.
 [9
 
+
 ]
-<fig/perspective.png, id=432, 540.81242pt x 323.51738pt>
+<fig/perspective.png, id=456, 540.81242pt x 323.51738pt>
 File: fig/perspective.png Graphic file (type png)
 <use fig/perspective.png>
 Package pdftex.def Info: fig/perspective.png  used on input line 19. on input l
 ine 19.
 Package pdftex.def Info: Requested size: 358.50473pt x 214.46992pt on input lin
 e 19.
-<fig/perspective2.png, id=433, 536.44711pt x 312.84665pt>
+<fig/perspective2.png, id=457, 536.44711pt x 312.84665pt>
 File: fig/perspective2.png Graphic file (type png)
 <use fig/perspective2.png>
 Package pdftex.def Info: fig/perspective2.png  used on input line 24. on input 
@@ -1278,21 +1282,21 @@ e 24.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10 <./fig/pinhole.png>] [11 <./fig/perspective.png> <./fig/perspective2.png>]
-<fig/700px-Bayer_pattern_on_sensor.png, id=450, 702.625pt x 456.70625pt>
+<fig/700px-Bayer_pattern_on_sensor.png, id=474, 702.625pt x 456.70625pt>
 File: fig/700px-Bayer_pattern_on_sensor.png Graphic file (type png)
 <use fig/700px-Bayer_pattern_on_sensor.png>
 Package pdftex.def Info: fig/700px-Bayer_pattern_on_sensor.png  used on input l
 ine 40. on input line 40.
 Package pdftex.def Info: Requested size: 107.5525pt x 69.9037pt on input line 4
 0.
-<fig/375px-Bayer_pattern_on_sensor_profile.png, id=451, 376.40625pt x 240.9pt>
+<fig/375px-Bayer_pattern_on_sensor_profile.png, id=475, 376.40625pt x 240.9pt>
 File: fig/375px-Bayer_pattern_on_sensor_profile.png Graphic file (type png)
 <use fig/375px-Bayer_pattern_on_sensor_profile.png>
 Package pdftex.def Info: fig/375px-Bayer_pattern_on_sensor_profile.png  used on
  input line 46. on input line 46.
 Package pdftex.def Info: Requested size: 107.5525pt x 68.83365pt on input line 
 46.
-<fig/intrinsic.png, id=455, 722.7pt x 267.68808pt>
+<fig/intrinsic.png, id=479, 722.7pt x 267.68808pt>
 File: fig/intrinsic.png Graphic file (type png)
 <use fig/intrinsic.png>
 Package pdftex.def Info: fig/intrinsic.png  used on input line 60. on input lin
@@ -1303,54 +1307,52 @@ e 60.
 Underfull \vbox (badness 7796) has occurred while \output is active []
 
  [12 <./fig/700px-Bayer_pattern_on_sensor.png> <./fig/375px-Bayer_pattern_on_se
-nsor_profile.png>] [13 <./fig/intrinsic.png>] [14] [15]
-<fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png, id=526, 903.375pt x 903.375pt>
+nsor_profile.png>] [13 <./fig/intrinsic.png>] [14] [15] [16]
+<fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png, id=557, 903.375pt x 903.375pt>
 File: fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png Graphic file (type png)
 <use fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png>
 Package pdftex.def Info: fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png  used on i
-nput line 177. on input line 177.
+nput line 193. on input line 193.
 Package pdftex.def Info: Requested size: 250.95221pt x 250.94453pt on input lin
-e 177.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
-[17 <./fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png>]
-<fig/sperical_to_cartesian.png, id=541, 185.83714pt x 187.85164pt>
+e 193.
+<fig/sperical_to_cartesian.png, id=560, 185.83714pt x 187.85164pt>
 File: fig/sperical_to_cartesian.png Graphic file (type png)
 <use fig/sperical_to_cartesian.png>
 Package pdftex.def Info: fig/sperical_to_cartesian.png  used on input line 201.
  on input line 201.
 Package pdftex.def Info: Requested size: 215.10503pt x 217.44655pt on input lin
 e 201.
-<fig/lidar_side.png, id=544, 244.00568pt x 186.59258pt>
+ [17 <./fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png>]
+<fig/lidar_side.png, id=568, 244.00568pt x 186.59258pt>
 File: fig/lidar_side.png Graphic file (type png)
 <use fig/lidar_side.png>
 Package pdftex.def Info: fig/lidar_side.png  used on input line 220. on input l
 ine 220.
 Package pdftex.def Info: Requested size: 125.4761pt x 95.95245pt on input line 
 220.
-<fig/lidar_top.png, id=545, 407.778pt x 391.134pt>
+<fig/lidar_top.png, id=569, 407.778pt x 391.134pt>
 File: fig/lidar_top.png Graphic file (type png)
 <use fig/lidar_top.png>
 Package pdftex.def Info: fig/lidar_top.png  used on input line 226. on input li
 ne 226.
 Package pdftex.def Info: Requested size: 125.4761pt x 120.35504pt on input line
  226.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [18 <./fig/sperical_to_cartesian.png>] [19 <./fig/lidar_side.png> <./fig/lidar
 _top.png>]
-<fig/vlp16_calibration.png, id=567, 705.38531pt x 423.08063pt>
+<fig/vlp16_calibration.png, id=591, 705.38531pt x 423.08063pt>
 File: fig/vlp16_calibration.png Graphic file (type png)
 <use fig/vlp16_calibration.png>
 Package pdftex.def Info: fig/vlp16_calibration.png  used on input line 267. on 
 input line 267.
 Package pdftex.def Info: Requested size: 250.95221pt x 150.51422pt on input lin
 e 267.
- [20 <./fig/vlp16_calibration.png>] [21] [22
 
-]) (chapter4.tex
+[20 <./fig/vlp16_calibration.png>]) (chapter4.tex
 Chapter 4.
-<fig/sensor_setup.png, id=587, 972.63374pt x 784.9325pt>
+<fig/sensor_setup.png, id=602, 972.63374pt x 784.9325pt>
 File: fig/sensor_setup.png Graphic file (type png)
 <use fig/sensor_setup.png>
 Package pdftex.def Info: fig/sensor_setup.png  used on input line 8. on input l
@@ -1365,7 +1367,8 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¥ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¥ in font ptmr7t!
-[23
+[21
+
 
  <./fig/sensor_setup.png>]
 Overfull \hbox (28.66103pt too wide) in paragraph at lines 35--36
@@ -1373,20 +1376,20 @@ Overfull \hbox (28.66103pt too wide) in paragraph at lines 35--36
 /github.com/ShaoqingRen/faster[]rcnn.
  []
 
-[24]
+[22]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 45.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<fig/roscore.png, id=603, 628.3475pt x 469.755pt>
+<fig/roscore.png, id=619, 628.3475pt x 469.755pt>
 File: fig/roscore.png Graphic file (type png)
 <use fig/roscore.png>
 Package pdftex.def Info: fig/roscore.png  used on input line 48. on input line 
 48.
 Package pdftex.def Info: Requested size: 143.39969pt x 107.20273pt on input lin
 e 48.
- [25 <./fig/roscore.png>]
-<fig/ros.png, id=612, 1287.81125pt x 739.76375pt>
+ [23 <./fig/roscore.png>]
+<fig/ros.png, id=628, 1287.81125pt x 739.76375pt>
 File: fig/ros.png Graphic file (type png)
 <use fig/ros.png>
 Package pdftex.def Info: fig/ros.png  used on input line 58. on input line 58.
@@ -1398,41 +1401,77 @@ Overfull \hbox (12.83192pt too wide) in paragraph at lines 62--88
 v-ing and pro-cess-ing GNSS-information
  []
 
-[26 <./fig/ros.png>] [27]
-<fig/outlier_calibration.PNG, id=645, 1446.15282pt x 773.13844pt>
+[24 <./fig/ros.png>] [25]
+<fig/outlier_calibration.PNG, id=660, 1446.15282pt x 773.13844pt>
 File: fig/outlier_calibration.PNG Graphic file (type png)
 <use fig/outlier_calibration.PNG>
 Package pdftex.def Info: fig/outlier_calibration.PNG  used on input line 110. o
 n input line 110.
 Package pdftex.def Info: Requested size: 286.80487pt x 153.32726pt on input lin
 e 110.
- [28]
-<fig/calibration_distorted.PNG, id=663, 812.28468pt x 453.94594pt>
+ [26]
+<fig/calibration_distorted.PNG, id=678, 812.28468pt x 453.94594pt>
 File: fig/calibration_distorted.PNG Graphic file (type png)
 <use fig/calibration_distorted.PNG>
 Package pdftex.def Info: fig/calibration_distorted.PNG  used on input line 120.
  on input line 120.
 Package pdftex.def Info: Requested size: 143.40244pt x 80.13438pt on input line
  120.
-<fig/calibration_undistorted.PNG, id=664, 819.06pt x 459.21562pt>
+<fig/calibration_undistorted.PNG, id=679, 819.06pt x 459.21562pt>
 File: fig/calibration_undistorted.PNG Graphic file (type png)
 <use fig/calibration_undistorted.PNG>
 Package pdftex.def Info: fig/calibration_undistorted.PNG  used on input line 12
 6. on input line 126.
 Package pdftex.def Info: Requested size: 143.40244pt x 80.39897pt on input line
  126.
- [29 <./fig/outlier_calibration.PNG> <./fig/calibration_distorted.PNG> <./fig/c
-alibration_undistorted.PNG>] [30
+ [27 <./fig/outlier_calibration.PNG> <./fig/calibration_distorted.PNG> <./fig/c
+alibration_undistorted.PNG>] [28
 
 ]) (chapter5.tex
 Chapter 5.
-[31
+<fig/trondheim_downtown.png, id=697, 996.888pt x 671.454pt>
+File: fig/trondheim_downtown.png Graphic file (type png)
+<use fig/trondheim_downtown.png>
+Package pdftex.def Info: fig/trondheim_downtown.png  used on input line 9. on i
+nput line 9.
+Package pdftex.def Info: Requested size: 286.80487pt x 193.16959pt on input lin
+e 9.
 
-] [32
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-]) (chapter6.tex
+ [29
+
+]
+<fig/sensor_rig.jpg, id=703, 3982.88pt x 2987.16pt>
+File: fig/sensor_rig.jpg Graphic file (type jpg)
+<use fig/sensor_rig.jpg>
+Package pdftex.def Info: fig/sensor_rig.jpg  used on input line 18. on input li
+ne 18.
+Package pdftex.def Info: Requested size: 143.40244pt x 107.524pt on input line 
+18.
+<fig/sensors_ravnkloa.jpg, id=704, 3982.88pt x 2987.16pt>
+File: fig/sensors_ravnkloa.jpg Graphic file (type jpg)
+<use fig/sensors_ravnkloa.jpg>
+Package pdftex.def Info: fig/sensors_ravnkloa.jpg  used on input line 24. on in
+put line 24.
+Package pdftex.def Info: Requested size: 143.40244pt x 107.524pt on input line 
+24.
+<fig/experiment_boat.jpg, id=706, 1204.5pt x 1606.0pt>
+File: fig/experiment_boat.jpg Graphic file (type jpg)
+<use fig/experiment_boat.jpg>
+Package pdftex.def Info: fig/experiment_boat.jpg  used on input line 35. on inp
+ut line 35.
+Package pdftex.def Info: Requested size: 286.80487pt x 382.4092pt on input line
+ 35.
+
+Underfull \vbox (badness 5970) has occurred while \output is active []
+
+ [30 <./fig/trondheim_downtown.png> <./fig/sensor_rig.jpg> <./fig/sensors_ravnk
+loa.jpg>]
+[31 <./fig/experiment_boat.jpg>] [32]) (chapter6.tex
 Chapter 6.
 [33
+
 
 ] [34
 
@@ -1450,26 +1489,19 @@ Chapter 8.
 
 ]) [39
 
+] [40] [41] [42
+
 ]
-Overfull \hbox (0.66733pt too wide) in paragraph at lines 33--33
-[]\OT1/ptm/m/n/10 I. Math-Works, \OT1/ptm/m/it/10 Es-ti-mate ge-o-met-ric pa-ra
-m-e-ters of a sin-gle cam-era - mat-lab\OT1/ptm/m/n/10 , [][]$\OT1/pcr/m/n/10 h
-ttps :
- []
-
-[40]
 Appendix A.
-(appendix.tex [41
-
-] [42]
-<fig/distortion_examples.png, id=771, 722.7pt x 277.035pt>
+(appendix.tex [43] [44]
+<fig/distortion_examples.png, id=820, 722.7pt x 277.035pt>
 File: fig/distortion_examples.png Graphic file (type png)
 <use fig/distortion_examples.png>
 Package pdftex.def Info: fig/distortion_examples.png  used on input line 99. on
  input line 99.
 Package pdftex.def Info: Requested size: 358.50473pt x 137.42653pt on input lin
 e 99.
- [43]
+ [45]
 Overfull \hbox (33.13173pt too wide) in paragraph at lines 103--103
 [][][]\OT1/ptm/m/n/8 Image cour-tesy: https://docs.opencv.org/2.4.13.2/modules/
 calib3d/doc/camera[]calibration[]and[]3d[]reconstruction.html| 
@@ -1483,27 +1515,27 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¥ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¥ in font ptmr7t!
-[44 <./fig/distortion_examples.png>]) [45]
+[46 <./fig/distortion_examples.png>]) [47]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2701AA77059A01A8047CE4F1AE6CCB5E;3197.
+(rerunfilecheck)             Checksum: AA40663D631E28BE1C9C6973B7657989;3264.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
- 27154 strings out of 493312
- 497063 string characters out of 3138890
- 910779 words of memory out of 3000000
- 29921 multiletter control sequences out of 15000+200000
+ 27207 strings out of 493312
+ 498278 string characters out of 3138890
+ 911779 words of memory out of 3000000
+ 29954 multiletter control sequences out of 15000+200000
  38180 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,94p,1315b,1284s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,17n,94p,1315b,1295s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1533,9 +1565,9 @@ ourier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (55 pages, 4710526 bytes).
+Output written on main.pdf (57 pages, 17065735 bytes).
 PDF statistics:
- 933 PDF objects out of 1000 (max. 8388607)
- 236 named destinations out of 1000 (max. 500000)
- 507 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 984 PDF objects out of 1000 (max. 8388607)
+ 251 named destinations out of 1000 (max. 500000)
+ 535 words of extra memory for PDF output out of 10000 (max. 10000000)
 

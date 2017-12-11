@@ -4,11 +4,11 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces The Joint Directors of Laboratories data fusion model.\relax }}{3}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces The Joint Directors of Laboratories data fusion model.\relax }}{4}{figure.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Challenges related to object classification in images.\footnotemark \relax }}{5}{figure.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces ImageNet top 5 errors over time.\footnotemark \relax }}{5}{figure.2.3}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces ImageNet top 5 errors over time.\footnotemark \relax }}{6}{figure.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.4}{\ignorespaces \relax }}{7}{figure.2.4}
 \defcounter {refsection}{0}\relax 
@@ -32,15 +32,23 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Sensor setup with physical connections.\relax }}{23}{figure.4.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sensor setup with physical connections.\relax }}{21}{figure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Roscore and its connection to other nodes in the system.\relax }}{25}{figure.4.2}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Roscore and its connection to other nodes in the system.\relax }}{23}{figure.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces ROS nodes and topic flow.\relax }}{26}{figure.4.3}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces ROS nodes and topic flow.\relax }}{24}{figure.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Camera Calibration app showing an outlier image.\relax }}{29}{figure.4.4}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Camera Calibration app showing an outlier image.\relax }}{27}{figure.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Distorted checkerboard image, along with the undistorted version.\relax }}{29}{figure.4.5}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Distorted checkerboard image, along with the undistorted version.\relax }}{27}{figure.4.5}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The experiment site in downtown Trondheim. Image taken from Google Maps.\relax }}{30}{figure.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The sensor rig, and its placement at the floating dock at Ravnkloa.\relax }}{30}{figure.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The boat used as a target in the experiments.\relax }}{31}{figure.5.3}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -50,6 +58,4 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Examples of radial distortion. \footnotemark \relax }}{44}{figure.A.1}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Examples of radial distortion. \footnotemark \relax }}{46}{figure.A.1}
