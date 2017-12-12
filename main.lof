@@ -50,7 +50,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.3}{\ignorespaces The boat used as a target in the experiments.\relax }}{31}{figure.5.3}
 \defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The recorded maneuvers overlaid a satellite image of Ravnkloa. Satellite image taken from Google maps.\relax }}{32}{figure.5.4}
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The lidar point cloud including surroundings at Ravnkloa, projected down to the xy-plane.\relax }}{36}{figure.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces A single point cloud from experiment 3, with the ray corresponding to the center of the bounding box detected in the image projected out in the scene.\relax }}{37}{figure.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Two examples of multiple ships being detected and classified as one.\relax }}{38}{figure.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Image with bounding boxes and scores corresponding to the point cloud in figure \ref {fig:example_ex3_pc}.\relax }}{38}{figure.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces The first return from the lidar, along with the corresponding detections in the image.\relax }}{39}{figure.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Results from experiment 1.\relax }}{40}{figure.6.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Results from experiment 2.\relax }}{40}{figure.6.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Two examples of multiple ships being detected and classified as one.\relax }}{41}{figure.6.8}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -58,4 +76,4 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Examples of radial distortion. \footnotemark \relax }}{46}{figure.A.1}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Examples of radial distortion. \footnotemark \relax }}{52}{figure.A.1}

@@ -328,61 +328,6 @@
     \field{year}{2012}
   \endentry
 
-  \entry{Zeiler2014}{inbook}{}
-    \name{author}{2}{}{%
-      {{hash=ZMD}{%
-         family={Zeiler},
-         familyi={Z\bibinitperiod},
-         given={Matthew\bibnamedelima D.},
-         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-      {{hash=FR}{%
-         family={Fergus},
-         familyi={F\bibinitperiod},
-         given={Rob},
-         giveni={R\bibinitperiod},
-      }}%
-    }
-    \name{editor}{4}{}{%
-      {{hash=FD}{%
-         family={Fleet},
-         familyi={F\bibinitperiod},
-         given={David},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=PT}{%
-         family={Pajdla},
-         familyi={P\bibinitperiod},
-         given={Tomas},
-         giveni={T\bibinitperiod},
-      }}%
-      {{hash=SB}{%
-         family={Schiele},
-         familyi={S\bibinitperiod},
-         given={Bernt},
-         giveni={B\bibinitperiod},
-      }}%
-      {{hash=TT}{%
-         family={Tuytelaars},
-         familyi={T\bibinitperiod},
-         given={Tinne},
-         giveni={T\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Springer International Publishing}%
-    }
-    \strng{namehash}{ZMDFR1}
-    \strng{fullhash}{ZMDFR1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{booktitle}{Computer Vision -- ECCV 2014: 13th European Conference,
-  Zurich, Switzerland, September 6-12, 2014, Proceedings, Part I}
-    \field{pages}{818\bibrangedash 833}
-    \field{title}{Visualizing and Understanding Convolutional Networks}
-    \field{year}{2014}
-  \endentry
-
   \entry{dropout}{article}{}
     \name{author}{5}{}{%
       {{hash=HGE}{%

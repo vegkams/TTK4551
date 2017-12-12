@@ -95,6 +95,7 @@ where \lstinline[basicstyle=\ttfamily]{filename} is the user-specified filename 
 \subsection{MATLAB implementation}
 MATLAB provides ROS interfaces via the Robotics System Toolbox, making it possible to use ROS topics directly in MATLAB. 
 \section{Camera Calibration}
+\label{section:matlab_calibration}
 As explained in section \ref{section:intrinsic_params}, one needs the cameras intrinsic parameters in order to associate pixel coordinates with world coordinates. MATLABs Computer Vision System Toolbox includes the Camera Calibrator application, which was used in calibrating the camera. The Camera Calibrator application implements the calibration routine by Zhang \cite{flexCal}, described in appendix \ref{app:cam_calibration} \cite{camera_calibrator}. The steps taken for calibrating the camera using this application can be summarized as follows:
 \begin{enumerate}
 	\item Prepare a checkerboard calibration pattern with known dimensions.
