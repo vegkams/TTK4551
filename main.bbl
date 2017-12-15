@@ -379,6 +379,28 @@
     \field{year}{2012}
   \endentry
 
+  \entry{machine_learning}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BCM}{%
+         family={Bishop},
+         familyi={B\bibinitperiod},
+         given={Christopher\bibnamedelima M.},
+         giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BCM1}
+    \strng{fullhash}{BCM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{1st ed. 2006. Corr. 2nd printing}
+    \field{series}{Information science and statistics}
+    \field{title}{Pattern Recognition and Machine Learning}
+    \field{year}{2006}
+  \endentry
+
   \entry{modernCV}{book}{}
     \name{author}{2}{}{%
       {{hash=FM}{%
@@ -559,6 +581,14 @@
     \field{pubstate}{March, 2016}
     \field{title}{User Manual and Programming Guide, VLP-16}
     \field{version}{63-9243 Rev B Mar 16}
+  \endentry
+
+  \entry{faster_rcnn_git}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{https://github.com/ShaoqingRen/faster_rcnn}}
+    \field{note}{Accessed: 2017-12-15}
+    \field{title}{Faster R-CNN: Towards Real-Time Object Detection with Region
+  Proposal Networks}
   \endentry
 
   \entry{programming_ros}{book}{}

@@ -30,98 +30,96 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{Neural Networks}{8}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Target tracking}{8}{section.2.3}
+\contentsline {subsubsection}{Loss Function and Back Propagation}{9}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Clustering}{8}{subsection.2.3.1}
+\contentsline {subsubsection}{Convolutional Neural Nets}{9}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}PDAF (or other tracking method)}{8}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}Sensor Models}{11}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Sensor Models}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Image Formation}{11}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Image Formation}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}The Pinhole Camera Model}{11}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}The Pinhole Camera Model}{9}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Digital Image Aquisition}{13}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Digital Image Aquisition}{11}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Intrinsic and Extrinsic Parameters}{14}{subsection.3.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}Intrinsic and Extrinsic Parameters}{12}{subsection.3.1.3}
+\contentsline {subsubsection}{Homogeneous Coordinates and Rigid Transformations}{15}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Homogeneous Coordinates and Rigid Transformations}{13}{section*.9}
+\contentsline {subsubsection}{Intrinsic Parameters}{16}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Intrinsic Parameters}{14}{section*.10}
+\contentsline {subsubsection}{Extrinsic Parameters}{17}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Extrinsic Parameters}{15}{section*.11}
+\contentsline {section}{\numberline {3.2}Lidar}{18}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Lidar}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Velodyne VLP-16 Lidar Specifications}{18}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Velodyne VLP-16 Lidar Specifications}{16}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Lidar Sensor Model}{19}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Lidar Sensor Model}{17}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Lidar Calibration}{21}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Lidar Calibration}{19}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}The Lidar Point Cloud}{22}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}The Lidar Point Cloud}{20}{subsection.3.2.4}
+\contentsline {chapter}{\numberline {4}Method}{23}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Method}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Sensors, Hardware and Processing Pipeline}{23}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Sensors, Hardware and Processing Pipeline}{21}{section.4.1}
+\contentsline {section}{\numberline {4.2}Faster R-CNN}{24}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Faster R-CNN}{22}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Training and validation data}{24}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Training and validation data}{22}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Implementation Aspects}{24}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Implementation Aspects}{22}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}ROS Implementation}{25}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}ROS Implementation}{22}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}ROS Nodes and Data Flow}{26}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}ROS Nodes and Data Flow}{24}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Rosbag}{28}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Rosbag}{25}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}MATLAB implementation}{28}{subsection.4.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}MATLAB implementation}{26}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Camera Calibration}{28}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Camera Calibration}{26}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Time Synchronization}{30}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Time Synchronization}{27}{subsection.4.4.1}
+\contentsline {chapter}{\numberline {5}Experiments}{31}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Experiments}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Performed Maneuvers}{34}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Performed Maneuvers}{32}{section.5.1}
+\contentsline {chapter}{\numberline {6}Analysis}{37}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Analysis}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Preprocessing}{37}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Preprocessing}{35}{section.6.1}
+\contentsline {section}{\numberline {6.2}Metrics}{38}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Metrics}{36}{section.6.2}
+\contentsline {section}{\numberline {6.3}Experimental Results}{39}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Experimental Results}{37}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Experiment 1}{39}{subsection.6.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.1}Experiment 1}{37}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Experiment 2}{42}{subsection.6.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.2}Experiment 2}{40}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Experiment 3}{44}{subsection.6.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.3}Experiment 3}{42}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Experiment 4}{46}{subsection.6.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.4}Experiment 4}{44}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Experiment 5}{48}{subsection.6.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.5}Experiment 5}{46}{subsection.6.3.5}
+\contentsline {subsection}{\numberline {6.3.6}Experiment 6}{50}{subsection.6.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.6}Experiment 6}{48}{subsection.6.3.6}
+\contentsline {subsection}{\numberline {6.3.7}Experiment 7}{52}{subsection.6.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.7}Experiment 7}{50}{subsection.6.3.7}
+\contentsline {chapter}{\numberline {7}Discussion}{55}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Discussion}{53}{chapter.7}
+\contentsline {chapter}{\numberline {8}Conclusion}{59}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusion}{55}{chapter.8}
+\contentsline {chapter}{\numberline {A}Appendix}{65}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Appendix}{59}{appendix.A}
+\contentsline {section}{\numberline {A.1}Geometric Camera Calibration}{65}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Geometric Camera Calibration}{59}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Perspective Projection between the Model Plane and Its Image}{65}{subsection.A.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1.1}Perspective Projection between the Model Plane and Its Image}{59}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Solving the Calibration Problem}{66}{subsection.A.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1.2}Solving the Calibration Problem}{60}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Radial Lens Distortion}{68}{subsection.A.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1.3}Radial Lens Distortion}{62}{subsection.A.1.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1.4}Calibration Procedure}{63}{subsection.A.1.4}
+\contentsline {subsection}{\numberline {A.1.4}Calibration Procedure}{69}{subsection.A.1.4}

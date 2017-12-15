@@ -2,6 +2,7 @@
 
 \chapter{Discussion}
 Discuss the results from the previous chapter, with a critical eye.
+As the results show, there are some places where the detection of boats in the images suffer. Upon examining the images where detection largely failed, for many of them this is the case when boats in the background are close to the target boat in the image.
 Consider figure \ref{fig:example_ex3_pc}, and the corresponding image with bounding boxes in figure \ref{fig:example_ex3_im}. The blue dot in figure \ref{fig:example_ex3_pc} is the centroid of the point cloud. Although the bounding box in figure \ref{fig:example_ex3_im} is almost perfectly centered on the target boat, there is a small discrepancy between the point cloud centroid and the projected ray in figure \ref{fig:example_ex3_pc}. This discrepancy is likely due to a combination of time delay between the sensors, the geometry of the point cloud not capturing the full geometry of the boat, as well as misalignment between the sensors. \todo{flytt til diskusjon}.
 \begin{figure}[H]
 	\centering

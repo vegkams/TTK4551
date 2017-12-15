@@ -18,20 +18,35 @@ The camera used to gather image data is a commercial off-the-shelf action camera
 	Model & HP zbook 15\\\hline
 	CPU & Intel Core i7-4800MQ 8$\times$2.7 GHz \\\hline
 	Memory & 8 GB RAM \\\hline
-	Graphics & lala \\\hline
+	Graphics & Quadro K2100M/PCIe/SSE2 \\\hline
 	Storage & 250 GB Solid State HDD \\\hline
 	Operating System & Linux Ubuntu 16.04 LTS (Xenial)\\
 	\hline
 	\end{tabular}
-	\caption{Computer specifications.}
+	\caption{Laptop computer specifications.}
 	\label{tab:comp_specs_laptop}
 \end{table}
-Overview of the sensor setup, hardware used, and signal flow through the system.
+The specifications for the computer used in post-processing is listed in table \ref{tab:comp_specs_desktop}.
+\begin{table}[H]
+	\centering
+	\begin{tabular}[H]{|c|c|}\hline
+		CPU & Intel Core i7-920 4$\times$2.67 GHz \\\hline
+		Memory & 16 GB RAM \\\hline
+		Graphics &  NVIDIA GeForce GTX 1070\\\hline
+		Storage & 250 GB Solid State HDD \\\hline
+		Operating System & Windows 10 Enterprise\\
+		\hline
+	\end{tabular}
+	\caption{Desktop computer specifications.}
+	\label{tab:comp_specs_desktop}
+\end{table}
+
 \section{Faster R-CNN}
 Introduce the framework of Faster R-CNN
 \subsection{Training and validation data}
 Describe the datasets used in training and validation (Espen Tangstads work basically)
 \subsection{Implementation Aspects}
+In order to run Faster R-CNN, there are some software requirements that need to be met. The steps are listed in the Github repository for the framework \cite{faster_rcnn_git}, and will be repeated here for convenience.
 Steps needed to run the Matlab implementation from https://github.com/ShaoqingRen/faster\_rcnn. Compiling Caffe with cuda for GTX1070, the link between caffe and Matlab (mex).
 \section{ROS Implementation}
 In order to capture, organize, timestamp and save the collected data, the open-source robotics framework of ROS was used. ROS, which is an abbreviation for Robot Operating System, is not, as the name might imply, a operating system, but a framework running on top of a traditional OS. The framework of ROS is based on several philosophical aspects \cite{programming_ros}:

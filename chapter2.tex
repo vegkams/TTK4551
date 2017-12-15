@@ -64,10 +64,13 @@ A convolutional neural net, abbreviated CNN, is a neural network designed for ob
 	\item The adaptation of powerful GPU processing implementations, making training of very large models tractable.
 	\item Better model regularization strategies, such as dropout, to prevent overfitting \cite{dropout}.
 \end{enumerate}
-
-In a classifier using classical computer vision techniques, features are extracted from an image, for example using a histogram of oriented gradients, and the extracted features are subsequently used to train a classifier such as a support-vector machine. In a convolutional neural network, on the other hand, the features are hidden, and feature extraction and classification is performed in a single pipeline. Features in a CNN are generated via one or several layers of filter convolutions, which generates a set of abstract sub-images from the input image. For the user, a CNN classifier appears as a "black box" where the internal workings of the feature extraction and classification are largely hidden. In order to understand how a convolutional neural net works, some basic concepts need to be introduced. The following sections first introduce the neuron and the concept of a neural network, then a brief introduction to a convolutional neural net will be given.
+In a classifier using classical computer vision techniques, features are extracted from an image, for example using a histogram of oriented gradients, and the extracted features are subsequently used to train a classifier such as a support-vector machine. In a convolutional neural network, on the other hand, the features are hidden, and feature extraction and classification is performed in a single pipeline. Features in a CNN are generated via one or several layers of filter convolutions, which generates a set of abstract sub-images from the input image. For the user, a CNN classifier appears as a "black box" where the internal workings of the feature extraction and classification are largely hidden. In order to understand how a convolutional neural net works, some basic concepts need to be introduced. The following sections first introduce the neuron and the concept of a neural network followed by a short discussion on how they are trained, then a brief introduction to convolutional neural nets will be given. The derivations and notation is largely based on that given in \cite{machine_learning}.
 \subsubsection{Neural Networks}
-The basic building block of a neural network is the \textit{neuron}, illustrated in figure \ref{fig:neuron}.
+In linear regression, a model can be considered as a linear combination of fixed nonlinear functions of the input variables, on the form
+\begin{equation}
+y(\mathbf{x,w})=w_0+\sum_{j=1}^{n-1}w_j\phi_j(\mathbf{x})
+\end{equation}
+where $\phi_j(\mathbf{x})$ are known as the nonlinear \textit{basis functions}. A neural network utilized for regression and classification, on the other hand, can be thought of as a combination of basis functions in parametric form, where the parameters of the basis functions are adapted during training. The term \textit{neural network} has its origins in attempts to find mathematical representations of information processing in biological systems. The basic building block of a neural network is the \textit{neuron}, or \textit{perceptron}, illustrated in figure \ref{fig:neuron}.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{.5\textwidth}
@@ -85,9 +88,17 @@ The basic building block of a neural network is the \textit{neuron}, illustrated
 	\caption{A neuron, alongside a simple neural network with a single hidden layer.}
 	\label{fig:neural_net}
 \end{figure}
-\section{Target tracking}
-Necessary? Will not implement tracking at this stage anyway.
-\subsection{Clustering}
-\subsection{PDAF (or other tracking method)}
+The basic neural network can be described as a series of functional transformations. First $M$ linear combinations of the input variables $x_1,\dots,x_D$ are formed, as
+\begin{equation}
+a_j = b_j^{1}+\sum_{i=1}^{D}w_{ji}^{1}x_i
+\end{equation}
+where $j=1,\dots,M$, $b_j^1$ is a bias, the parameters $w_{ji}^1$ are the weights, and the superscript 1 indicates that the corresponding parameters are the parameters of the first layer in the network. The result of this weighted sum of the inputs, $a_j$ is known as the activation. Each $a_j$ is then transformed via a nonlinear, differentiable activation function, $z_j\sigma(a_j)$, which is then input to the next layer in the network. Figure \ref{fig:neuron} illustrates this process for a single neuron. The quantities $z_j$ are referred to as \textit{hidden units}, and the corresponding layers are referred to as \textit{hidden layers}. The nonlinear functions $\sigma(\cdot)$ are generally chosen to be sigmoidal functions such as the logistic sigmoid ($\sigma(a)=\frac{1}{1+\exp(-a)}$) or the hyperbolic tangent function ($\tanh(a)$). The outputs $z_j$ are again linearly combined to give output unit activations as
+\begin{equation}
+a_k = b_k^2+\sum_{j=1}^{M}w_{kj}^2z_j
+\end{equation} 
+where $k=1,\dots,M$ and $K$ is the total number of outputs. This corresponds to the second layer of the network. Lastly, the output unit activations are transformed using an appropriate activation function to give a set of network outputs $y_k$. A simple network with a single hidden layer is illustrated in figure \ref{fig:layers}. The choice for the output activation function is largely determined by the nature of the data and the assumed distribution of the target variables. For binary classification problems, the logistic sigmoid function is commonly used.
+\subsubsection{Loss Function and Back Propagation}
+\subsubsection{Convolutional Neural Nets}
+
 
 \cleardoublepage

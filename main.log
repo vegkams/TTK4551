@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.8)  14 DEC 2017 18:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.8)  15 DEC 2017 19:56
 entering extended mode
 **./main.tex
 (main.tex
@@ -982,23 +982,7 @@ File: english.lbx 2017/11/21 v3.9 biblatex localization (PK/JW/AB)
 )
 \@quotelevel=\count347
 \@quotereset=\count348
- (main.aux
-
-LaTeX Warning: Label `fig:sub1' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:sub1' multiply defined.
-
-
-LaTeX Warning: Label `fig:sub2' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:sub2' multiply defined.
-
-
-LaTeX Warning: Label `fig:ccd_color' multiply defined.
-
-)
+ (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -1016,7 +1000,8 @@ LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 9.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 *geometry* detected driver: pdftex
@@ -1284,7 +1269,7 @@ l.21 \cleardoublepage
 l.21 \cleardoublepage
                       [2]) (chapter2.tex
 Chapter 2.
-<fig/JDLfusion.png, id=519, 851.18pt x 372.39125pt>
+<fig/JDLfusion.png, id=504, 851.18pt x 372.39125pt>
 File: fig/JDLfusion.png Graphic file (type png)
 <use fig/JDLfusion.png>
 Package pdftex.def Info: fig/JDLfusion.png  used on input line 11. on input lin
@@ -1308,14 +1293,14 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
  [4 <./fig/JDLfusion.png>]
-<fig/challenges.jpeg, id=539, 978.65625pt x 348.30125pt>
+<fig/challenges.jpeg, id=524, 978.65625pt x 348.30125pt>
 File: fig/challenges.jpeg Graphic file (type jpg)
 <use fig/challenges.jpeg>
 Package pdftex.def Info: fig/challenges.jpeg  used on input line 33. on input l
 ine 33.
 Package pdftex.def Info: Requested size: 286.80487pt x 102.07301pt on input lin
 e 33.
-<fig/imagenet_top_5.png, id=542, 803.0pt x 364.36125pt>
+<fig/imagenet_top_5.png, id=527, 803.0pt x 364.36125pt>
 File: fig/imagenet_top_5.png Graphic file (type png)
 <use fig/imagenet_top_5.png>
 Package pdftex.def Info: fig/imagenet_top_5.png  used on input line 40. on inpu
@@ -1325,7 +1310,7 @@ Package pdftex.def Info: Requested size: 286.80487pt x 130.1414pt on input line
  [5 <./fig/challenges.jpeg>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
-<fig/digimageproc.png, id=554, 1035.87pt x 862.22125pt>
+<fig/digimageproc.png, id=539, 1035.87pt x 862.22125pt>
 File: fig/digimageproc.png Graphic file (type png)
 <use fig/digimageproc.png>
 Package pdftex.def Info: fig/digimageproc.png  used on input line 55. on input 
@@ -1333,44 +1318,43 @@ line 55.
 Package pdftex.def Info: Requested size: 286.80487pt x 238.72324pt on input lin
 e 55.
  [6 <./fig/imagenet_top_5.png>] [7 <./fig/digimageproc.png>]
-
-LaTeX Warning: Reference `fig:neuron' on page 8 undefined on input line 70.
-
-<fig/neural.png, id=584, 763.85374pt x 504.88625pt>
+<fig/neural.png, id=571, 793.96625pt x 502.87875pt>
 File: fig/neural.png Graphic file (type png)
 <use fig/neural.png>
-Package pdftex.def Info: fig/neural.png  used on input line 75. on input line 7
-5.
-Package pdftex.def Info: Requested size: 179.25237pt x 118.47879pt on input lin
-e 75.
-<fig/layers.png, id=585, 889.3225pt x 794.97pt>
+Package pdftex.def Info: fig/neural.png  used on input line 78. on input line 7
+8.
+Package pdftex.def Info: Requested size: 179.25237pt x 113.53416pt on input lin
+e 78.
+<fig/layers.png, id=572, 889.3225pt x 794.97pt>
 File: fig/layers.png Graphic file (type png)
 <use fig/layers.png>
-Package pdftex.def Info: fig/layers.png  used on input line 81. on input line 8
-1.
+Package pdftex.def Info: fig/layers.png  used on input line 84. on input line 8
+4.
 Package pdftex.def Info: Requested size: 179.25237pt x 160.22847pt on input lin
-e 81.
-[8 <./fig/neural.png> <./fig/layers.png>]) (chapter3.tex
+e 84.
+ [8 <./fig/neural.png> <./fig/layers.png>] [9] [10
+
+])
+(chapter3.tex
 Chapter 3.
-<fig/pinhole.png, id=600, 668.35297pt x 352.09944pt>
+<fig/pinhole.png, id=604, 668.35297pt x 352.09944pt>
 File: fig/pinhole.png Graphic file (type png)
 <use fig/pinhole.png>
 Package pdftex.def Info: fig/pinhole.png  used on input line 12. on input line 
 12.
 Package pdftex.def Info: Requested size: 358.50473pt x 188.8683pt on input line
  12.
-[9
-
+[11
 
 ]
-<fig/perspective.png, id=608, 540.81242pt x 323.51738pt>
+<fig/perspective.png, id=612, 540.81242pt x 323.51738pt>
 File: fig/perspective.png Graphic file (type png)
 <use fig/perspective.png>
 Package pdftex.def Info: fig/perspective.png  used on input line 19. on input l
 ine 19.
 Package pdftex.def Info: Requested size: 358.50473pt x 214.46992pt on input lin
 e 19.
-<fig/perspective2.png, id=609, 536.44711pt x 312.84665pt>
+<fig/perspective2.png, id=613, 536.44711pt x 312.84665pt>
 File: fig/perspective2.png Graphic file (type png)
 <use fig/perspective2.png>
 Package pdftex.def Info: fig/perspective2.png  used on input line 24. on input 
@@ -1380,22 +1364,22 @@ e 24.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10 <./fig/pinhole.png>] [11 <./fig/perspective.png> <./fig/perspective2.png>]
-<fig/700px-Bayer_pattern_on_sensor.png, id=626, 702.625pt x 456.70625pt>
+ [12 <./fig/pinhole.png>] [13 <./fig/perspective.png> <./fig/perspective2.png>]
+<fig/700px-Bayer_pattern_on_sensor.png, id=631, 702.625pt x 456.70625pt>
 File: fig/700px-Bayer_pattern_on_sensor.png Graphic file (type png)
 <use fig/700px-Bayer_pattern_on_sensor.png>
 Package pdftex.def Info: fig/700px-Bayer_pattern_on_sensor.png  used on input l
 ine 40. on input line 40.
 Package pdftex.def Info: Requested size: 107.5525pt x 69.9037pt on input line 4
 0.
-<fig/375px-Bayer_pattern_on_sensor_profile.png, id=627, 376.40625pt x 240.9pt>
+<fig/375px-Bayer_pattern_on_sensor_profile.png, id=632, 376.40625pt x 240.9pt>
 File: fig/375px-Bayer_pattern_on_sensor_profile.png Graphic file (type png)
 <use fig/375px-Bayer_pattern_on_sensor_profile.png>
 Package pdftex.def Info: fig/375px-Bayer_pattern_on_sensor_profile.png  used on
  input line 46. on input line 46.
 Package pdftex.def Info: Requested size: 107.5525pt x 68.83365pt on input line 
 46.
-<fig/intrinsic.png, id=631, 722.7pt x 267.68808pt>
+<fig/intrinsic.png, id=636, 722.7pt x 267.68808pt>
 File: fig/intrinsic.png Graphic file (type png)
 <use fig/intrinsic.png>
 Package pdftex.def Info: fig/intrinsic.png  used on input line 61. on input lin
@@ -1405,31 +1389,31 @@ e 61.
 
 Underfull \vbox (badness 7796) has occurred while \output is active []
 
- [12 <./fig/700px-Bayer_pattern_on_sensor.png> <./fig/375px-Bayer_pattern_on_se
-nsor_profile.png>] [13 <./fig/intrinsic.png>] [14] [15] [16]
-<fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png, id=709, 903.375pt x 903.375pt>
+ [14 <./fig/700px-Bayer_pattern_on_sensor.png> <./fig/375px-Bayer_pattern_on_se
+nsor_profile.png>] [15 <./fig/intrinsic.png>] [16] [17] [18]
+<fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png, id=712, 903.375pt x 903.375pt>
 File: fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png Graphic file (type png)
 <use fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png>
 Package pdftex.def Info: fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png  used on i
 nput line 194. on input line 194.
 Package pdftex.def Info: Requested size: 250.95221pt x 250.94453pt on input lin
 e 194.
-<fig/sperical_to_cartesian.png, id=712, 185.83714pt x 187.85164pt>
+<fig/sperical_to_cartesian.png, id=715, 185.83714pt x 187.85164pt>
 File: fig/sperical_to_cartesian.png Graphic file (type png)
 <use fig/sperical_to_cartesian.png>
 Package pdftex.def Info: fig/sperical_to_cartesian.png  used on input line 202.
  on input line 202.
 Package pdftex.def Info: Requested size: 215.10503pt x 217.44655pt on input lin
 e 202.
- [17 <./fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png>]
-<fig/lidar_side.png, id=720, 244.00568pt x 186.59258pt>
+ [19 <./fig/Velodyne_LiDAR_Puck_VLP-16_Left_900.png>]
+<fig/lidar_side.png, id=724, 244.00568pt x 186.59258pt>
 File: fig/lidar_side.png Graphic file (type png)
 <use fig/lidar_side.png>
 Package pdftex.def Info: fig/lidar_side.png  used on input line 221. on input l
 ine 221.
 Package pdftex.def Info: Requested size: 125.4761pt x 95.95245pt on input line 
 221.
-<fig/lidar_top.png, id=721, 407.778pt x 391.134pt>
+<fig/lidar_top.png, id=725, 407.778pt x 391.134pt>
 File: fig/lidar_top.png Graphic file (type png)
 <use fig/lidar_top.png>
 Package pdftex.def Info: fig/lidar_top.png  used on input line 227. on input li
@@ -1439,9 +1423,9 @@ Package pdftex.def Info: Requested size: 125.4761pt x 120.35504pt on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18 <./fig/sperical_to_cartesian.png>] [19 <./fig/lidar_side.png> <./fig/lidar
+ [20 <./fig/sperical_to_cartesian.png>] [21 <./fig/lidar_side.png> <./fig/lidar
 _top.png>]
-<fig/vlp16_calibration.png, id=744, 705.38531pt x 423.08063pt>
+<fig/vlp16_calibration.png, id=747, 705.38531pt x 423.08063pt>
 File: fig/vlp16_calibration.png Graphic file (type png)
 <use fig/vlp16_calibration.png>
 Package pdftex.def Info: fig/vlp16_calibration.png  used on input line 268. on 
@@ -1449,78 +1433,74 @@ input line 268.
 Package pdftex.def Info: Requested size: 250.95221pt x 150.51422pt on input lin
 e 268.
 
-[20 <./fig/vlp16_calibration.png>]) (chapter4.tex
+[22 <./fig/vlp16_calibration.png>]) (chapter4.tex
 Chapter 4.
-<fig/sensor_setup.png, id=755, 972.63374pt x 784.9325pt>
+<fig/sensor_setup.png, id=758, 972.63374pt x 784.9325pt>
 File: fig/sensor_setup.png Graphic file (type png)
 <use fig/sensor_setup.png>
 Package pdftex.def Info: fig/sensor_setup.png  used on input line 8. on input l
 ine 8.
 Package pdftex.def Info: Requested size: 286.80487pt x 231.45726pt on input lin
 e 8.
-[21
+[23
 
 
- <./fig/sensor_setup.png>]
-Overfull \hbox (28.66103pt too wide) in paragraph at lines 35--36
-\OT1/ptm/m/n/10 Steps needed to run the Mat-lab im-ple-men-ta-tion from https:/
-/github.com/ShaoqingRen/faster[]rcnn.
- []
+ <./fig/sensor_setup.png>] [24]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 60.
 
-[22]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 45.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-<fig/roscore.png, id=770, 628.3475pt x 469.755pt>
+<fig/roscore.png, id=775, 628.3475pt x 469.755pt>
 File: fig/roscore.png Graphic file (type png)
 <use fig/roscore.png>
-Package pdftex.def Info: fig/roscore.png  used on input line 48. on input line 
-48.
+Package pdftex.def Info: fig/roscore.png  used on input line 63. on input line 
+63.
 Package pdftex.def Info: Requested size: 143.39969pt x 107.20273pt on input lin
-e 48.
- [23 <./fig/roscore.png>]
-<fig/ros.png, id=779, 1287.81125pt x 739.76375pt>
+e 63.
+ [25]
+<fig/ros.png, id=785, 1287.81125pt x 739.76375pt>
 File: fig/ros.png Graphic file (type png)
 <use fig/ros.png>
-Package pdftex.def Info: fig/ros.png  used on input line 58. on input line 58.
+Package pdftex.def Info: fig/ros.png  used on input line 73. on input line 73.
 Package pdftex.def Info: Requested size: 286.80487pt x 164.74648pt on input lin
-e 58.
+e 73.
 
-Overfull \hbox (12.83192pt too wide) in paragraph at lines 62--88
+Overfull \hbox (12.83192pt too wide) in paragraph at lines 77--103
 \OT1/ptm/m/n/10 The dummy AIS nodes in fig-ure [][]4.3[][] are nodes for re-cei
 v-ing and pro-cess-ing GNSS-information
  []
 
-[24 <./fig/ros.png>] [25]
-<fig/outlier_calibration.PNG, id=812, 1446.15282pt x 773.13844pt>
+[26 <./fig/roscore.png> <./fig/ros.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+[28]
+<fig/outlier_calibration.PNG, id=824, 1446.15282pt x 773.13844pt>
 File: fig/outlier_calibration.PNG Graphic file (type png)
 <use fig/outlier_calibration.PNG>
-Package pdftex.def Info: fig/outlier_calibration.PNG  used on input line 111. o
-n input line 111.
+Package pdftex.def Info: fig/outlier_calibration.PNG  used on input line 126. o
+n input line 126.
 Package pdftex.def Info: Requested size: 286.80487pt x 153.32726pt on input lin
-e 111.
- [26]
-<fig/calibration_distorted.PNG, id=830, 812.28468pt x 453.94594pt>
+e 126.
+<fig/calibration_distorted.PNG, id=828, 812.28468pt x 453.94594pt>
 File: fig/calibration_distorted.PNG Graphic file (type png)
 <use fig/calibration_distorted.PNG>
-Package pdftex.def Info: fig/calibration_distorted.PNG  used on input line 121.
- on input line 121.
+Package pdftex.def Info: fig/calibration_distorted.PNG  used on input line 136.
+ on input line 136.
 Package pdftex.def Info: Requested size: 143.40244pt x 80.13438pt on input line
- 121.
-<fig/calibration_undistorted.PNG, id=831, 819.06pt x 459.21562pt>
+ 136.
+<fig/calibration_undistorted.PNG, id=829, 819.06pt x 459.21562pt>
 File: fig/calibration_undistorted.PNG Graphic file (type png)
 <use fig/calibration_undistorted.PNG>
-Package pdftex.def Info: fig/calibration_undistorted.PNG  used on input line 12
-7. on input line 127.
+Package pdftex.def Info: fig/calibration_undistorted.PNG  used on input line 14
+2. on input line 142.
 Package pdftex.def Info: Requested size: 143.40244pt x 80.39897pt on input line
- 127.
- [27 <./fig/outlier_calibration.PNG> <./fig/calibration_distorted.PNG> <./fig/c
-alibration_undistorted.PNG>] [28
-
-]) (chapter5.tex
+ 142.
+ [29 <./fig/outlier_calibration.PNG>] [30 <./fig/calibration_distorted.PNG> <./
+fig/calibration_undistorted.PNG>]) (chapter5.tex
 Chapter 5.
-<fig/trondheim_downtown.png, id=849, 996.888pt x 671.454pt>
+<fig/trondheim_downtown.png, id=855, 996.888pt x 671.454pt>
 File: fig/trondheim_downtown.png Graphic file (type png)
 <use fig/trondheim_downtown.png>
 Package pdftex.def Info: fig/trondheim_downtown.png  used on input line 9. on i
@@ -1530,31 +1510,32 @@ e 9.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29
+ [31
+
 
 ]
-<fig/sensor_rig.jpg, id=855, 3982.88pt x 2987.16pt>
+<fig/sensor_rig.jpg, id=862, 3982.88pt x 2987.16pt>
 File: fig/sensor_rig.jpg Graphic file (type jpg)
 <use fig/sensor_rig.jpg>
 Package pdftex.def Info: fig/sensor_rig.jpg  used on input line 18. on input li
 ne 18.
 Package pdftex.def Info: Requested size: 143.40244pt x 107.524pt on input line 
 18.
-<fig/sensors_ravnkloa.jpg, id=856, 3982.88pt x 2987.16pt>
+<fig/sensors_ravnkloa.jpg, id=863, 3982.88pt x 2987.16pt>
 File: fig/sensors_ravnkloa.jpg Graphic file (type jpg)
 <use fig/sensors_ravnkloa.jpg>
 Package pdftex.def Info: fig/sensors_ravnkloa.jpg  used on input line 24. on in
 put line 24.
 Package pdftex.def Info: Requested size: 143.40244pt x 107.524pt on input line 
 24.
-<fig/experiment_boat.jpg, id=858, 1204.5pt x 1606.0pt>
+<fig/experiment_boat.jpg, id=865, 1204.5pt x 1606.0pt>
 File: fig/experiment_boat.jpg Graphic file (type jpg)
 <use fig/experiment_boat.jpg>
 Package pdftex.def Info: fig/experiment_boat.jpg  used on input line 35. on inp
 ut line 35.
 Package pdftex.def Info: Requested size: 286.80487pt x 382.4092pt on input line
  35.
-<fig/experiments_performed.png, id=860, 664.884pt x 717.34666pt>
+<fig/experiments_performed.png, id=867, 664.884pt x 717.34666pt>
 File: fig/experiments_performed.png Graphic file (type png)
 <use fig/experiments_performed.png>
 Package pdftex.def Info: fig/experiments_performed.png  used on input line 43. 
@@ -1564,31 +1545,31 @@ e 43.
 
 Underfull \vbox (badness 5970) has occurred while \output is active []
 
- [30 <./fig/trondheim_downtown.png> <./fig/sensor_rig.jpg> <./fig/sensors_ravnk
+ [32 <./fig/trondheim_downtown.png> <./fig/sensor_rig.jpg> <./fig/sensors_ravnk
 loa.jpg>]
-[31 <./fig/experiment_boat.jpg>] [32 <./fig/experiments_performed.png>]
-[33] [34
+[33 <./fig/experiment_boat.jpg>] [34 <./fig/experiments_performed.png>]
+[35] [36
 
 ]) (chapter6.tex
 Chapter 6.
-<fig/ravnkloa_surroundings.png, id=899, 1445.4pt x 796.576pt>
+<fig/ravnkloa_surroundings.png, id=905, 1445.4pt x 796.576pt>
 File: fig/ravnkloa_surroundings.png Graphic file (type png)
 <use fig/ravnkloa_surroundings.png>
 Package pdftex.def Info: fig/ravnkloa_surroundings.png  used on input line 32. 
 on input line 32.
 Package pdftex.def Info: Requested size: 358.50473pt x 197.57555pt on input lin
 e 32.
-[35
+[37
 
-] [36 <./fig/ravnkloa_surroundings.png>]
-<fig/detection_1_exp_1.png, id=913, 1445.4pt x 903.375pt>
+] [38 <./fig/ravnkloa_surroundings.png>]
+<fig/detection_1_exp_1.png, id=920, 1445.4pt x 903.375pt>
 File: fig/detection_1_exp_1.png Graphic file (type png)
 <use fig/detection_1_exp_1.png>
 Package pdftex.def Info: fig/detection_1_exp_1.png  used on input line 52. on i
 nput line 52.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  52.
-<fig/detection_1_exp_1_img.png, id=914, 1445.4pt x 903.375pt>
+<fig/detection_1_exp_1_img.png, id=921, 1445.4pt x 903.375pt>
 File: fig/detection_1_exp_1_img.png Graphic file (type png)
 <use fig/detection_1_exp_1_img.png>
 Package pdftex.def Info: fig/detection_1_exp_1_img.png  used on input line 58. 
@@ -1605,7 +1586,7 @@ Package epstopdf Info: Source file: <fig/exp_1_track.eps>
 ed-to.pdf fig/exp_1_track.eps>
 (epstopdf)             \includegraphics on input line 67.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_1_track-eps-converted-to.pdf, id=915, pagebox=cropbox, 752.8125pt x 60
+<fig/exp_1_track-eps-converted-to.pdf, id=922, pagebox=cropbox, 752.8125pt x 60
 2.25pt>
 File: fig/exp_1_track-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_1_track-eps-converted-to.pdf>
@@ -1616,15 +1597,15 @@ e 67.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
-<fig/exp1_50m.png, id=923, 1445.4pt x 903.375pt>
+ [39]
+<fig/exp1_50m.png, id=929, 1445.4pt x 903.375pt>
 File: fig/exp1_50m.png Graphic file (type png)
 <use fig/exp1_50m.png>
 Package pdftex.def Info: fig/exp1_50m.png  used on input line 77. on input line
  77.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  77.
-<fig/exp1_bb_50m.png, id=924, 1445.4pt x 903.375pt>
+<fig/exp1_bb_50m.png, id=930, 1445.4pt x 903.375pt>
 File: fig/exp1_bb_50m.png Graphic file (type png)
 <use fig/exp1_bb_50m.png>
 Package pdftex.def Info: fig/exp1_bb_50m.png  used on input line 83. on input l
@@ -1634,7 +1615,7 @@ Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38 <./fig/detection_1_exp_1.png (PNG copy)> <./fig/detection_1_exp_1_img.png 
+ [40 <./fig/detection_1_exp_1.png (PNG copy)> <./fig/detection_1_exp_1_img.png 
 (PNG copy)> <./fig/exp_1_track-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/exp_1_dist_pr_pc.eps>
 (epstopdf)                    date: 2017-12-13 18:17:20
@@ -1647,7 +1628,7 @@ Package epstopdf Info: Source file: <fig/exp_1_dist_pr_pc.eps>
 nverted-to.pdf fig/exp_1_dist_pr_pc.eps>
 (epstopdf)             \includegraphics on input line 93.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_1_dist_pr_pc-eps-converted-to.pdf, id=936, pagebox=cropbox, 752.8125pt
+<fig/exp_1_dist_pr_pc-eps-converted-to.pdf, id=942, pagebox=cropbox, 752.8125pt
  x 602.25pt>
 File: fig/exp_1_dist_pr_pc-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_1_dist_pr_pc-eps-converted-to.pdf>
@@ -1658,7 +1639,7 @@ e 93.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <./fig/exp1_50m.png (PNG copy)> <./fig/exp1_bb_50m.png (PNG copy)> <./fig/
+ [41 <./fig/exp1_50m.png (PNG copy)> <./fig/exp1_bb_50m.png (PNG copy)> <./fig/
 exp_1_dist_pr_pc-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/exp_2_track.eps>
 (epstopdf)                    date: 2017-12-13 18:41:27
@@ -1670,7 +1651,7 @@ Package epstopdf Info: Source file: <fig/exp_2_track.eps>
 ed-to.pdf fig/exp_2_track.eps>
 (epstopdf)             \includegraphics on input line 117.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_2_track-eps-converted-to.pdf, id=950, pagebox=cropbox, 752.8125pt x 60
+<fig/exp_2_track-eps-converted-to.pdf, id=956, pagebox=cropbox, 752.8125pt x 60
 2.25pt>
 File: fig/exp_2_track-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_2_track-eps-converted-to.pdf>
@@ -1689,7 +1670,7 @@ Package epstopdf Info: Source file: <fig/exp_2_dist_pr_pc.eps>
 nverted-to.pdf fig/exp_2_dist_pr_pc.eps>
 (epstopdf)             \includegraphics on input line 123.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_2_dist_pr_pc-eps-converted-to.pdf, id=951, pagebox=cropbox, 752.8125pt
+<fig/exp_2_dist_pr_pc-eps-converted-to.pdf, id=957, pagebox=cropbox, 752.8125pt
  x 602.25pt>
 File: fig/exp_2_dist_pr_pc-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_2_dist_pr_pc-eps-converted-to.pdf>
@@ -1700,22 +1681,22 @@ e 123.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40 <./fig/exp_2_track-eps-converted-to.pdf>]
-<fig/exp_2_problem.png, id=963, 1445.4pt x 903.375pt>
+ [42 <./fig/exp_2_track-eps-converted-to.pdf>]
+<fig/exp_2_problem.png, id=969, 1445.4pt x 903.375pt>
 File: fig/exp_2_problem.png Graphic file (type png)
 <use fig/exp_2_problem.png>
 Package pdftex.def Info: fig/exp_2_problem.png  used on input line 132. on inpu
 t line 132.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  132.
-<fig/exp2_past_problem.png, id=964, 1445.4pt x 903.375pt>
+<fig/exp2_past_problem.png, id=970, 1445.4pt x 903.375pt>
 File: fig/exp2_past_problem.png Graphic file (type png)
 <use fig/exp2_past_problem.png>
 Package pdftex.def Info: fig/exp2_past_problem.png  used on input line 138. on 
 input line 138.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  138.
- [41 <./fig/exp_2_dist_pr_pc-eps-converted-to.pdf> <./fig/exp_2_problem.png (PN
+ [43 <./fig/exp_2_dist_pr_pc-eps-converted-to.pdf> <./fig/exp_2_problem.png (PN
 G copy)> <./fig/exp2_past_problem.png (PNG copy)>]
 Package epstopdf Info: Source file: <fig/exp_3_track.eps>
 (epstopdf)                    date: 2017-12-13 18:42:05
@@ -1727,7 +1708,7 @@ Package epstopdf Info: Source file: <fig/exp_3_track.eps>
 ed-to.pdf fig/exp_3_track.eps>
 (epstopdf)             \includegraphics on input line 165.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_3_track-eps-converted-to.pdf, id=978, pagebox=cropbox, 752.8125pt x 60
+<fig/exp_3_track-eps-converted-to.pdf, id=985, pagebox=cropbox, 752.8125pt x 60
 2.25pt>
 File: fig/exp_3_track-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_3_track-eps-converted-to.pdf>
@@ -1735,14 +1716,14 @@ Package pdftex.def Info: fig/exp_3_track-eps-converted-to.pdf  used on input li
 ne 165. on input line 165.
 Package pdftex.def Info: Requested size: 286.80487pt x 229.44551pt on input lin
 e 165.
-<fig/ex3_miss.png, id=979, 1445.4pt x 903.375pt>
+<fig/ex3_miss.png, id=986, 1445.4pt x 903.375pt>
 File: fig/ex3_miss.png Graphic file (type png)
 <use fig/ex3_miss.png>
 Package pdftex.def Info: fig/ex3_miss.png  used on input line 173. on input lin
 e 173.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  173.
-<fig/ex3_miss_pc.png, id=980, 1445.4pt x 903.375pt>
+<fig/ex3_miss_pc.png, id=987, 1445.4pt x 903.375pt>
 File: fig/ex3_miss_pc.png Graphic file (type png)
 <use fig/ex3_miss_pc.png>
 Package pdftex.def Info: fig/ex3_miss_pc.png  used on input line 179. on input 
@@ -1752,7 +1733,7 @@ Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42 <./fig/exp_3_track-eps-converted-to.pdf>]
+ [44 <./fig/exp_3_track-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/exp_3_dist_pr_pc.eps>
 (epstopdf)                    date: 2017-12-13 18:14:54
 (epstopdf)                    size: 23403 bytes
@@ -1764,7 +1745,7 @@ Package epstopdf Info: Source file: <fig/exp_3_dist_pr_pc.eps>
 nverted-to.pdf fig/exp_3_dist_pr_pc.eps>
 (epstopdf)             \includegraphics on input line 189.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_3_dist_pr_pc-eps-converted-to.pdf, id=989, pagebox=cropbox, 752.8125pt
+<fig/exp_3_dist_pr_pc-eps-converted-to.pdf, id=996, pagebox=cropbox, 752.8125pt
  x 602.25pt>
 File: fig/exp_3_dist_pr_pc-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_3_dist_pr_pc-eps-converted-to.pdf>
@@ -1775,7 +1756,7 @@ e 189.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43 <./fig/ex3_miss.png (PNG copy)> <./fig/ex3_miss_pc.png (PNG copy)> <./fig/
+ [45 <./fig/ex3_miss.png (PNG copy)> <./fig/ex3_miss_pc.png (PNG copy)> <./fig/
 exp_3_dist_pr_pc-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <fig/exp_4_track.eps>
 (epstopdf)                    date: 2017-12-13 18:43:00
@@ -1787,7 +1768,7 @@ Package epstopdf Info: Source file: <fig/exp_4_track.eps>
 ed-to.pdf fig/exp_4_track.eps>
 (epstopdf)             \includegraphics on input line 213.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_4_track-eps-converted-to.pdf, id=1003, pagebox=cropbox, 752.8125pt x 6
+<fig/exp_4_track-eps-converted-to.pdf, id=1009, pagebox=cropbox, 752.8125pt x 6
 02.25pt>
 File: fig/exp_4_track-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_4_track-eps-converted-to.pdf>
@@ -1806,7 +1787,7 @@ Package epstopdf Info: Source file: <fig/exp_4_dist_pr_pc.eps>
 nverted-to.pdf fig/exp_4_dist_pr_pc.eps>
 (epstopdf)             \includegraphics on input line 219.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_4_dist_pr_pc-eps-converted-to.pdf, id=1004, pagebox=cropbox, 752.8125p
+<fig/exp_4_dist_pr_pc-eps-converted-to.pdf, id=1010, pagebox=cropbox, 752.8125p
 t x 602.25pt>
 File: fig/exp_4_dist_pr_pc-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_4_dist_pr_pc-eps-converted-to.pdf>
@@ -1817,15 +1798,15 @@ e 219.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44 <./fig/exp_4_track-eps-converted-to.pdf>]
-<fig/ex4_miss.png, id=1016, 1445.4pt x 903.375pt>
+ [46 <./fig/exp_4_track-eps-converted-to.pdf>]
+<fig/ex4_miss.png, id=1022, 1445.4pt x 903.375pt>
 File: fig/ex4_miss.png Graphic file (type png)
 <use fig/ex4_miss.png>
 Package pdftex.def Info: fig/ex4_miss.png  used on input line 228. on input lin
 e 228.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  228.
-<fig/ex4_miss_pc.png, id=1017, 1445.4pt x 903.375pt>
+<fig/ex4_miss_pc.png, id=1023, 1445.4pt x 903.375pt>
 File: fig/ex4_miss_pc.png Graphic file (type png)
 <use fig/ex4_miss_pc.png>
 Package pdftex.def Info: fig/ex4_miss_pc.png  used on input line 234. on input 
@@ -1835,7 +1816,7 @@ Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
 
 Underfull \vbox (badness 1603) has occurred while \output is active []
 
- [45 <./fig/exp_4_dist_pr_pc-eps-converted-to.pdf> <./fig/ex4_miss.png (PNG cop
+ [47 <./fig/exp_4_dist_pr_pc-eps-converted-to.pdf> <./fig/ex4_miss.png (PNG cop
 y)> <./fig/ex4_miss_pc.png (PNG copy)>]
 Package epstopdf Info: Source file: <fig/exp_5_track.eps>
 (epstopdf)                    date: 2017-12-13 18:43:41
@@ -1847,7 +1828,7 @@ Package epstopdf Info: Source file: <fig/exp_5_track.eps>
 ed-to.pdf fig/exp_5_track.eps>
 (epstopdf)             \includegraphics on input line 261.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_5_track-eps-converted-to.pdf, id=1030, pagebox=cropbox, 752.8125pt x 6
+<fig/exp_5_track-eps-converted-to.pdf, id=1036, pagebox=cropbox, 752.8125pt x 6
 02.25pt>
 File: fig/exp_5_track-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_5_track-eps-converted-to.pdf>
@@ -1866,7 +1847,7 @@ Package epstopdf Info: Source file: <fig/exp_5_dist_pr_pc.eps>
 nverted-to.pdf fig/exp_5_dist_pr_pc.eps>
 (epstopdf)             \includegraphics on input line 267.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_5_dist_pr_pc-eps-converted-to.pdf, id=1031, pagebox=cropbox, 752.8125p
+<fig/exp_5_dist_pr_pc-eps-converted-to.pdf, id=1037, pagebox=cropbox, 752.8125p
 t x 602.25pt>
 File: fig/exp_5_dist_pr_pc-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_5_dist_pr_pc-eps-converted-to.pdf>
@@ -1877,15 +1858,15 @@ e 267.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46 <./fig/exp_5_track-eps-converted-to.pdf>]
-<fig/ex5_miss.png, id=1041, 1445.4pt x 903.375pt>
+ [48 <./fig/exp_5_track-eps-converted-to.pdf>]
+<fig/ex5_miss.png, id=1047, 1445.4pt x 903.375pt>
 File: fig/ex5_miss.png Graphic file (type png)
 <use fig/ex5_miss.png>
 Package pdftex.def Info: fig/ex5_miss.png  used on input line 276. on input lin
 e 276.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  276.
-<fig/ex5_miss_pc.png, id=1042, 1445.4pt x 903.375pt>
+<fig/ex5_miss_pc.png, id=1048, 1445.4pt x 903.375pt>
 File: fig/ex5_miss_pc.png Graphic file (type png)
 <use fig/ex5_miss_pc.png>
 Package pdftex.def Info: fig/ex5_miss_pc.png  used on input line 282. on input 
@@ -1895,7 +1876,7 @@ Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
 
 Underfull \vbox (badness 3623) has occurred while \output is active []
 
- [47 <./fig/exp_5_dist_pr_pc-eps-converted-to.pdf> <./fig/ex5_miss.png (PNG cop
+ [49 <./fig/exp_5_dist_pr_pc-eps-converted-to.pdf> <./fig/ex5_miss.png (PNG cop
 y)> <./fig/ex5_miss_pc.png (PNG copy)>]
 Package epstopdf Info: Source file: <fig/exp_6_track.eps>
 (epstopdf)                    date: 2017-12-13 18:44:33
@@ -1907,7 +1888,7 @@ Package epstopdf Info: Source file: <fig/exp_6_track.eps>
 ed-to.pdf fig/exp_6_track.eps>
 (epstopdf)             \includegraphics on input line 309.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_6_track-eps-converted-to.pdf, id=1055, pagebox=cropbox, 752.8125pt x 6
+<fig/exp_6_track-eps-converted-to.pdf, id=1062, pagebox=cropbox, 752.8125pt x 6
 02.25pt>
 File: fig/exp_6_track-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_6_track-eps-converted-to.pdf>
@@ -1926,7 +1907,7 @@ Package epstopdf Info: Source file: <fig/exp_6_dist_pr_pc.eps>
 nverted-to.pdf fig/exp_6_dist_pr_pc.eps>
 (epstopdf)             \includegraphics on input line 315.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_6_dist_pr_pc-eps-converted-to.pdf, id=1056, pagebox=cropbox, 752.8125p
+<fig/exp_6_dist_pr_pc-eps-converted-to.pdf, id=1063, pagebox=cropbox, 752.8125p
 t x 602.25pt>
 File: fig/exp_6_dist_pr_pc-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_6_dist_pr_pc-eps-converted-to.pdf>
@@ -1937,15 +1918,15 @@ e 315.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48 <./fig/exp_6_track-eps-converted-to.pdf>]
-<fig/ex6_miss.png, id=1066, 1445.4pt x 903.375pt>
+ [50 <./fig/exp_6_track-eps-converted-to.pdf>]
+<fig/ex6_miss.png, id=1073, 1445.4pt x 903.375pt>
 File: fig/ex6_miss.png Graphic file (type png)
 <use fig/ex6_miss.png>
 Package pdftex.def Info: fig/ex6_miss.png  used on input line 324. on input lin
 e 324.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  324.
-<fig/ex6_miss_pc.png, id=1067, 1445.4pt x 903.375pt>
+<fig/ex6_miss_pc.png, id=1074, 1445.4pt x 903.375pt>
 File: fig/ex6_miss_pc.png Graphic file (type png)
 <use fig/ex6_miss_pc.png>
 Package pdftex.def Info: fig/ex6_miss_pc.png  used on input line 330. on input 
@@ -1955,7 +1936,7 @@ Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49 <./fig/exp_6_dist_pr_pc-eps-converted-to.pdf> <./fig/ex6_miss.png (PNG cop
+ [51 <./fig/exp_6_dist_pr_pc-eps-converted-to.pdf> <./fig/ex6_miss.png (PNG cop
 y)> <./fig/ex6_miss_pc.png (PNG copy)>]
 Package epstopdf Info: Source file: <fig/exp_7_track.eps>
 (epstopdf)                    date: 2017-12-13 18:46:07
@@ -1967,7 +1948,7 @@ Package epstopdf Info: Source file: <fig/exp_7_track.eps>
 ed-to.pdf fig/exp_7_track.eps>
 (epstopdf)             \includegraphics on input line 357.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_7_track-eps-converted-to.pdf, id=1084, pagebox=cropbox, 752.8125pt x 6
+<fig/exp_7_track-eps-converted-to.pdf, id=1090, pagebox=cropbox, 752.8125pt x 6
 02.25pt>
 File: fig/exp_7_track-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_7_track-eps-converted-to.pdf>
@@ -1975,29 +1956,29 @@ Package pdftex.def Info: fig/exp_7_track-eps-converted-to.pdf  used on input li
 ne 357. on input line 357.
 Package pdftex.def Info: Requested size: 286.80487pt x 229.44551pt on input lin
 e 357.
-<fig/ex7_miss_first_circ.png, id=1087, 1445.4pt x 903.375pt>
+<fig/ex7_miss_first_circ.png, id=1093, 1445.4pt x 903.375pt>
 File: fig/ex7_miss_first_circ.png Graphic file (type png)
 <use fig/ex7_miss_first_circ.png>
 Package pdftex.def Info: fig/ex7_miss_first_circ.png  used on input line 366. o
 n input line 366.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  366.
-<fig/ex7_miss_first_circ_pc.png, id=1088, 1445.4pt x 903.375pt>
+<fig/ex7_miss_first_circ_pc.png, id=1094, 1445.4pt x 903.375pt>
 File: fig/ex7_miss_first_circ_pc.png Graphic file (type png)
 <use fig/ex7_miss_first_circ_pc.png>
 Package pdftex.def Info: fig/ex7_miss_first_circ_pc.png  used on input line 372
 . on input line 372.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  372.
- [50 <./fig/exp_7_track-eps-converted-to.pdf>]
-<fig/ex7_miss_top.png, id=1099, 1445.4pt x 903.375pt>
+ [52 <./fig/exp_7_track-eps-converted-to.pdf>]
+<fig/ex7_miss_top.png, id=1105, 1445.4pt x 903.375pt>
 File: fig/ex7_miss_top.png Graphic file (type png)
 <use fig/ex7_miss_top.png>
 Package pdftex.def Info: fig/ex7_miss_top.png  used on input line 384. on input
  line 384.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
  384.
-<fig/ex7_miss_top_pc.png, id=1100, 1445.4pt x 903.375pt>
+<fig/ex7_miss_top_pc.png, id=1106, 1445.4pt x 903.375pt>
 File: fig/ex7_miss_top_pc.png Graphic file (type png)
 <use fig/ex7_miss_top_pc.png>
 Package pdftex.def Info: fig/ex7_miss_top_pc.png  used on input line 390. on in
@@ -2015,7 +1996,7 @@ Package epstopdf Info: Source file: <fig/exp_7_dist_pr_pc.eps>
 nverted-to.pdf fig/exp_7_dist_pr_pc.eps>
 (epstopdf)             \includegraphics on input line 399.
 Package epstopdf Info: Output file is already uptodate.
-<fig/exp_7_dist_pr_pc-eps-converted-to.pdf, id=1101, pagebox=cropbox, 752.8125p
+<fig/exp_7_dist_pr_pc-eps-converted-to.pdf, id=1107, pagebox=cropbox, 752.8125p
 t x 602.25pt>
 File: fig/exp_7_dist_pr_pc-eps-converted-to.pdf Graphic file (type pdf)
 <use fig/exp_7_dist_pr_pc-eps-converted-to.pdf>
@@ -2026,66 +2007,71 @@ e 399.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51 <./fig/ex7_miss_first_circ.png (PNG copy)> <./fig/ex7_miss_first_circ_pc.p
+ [53 <./fig/ex7_miss_first_circ.png (PNG copy)> <./fig/ex7_miss_first_circ_pc.p
 ng (PNG copy)> <./fig/ex7_miss_top.png (PNG copy)> <./fig/ex7_miss_top_pc.png (
-PNG copy)>] [52 <./fig/exp_7_dist_pr_pc-eps-converted-to.pdf>]) (chapter7.tex
+PNG copy)>] [54 <./fig/exp_7_dist_pr_pc-eps-converted-to.pdf>]) (chapter7.tex
 Chapter 7.
-<fig/example_1_pc.png, id=1122, 1445.4pt x 903.375pt>
+<fig/example_1_pc.png, id=1128, 1445.4pt x 903.375pt>
 File: fig/example_1_pc.png Graphic file (type png)
 <use fig/example_1_pc.png>
-Package pdftex.def Info: fig/example_1_pc.png  used on input line 8. on input l
-ine 8.
+Package pdftex.def Info: fig/example_1_pc.png  used on input line 9. on input l
+ine 9.
 Package pdftex.def Info: Requested size: 358.50473pt x 224.065pt on input line 
-8.
-<fig/example_1.png, id=1123, 1445.4pt x 903.375pt>
+9.
+<fig/example_1.png, id=1129, 1445.4pt x 903.375pt>
 File: fig/example_1.png Graphic file (type png)
 <use fig/example_1.png>
-Package pdftex.def Info: fig/example_1.png  used on input line 14. on input lin
-e 14.
+Package pdftex.def Info: fig/example_1.png  used on input line 15. on input lin
+e 15.
 Package pdftex.def Info: Requested size: 358.50473pt x 224.065pt on input line 
-14.
-[53
+15.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [55
 
 
- <./fig/example_1_pc.png (PNG copy)>]
-<fig/issue_overlapping.png, id=1133, 1445.4pt x 903.375pt>
+]
+<fig/issue_overlapping.png, id=1140, 1445.4pt x 903.375pt>
 File: fig/issue_overlapping.png Graphic file (type png)
 <use fig/issue_overlapping.png>
-Package pdftex.def Info: fig/issue_overlapping.png  used on input line 23. on i
-nput line 23.
+Package pdftex.def Info: fig/issue_overlapping.png  used on input line 24. on i
+nput line 24.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
- 23.
-<fig/issue_2.png, id=1134, 1445.4pt x 903.375pt>
+ 24.
+<fig/issue_2.png, id=1141, 1445.4pt x 903.375pt>
 File: fig/issue_2.png Graphic file (type png)
 <use fig/issue_2.png>
-Package pdftex.def Info: fig/issue_2.png  used on input line 29. on input line 
-29.
+Package pdftex.def Info: fig/issue_2.png  used on input line 30. on input line 
+30.
 Package pdftex.def Info: Requested size: 179.25237pt x 112.0256pt on input line
- 29.
- [54 <./fig/issue_overlapping.png (PNG copy)> <./fig/issue_2.png (PNG copy)> <.
-/fig/example_1.png (PNG copy)>])
-(chapter8.tex
+ 30.
+
+[56 <./fig/example_1_pc.png (PNG copy)> <./fig/example_1.png (PNG copy)>]
+[57 <./fig/issue_overlapping.png (PNG copy)> <./fig/issue_2.png (PNG copy)>]
+[58
+
+]) (chapter8.tex
 Chapter 8.
-[55
+[59
 
+] [60
 
-] [56
+]) [61
 
-]) [57
+] [62] [63] [64
 
-] [58]
+]
 Appendix A.
-(appendix.tex [59
-
-] [60]
-<fig/distortion_examples.png, id=1216, 722.7pt x 277.035pt>
+(appendix.tex [65] [66]
+<fig/distortion_examples.png, id=1240, 722.7pt x 277.035pt>
 File: fig/distortion_examples.png Graphic file (type png)
 <use fig/distortion_examples.png>
 Package pdftex.def Info: fig/distortion_examples.png  used on input line 99. on
  input line 99.
 Package pdftex.def Info: Requested size: 358.50473pt x 137.42653pt on input lin
 e 99.
- [61]
+ [67]
 Overfull \hbox (33.13173pt too wide) in paragraph at lines 103--103
 [][][]\OT1/ptm/m/n/8 Image cour-tesy: https://docs.opencv.org/2.4.13.2/modules/
 calib3d/doc/camera[]calibration[]and[]3d[]reconstruction.html| 
@@ -2099,39 +2085,29 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¥ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¥ in font ptmr7t!
-[62 <./fig/distortion_examples.png>]) [63]
+[68 <./fig/distortion_examples.png>]) [69]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 24422717C264758A9872F5737B463366;3917.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: 46A2C971F7AF3EF0050F820A62C35E9F;3701.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
  ) 
 Here is how much of TeX's memory you used:
- 27714 strings out of 493312
- 508776 string characters out of 3138890
- 914748 words of memory out of 3000000
- 30314 multiletter control sequences out of 15000+200000
+ 27726 strings out of 493312
+ 509058 string characters out of 3138890
+ 916748 words of memory out of 3000000
+ 30316 multiletter control sequences out of 15000+200000
  38180 words of font info for 86 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,18n,94p,2267b,1289s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
-, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
 , replaced by a fixed one
@@ -2159,9 +2135,9 @@ ourier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (75 pages, 28495604 bytes).
+Output written on main.pdf (81 pages, 28509709 bytes).
 PDF statistics:
- 1401 PDF objects out of 1440 (max. 8388607)
- 349 named destinations out of 1000 (max. 500000)
- 815 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1426 PDF objects out of 1440 (max. 8388607)
+ 359 named destinations out of 1000 (max. 500000)
+ 791 words of extra memory for PDF output out of 10000 (max. 10000000)
 
