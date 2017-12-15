@@ -3,6 +3,7 @@
 \chapter{Theory}
 In this chapter, blablabla...
 \section{Sensor Fusion}
+\label{section:fusion}
 Robots and autonomous vehicles, be it a car or a ship, operate in unstructured environments, environments that are unpredictable. While robots working on a assembly line work in very structured, predictable environments, a vessel attempting to atonomously navigate a busy shipping lane has to rely on sensor inputs in order to make sense of its environment, and navigate safely. In sensing its environment, a vessel might use various sensors, such as radar(s), cameras, sonars or laser range finders. The different sensors typically give a incomplete and imperfect view of the surrounding world. Sensor data fusion is the process of combining such mutually complementary sensor information in such a way that a better understanding of the surroundings can be achieved \cite{sensorFusion1}.
 The U.S. Joint Directors of Laboratories (JDL) Data Fusion Working Group developed a process model in 1985 for characterizing hierarchical levels of fusion processing, categorized fusion functions, and candidate algorithm approaches, and is the most widely used system for categorizing data fusion-related functions \cite{JDLFusion}. The model is illustrated in figure \ref{fig:jdl_fusion}.
 \begin{figure}[H]
@@ -64,7 +65,26 @@ A convolutional neural net, abbreviated CNN, is a neural network designed for ob
 	\item Better model regularization strategies, such as dropout, to prevent overfitting \cite{dropout}.
 \end{enumerate}
 
-In a classifier using classical computer vision techniques, features are extracted from an image, for example using a histogram of oriented gradients, and the extracted features are subsequently used to train a classifier such as a support-vector machine. In a convolutional neural network, on the other hand, the features are hidden, and feature extraction and classification is performed in a single pipeline. Features in a CNN are generated via one or several layers of filter convolutions, which generates a set of abstract sub-images from the input image. For the user, a CNN classifier appears as a "black box" where the internal workings of the feature extraction and classification are largely hidden. In order to understand how a convolutional neural net works, some basic concepts need to be introduced.
+In a classifier using classical computer vision techniques, features are extracted from an image, for example using a histogram of oriented gradients, and the extracted features are subsequently used to train a classifier such as a support-vector machine. In a convolutional neural network, on the other hand, the features are hidden, and feature extraction and classification is performed in a single pipeline. Features in a CNN are generated via one or several layers of filter convolutions, which generates a set of abstract sub-images from the input image. For the user, a CNN classifier appears as a "black box" where the internal workings of the feature extraction and classification are largely hidden. In order to understand how a convolutional neural net works, some basic concepts need to be introduced. The following sections first introduce the neuron and the concept of a neural network, then a brief introduction to a convolutional neural net will be given.
+\subsubsection{Neural Networks}
+The basic building block of a neural network is the \textit{neuron}, illustrated in figure \ref{fig:neuron}.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/neural.png}
+		\caption{A neuron, with its inputs,\\ bias and output.}
+		\label{fig:neuron}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/layers.png}
+		\caption{A simple neural network.}
+		\label{fig:layers}
+	\end{subfigure}
+	\caption{A neuron, alongside a simple neural network with a single hidden layer.}
+	\label{fig:neural_net}
+\end{figure}
 \section{Target tracking}
 Necessary? Will not implement tracking at this stage anyway.
 \subsection{Clustering}

@@ -2,4 +2,36 @@
 
 \chapter{Discussion}
 Discuss the results from the previous chapter, with a critical eye.
+Consider figure \ref{fig:example_ex3_pc}, and the corresponding image with bounding boxes in figure \ref{fig:example_ex3_im}. The blue dot in figure \ref{fig:example_ex3_pc} is the centroid of the point cloud. Although the bounding box in figure \ref{fig:example_ex3_im} is almost perfectly centered on the target boat, there is a small discrepancy between the point cloud centroid and the projected ray in figure \ref{fig:example_ex3_pc}. This discrepancy is likely due to a combination of time delay between the sensors, the geometry of the point cloud not capturing the full geometry of the boat, as well as misalignment between the sensors. \todo{flytt til diskusjon}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{fig/example_1_pc.png}
+	\caption{A single point cloud from experiment 3, with the ray corresponding to the center of the bounding box detected in the image projected out in the scene.}
+	\label{fig:example_ex3_pc}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{fig/example_1.png}
+	\caption{Image with bounding boxes and scores corresponding to the point cloud in figure \ref{fig:example_ex3_pc}.}
+	\label{fig:example_ex3_im}
+\end{figure}
+Another thing to notice in figure \ref{fig:example_ex3_im} is the fact that there are other boats in the surrounding scene, giving detections other than the target ship. Not only can this give false detections, but it can also lead to a missed detection due to the foreground and background ships being detected as one. Figure \ref{fig:issues_multiple_detections} illustrates two examples where multiple ships are detected as one. \todo{flytt til diskusjon}
+\begin{figure}
+	\centering
+	\begin{subfigure}[t]{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/issue_overlapping.png}
+		\caption{Three ships detected as one (far left of the image).}
+		\label{fig:sub_issue1}
+	\end{subfigure}%
+	\begin{subfigure}[t]{.5\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/issue_2.png}
+		\caption{Two ships detected as one (second bounding box from the left).}
+		\label{fig:sub_issue2}
+	\end{subfigure}
+	\caption{Two examples of multiple ships being detected and classified as one.}
+	\label{fig:issues_multiple_detections}
+\end{figure} 
+Given more time, this issue could have been compensated for by for example background subtraction. However, in a realistic situation one usually has limited knowledge on what is background noise and what is not, and the problem of target association is an important part of sensor fusion and tracking \todo{fiks}. 
 \cleardoublepage

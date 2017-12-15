@@ -21,7 +21,7 @@ In order to associate boat detections in the images to world coordinates, the in
 which is a rotation of $\frac{\pi}{2}$ radians around the cameras z-axis, followed by a rotation of $-\frac{\pi}{2}$ radians around the new y-axis, and the translation vector
 \begin{equation}
 \mathbf{t_c^l}=\begin{bmatrix}
--0.05 & 0 & -0.097
+0.05 & 0 & -0.097
 \end{bmatrix}^T
 \end{equation} 
 given in meters. The rotation angles and translation vector were measured by hand.
@@ -33,47 +33,15 @@ The location used in the experiments gave many returns in the lidar point cloud 
 	\caption{The lidar point cloud including surroundings at Ravnkloa, projected down to the xy-plane.}
 	\label{fig:ravnkloa_pointcloud}
 \end{figure}
-Since, unfortunately, no position ground truth was produced during the experiments, it was decided to use the returns from the boat in the lidar data as a ground truth, when comparing detections from faster R-CNN with the lidar data. In order to achieve this, all unwanted returns were filtered using a "pass through" filter removing all points which lies outside a specified rectangular region in the xy-plane, keeping only the returns from the boat. The point cloud was also reduced to two dimensions by projecting all points down to the plane $z=0$, for simplicity \todo{mer}.
+Since, unfortunately, no position ground truth was produced during the experiments, it was decided to use the returns from the boat in the lidar data as a ground truth, when comparing detections from faster R-CNN with the lidar data. In order to achieve this, all unwanted returns were filtered using a "pass through" filter removing all points which lies outside a specified rectangular region in the xy-plane, keeping only the returns from the boat. The point cloud was also reduced to two dimensions by projecting all points down to the plane $z=0$, for simplicity. In addition, the point cloud returns were limited to only those lying in the cameras field of view.
 
 Once the point cloud was reduced to two dimensions, and all returns not belonging to the target boat was removed, k-Means clustering (with k=1) was used to find the centroid of the points returned by the boat.
 \section{Metrics}
 Faster R-CNN gives the bounding boxes for its detections, along with the score for the detection, indicating the "confidence" in the classification. The threshold for the score was set to 0.6, where 1.0 indicates absolute certainty (from the detectors perspective) and 0 indicates zero confidence. The 0.6 threshold was the default set in the faster R-CNN implementation from the Github repository. The detection threshold has not been analyzed with particular attention in this project, due to limited time, so the default threshold has been kept as-is.
 
-As a metric in determining whether or not a detection from the convolutional net corresponds with the boat, the minimum distance between the ray projected by the centroid of the bounding box and the centroid of the point cloud cluster corresponding to the boat was used. This distance was set to 2.5 meters. This value was heuristically determined through experimentation, and was chosen as a compromise between the target boat being detected versus boats in the background counting as a detection of the target boat. Due to the geometry of the boat, for some maneuvers the majority of the returns found by the lidar come from the front part of the boat, while the detections in the image are more centered on the projection of the boat into the image plane. The 2.5 meters distance also allow for some time delay between the images and the point cloud. The images corresponding to a particular point cloud were found by searching through the image set and selecting the image with the temporally closest time stamp, since the time delay between the lidar and the camera is unknown (but present). Lastly, the transformation between the camera frame and the lidar frame is hand-measured and assumes that the camera z-axis is perfectly aligned with the lidar x-axis, not taking into account misalignments. The minimum distance of 2.5 meters allows for some leeway in the alignment of the sensors.
-
-Consider figure \ref{fig:example_ex3_pc}, and the corresponding image with bounding boxes in figure \ref{fig:example_ex3_im}. The blue dot in figure \ref{fig:example_ex3_pc} is the centroid of the point cloud. Although the bounding box in figure \ref{fig:example_ex3_im} is almost perfectly centered on the target boat, there is a small discrepancy between the point cloud centroid and the projected ray in figure \ref{fig:example_ex3_pc}. This discrepancy is likely due to a combination of time delay between the sensors, the geometry of the point cloud not capturing the full geometry of the boat, as well as misalignment between the sensors. \todo{flytt til diskusjon}.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{fig/example_1_pc.png}
-	\caption{A single point cloud from experiment 3, with the ray corresponding to the center of the bounding box detected in the image projected out in the scene.}
-	\label{fig:example_ex3_pc}
-\end{figure}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{fig/example_1.png}
-	\caption{Image with bounding boxes and scores corresponding to the point cloud in figure \ref{fig:example_ex3_pc}.}
-	\label{fig:example_ex3_im}
-\end{figure}
-Another thing to notice in figure \ref{fig:example_ex3_im} is the fact that there are other boats in the surrounding scene, giving detections other than the target ship. Not only can this give false detections, but it can also lead to a missed detection due to the foreground and background ships being detected as one. Figure \ref{fig:issues_multiple_detections} illustrates two examples where multiple ships are detected as one. \todo{flytt til diskusjon}
-\begin{figure}
-	\centering
-	\begin{subfigure}[t]{.5\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{fig/issue_overlapping.png}
-		\caption{Three ships detected as one (far left of the image).}
-		\label{fig:sub_issue1}
-	\end{subfigure}%
-	\begin{subfigure}[t]{.5\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{fig/issue_2.png}
-		\caption{Two ships detected as one (second bounding box from the left).}
-		\label{fig:sub_issue2}
-	\end{subfigure}
-	\caption{Two examples of multiple ships being detected and classified as one.}
-	\label{fig:issues_multiple_detections}
-\end{figure} 
-Given more time, this issue could have been compensated for by for example background subtraction. However, in a realistic situation there is no way of knowing what is the background and what is not, and the problem of target association is an important part of sensor fusion and tracking \todo{fiks}. In order to avoid multiple detections in cases where the target boat pass in front of a boat in the background, only the detection closest to the point cloud cluster center is considered. For each measurement, the number of total image detections are calculated, and an estimate of the probability of detection based on range from the sensors are computed based on the number of image detections versus the number of point clouds in total at that range. The distance between the center of the bounding box and the cluster center is plotted against the distance from the sensors to the center of the point cloud.
+As a metric in determining whether or not a detection from the convolutional net corresponds with the boat, the minimum distance between the ray projected by the centroid of the bounding box and the centroid of the point cloud cluster corresponding to the boat was used. This distance was set to 2.5 meters, which is approximately half the length of the boat used in the experiments. This value was heuristically determined through experimentation, and was chosen as a compromise between the target boat being detected versus boats in the background counting as a detection of the target boat. Due to the geometry of the boat, for some maneuvers the majority of the returns found by the lidar come from the front part of the boat, while the detections in the image are more centered on the projection of the boat into the image plane. The 2.5 meters distance also allow for some time difference between the images and the point cloud, as the data is not time stamped at capture time, but at arrival time in the computer, not accounting for intermediary processing and transmission delay. The images corresponding to a particular point cloud were found by searching through the image set and selecting the image with the temporally closest time stamp, since the time offset between the lidar and the camera is unknown. Lastly, the transformation between the camera frame and the lidar frame is hand-measured and assumes that the camera z-axis is perfectly aligned with the lidar x-axis, not taking into account misalignments. The minimum distance of 2.5 meters allows for some leeway in the alignment of the sensors. In order to avoid multiple detections in cases where the target boat pass in front of a boat in the background, only the detection closest to the point cloud cluster center is considered. For each experiment, the total number of image detections corresponding to a point cloud are calculated. The accumulated point cloud cluster centers are plotted as a track for each experiment, and color coded to indicate if there is a detection in a image corresponding to that particular point cloud cluster center. The distance between the center of the bounding box and the cluster center is plotted for the entire recording.
 \section{Experimental Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Experiment 1}
 Experiment 1 was performed by the vessel arriving head on towards the sensor setup, see figure \ref{fig:experiments}.
 The first return from the boat was attained at a range of 67.39 meters, shown in figure \ref{fig:ex1_1}.
@@ -94,25 +62,39 @@ The first return from the boat was attained at a range of 67.39 meters, shown in
 	\caption{The first return from the lidar, along with the corresponding detections in the image.}
 	\label{fig:ex1_1}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{fig/exp_1_track.eps}
+	\caption{Track generated by point cloud cluster center in experiment 1.}
+	\label{fig:ex1_track}
+\end{figure}
+As seen in figure \ref{fig:ex1_track}, there are some missed detections in the image data around $x=50$ meters.
+Looking at figure \ref{fig:ex1_50m}, it's hard to determine an exact reason for this. One possibility may be that a combination of lighting conditions and background kept the detection score below the threshold of 0.6 for some time.
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[t]{.5\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{fig/exp_1_detect_dist.eps}
-		\caption{Distance from the center of the bounding\\ box to the point cloud cluster centroid vs.\\ distance to target.}
-		\label{fig:sub_ex1_detect_dist}
+		\includegraphics[width=\linewidth]{fig/exp1_50m.png}
+		\caption{Lidar return.}
+		\label{fig:sub_ex1_50m}
 	\end{subfigure}%
 	\begin{subfigure}[t]{.5\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{fig/exp_1_probs.eps}
-		\caption{Estimate for probability of detection based on range.}
-		\label{fig:sub_ex1_prob}
+		\includegraphics[width=\linewidth]{fig/exp1_bb_50m.png}
+		\caption{Corresponding image frame.}
+		\label{fig:sub_ex1_bb_50m}
 	\end{subfigure}
-	\caption{Results from experiment 1.}
-	\label{fig:ex1_plot}
+	\caption{Missed detection in experiment 1.}
+	\label{fig:ex1_50m}
 \end{figure}
-As figure \ref{fig:ex1_plot} shows, once the vessel was within 40 meters, every single point cloud had a corresponding detection of the vessel.
-The total number of point clouds, total number of detections and an estimate of total detection probability is shown in table
+As figure \ref{fig:ex1_track} shows, once the vessel was within 40 meters, every single point cloud had a corresponding detection of the vessel. Figure \ref{fig:ex1_pc_dist} shows the calculated distance between the point cloud cluster and the ray projected from the center of the bounding box around the boat in the corresponding image.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.7\linewidth]{fig/exp_1_dist_pr_pc.eps}
+	\caption{Distance between bounding box center and point cloud cluster center throughout experiment 1.}
+	\label{fig:ex1_pc_dist}
+\end{figure}
+The total number of point clouds, total number of detections and the fraction of boat detections in images over the total number of point clouds for experiment 1 is shown in table \ref{tab:exp1}.
 \begin{table}[H]
 	\centering
 	\begin{tabularx}{.7\linewidth}{L c}
@@ -121,31 +103,28 @@ The total number of point clouds, total number of detections and an estimate of 
 		\midrule
 		Number of detections & 365\\
 		\midrule
-		Estimated probability of detection in image & 0.8924 \\
+	    Detections/Point clouds & 0.8924 \\
 		\bottomrule
 	\end{tabularx}
 \caption{Data from experiment 1.}
 \label{tab:exp1}
 \end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Experiment 2}
-
+Experiment 2 was performed by the vessel approaching the sensor location from an angle, see figure \ref{fig:experiments}. The track generated by the point cloud cluster centers are shown in figure \ref{fig:ex2_track}. The calculated distance between the bounding box centers and the cluster center is shown in figure \ref{fig:ex2_pc_dist}.
 \begin{figure}[H]
-\centering
-\begin{subfigure}[t]{.5\textwidth}
 	\centering
-	\includegraphics[width=\linewidth]{fig/exp_2_detect_dist.eps}
-	\caption{Distance from the center of the bounding\\ box to the point cloud cluster centroid vs.\\ distance to target.}
-	\label{fig:sub_ex2_detect_dist}
-\end{subfigure}%
-\begin{subfigure}[t]{.5\textwidth}
-	\centering
-	\includegraphics[width=\linewidth]{fig/exp_2_probs.eps}
-	\caption{Estimate for probability of detection based on range.}
-	\label{fig:sub_ex2_prob}
-\end{subfigure}
-\caption{Results from experiment 2.}
-\label{fig:ex2_plot}
+	\includegraphics[width=.8\linewidth]{fig/exp_2_track.eps}
+	\caption{Track generated by point cloud cluster center in experiment 2.}
+	\label{fig:ex2_track}
 \end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.7\linewidth]{fig/exp_2_dist_pr_pc.eps}
+	\caption{Distance between bounding box center and point cloud cluster center throughout experiment 2.}
+	\label{fig:ex2_pc_dist}
+\end{figure}
+As seen in figure \ref{fig:ex2_track}, there is an interval around $x=20$ meters where the image detections dissapear. Figure \ref{fig:sub_ex2_issue} shows the reason for this, as a ship in the background is influencing the detection of the target. In figure \ref{fig:sub_ex2_issue2}, the target vessel has moved enough for the two boats to be detected separately. This influence can also be seen in figure \ref{fig:ex2_pc_dist}, which shows the calculated distance between the cluster center in the point cloud and the projected ray from the center of the bounding box. The background boat influence the center of the bounding box before and after the detections disappear.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[t]{.5\linewidth}
@@ -162,7 +141,8 @@ The total number of point clouds, total number of detections and an estimate of 
 	\end{subfigure}
 	\caption{Two examples of multiple ships being detected and classified as one.}
 	\label{fig:issues_ex2}
-\end{figure} 
+\end{figure}
+The total number of point clouds, total number of detections and the fraction of boat detections in images over the total number of point clouds for experiment 2 is shown in table \ref{tab:exp2}.
 \begin{table}[H]
 	\centering
 	\begin{tabularx}{.7\linewidth}{L c}
@@ -171,15 +151,268 @@ The total number of point clouds, total number of detections and an estimate of 
 		\midrule
 		Number of detections & 186\\
 		\midrule
-		Estimated probability of detection in image & 0.9163 \\
+		Detections/Point clouds & 0.9163 \\
 		\bottomrule
 	\end{tabularx}
-	\caption{Data from experiment 1.}
-	\label{tab:exp1}
+	\caption{Data from experiment 2.}
+	\label{tab:exp2}
 \end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Experiment 3}
+Experiment 3 was performed by the boat passing across of the sensors, at a distance of approximately 25 to 15 meters in the $x$-direction. As seen in figure \ref{fig:ex3_track}, the target is detected in almost all of the images corresponding to the point clouds in the track. There are some missed detections near the end of the track, around $x=20$ and $y=10$ in figure \ref{fig:ex3_track}. As seen in figure \ref{fig:issues_ex3}, there are boats in the background at this part of the track.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{fig/exp_3_track.eps}
+	\caption{Track generated by point cloud cluster center in experiment 3.}
+	\label{fig:ex3_track}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex3_miss.png}
+		\caption{Background ship confusing the detection\\ of the target.}
+		\label{fig:sub_ex3_issue}
+	\end{subfigure}%
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex3_miss_pc.png}
+		\caption{Corresponding point cloud.}
+		\label{fig:sub_ex3_issue2}
+	\end{subfigure}
+	\caption{Background confusing the detection of the target in the image in experiment 3.}
+	\label{fig:issues_ex3}
+\end{figure}
+The calculated distance between the point cloud cluster center and the corresponding image bounding box is shown in figure \ref{fig:ex3_pc_dist}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.7\linewidth]{fig/exp_3_dist_pr_pc.eps}
+	\caption{Distance between bounding box center and point cloud cluster center throughout experiment 3.}
+	\label{fig:ex3_pc_dist}
+\end{figure}
+The total number of point clouds, total number of detections and the fraction of boat detections in images over the total number of point clouds for experiment 3 is shown in table \ref{tab:exp3}.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{.7\linewidth}{L c}
+		\toprule
+		Number of point clouds & 214\\
+		\midrule
+		Number of detections & 207\\
+		\midrule
+		Detections/Point clouds & 0.9673 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Data from experiment 3.}
+	\label{tab:exp3}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Experiment 4}
+Experiment 4 was performed by the boat passing across the sensor setup, this time at a distance of approximately 30 to 40 meters in the $x$-direction. Figure \ref{fig:ex4_track} shows the track generated by the point cloud cluster centers, and figure \ref{fig:ex4_pc_dist} shows the calculated distance between the point cloud cluster center and the corresponding image bounding box.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{fig/exp_4_track.eps}
+	\caption{Track generated by point cloud cluster center in experiment 4.}
+	\label{fig:ex4_track}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.7\linewidth]{fig/exp_4_dist_pr_pc.eps}
+	\caption{Distance between bounding box center and point cloud cluster center throughout experiment 4.}
+	\label{fig:ex4_pc_dist}
+\end{figure}
+Again, we see from figure \ref{fig:ex4_track} that there are certain parts of the track where the image detections suffer. Figure \ref{fig:issues_ex4} shows that there are boats in the background of the image at this part of the track. Referring to figure \ref{fig:sub_ex4_issue} and comparing with figure \ref{fig:ex4_track}, we see that for all parts of the track where image detections are missing, there are boats in the background of the image.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex4_miss.png}
+		\caption{Detections in the image at the\\ start of the track.}
+		\label{fig:sub_ex4_issue}
+	\end{subfigure}%
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex4_miss_pc.png}
+		\caption{Corresponding point cloud.}
+		\label{fig:sub_ex4_issue2}
+	\end{subfigure}
+	\caption{Background confusing the detection of the target in the image in experiment 4.}
+	\label{fig:issues_ex4}
+\end{figure}
+The total number of point clouds, total number of detections and the fraction of boat detections in images over the total number of point clouds for experiment 4 is shown in table \ref{tab:exp4}.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{.7\linewidth}{L c}
+		\toprule
+		Number of point clouds & 240\\
+		\midrule
+		Number of detections & 171\\
+		\midrule
+		Detections/Point clouds & 0.7125 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Data from experiment 4.}
+	\label{tab:exp4}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Experiment 5}
+In experiment 5, the boat was passing across the sensor setup at a distance of approximately 45 to 30 meters in the $x$-direction, this time with a speed of approximately 2.5 meters/second. As seen in figure \ref{fig:ex5_track}, there are fewer image detections in this experiment than for the others. Figure \ref{fig:ex5_pc_dist} shows the calculated distance between the image detection bounding box projections and the point cloud cluster centers.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{fig/exp_5_track.eps}
+	\caption{Track generated by point cloud cluster center in experiment 5.}
+	\label{fig:ex5_track}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{fig/exp_5_dist_pr_pc.eps}
+	\caption{Distance between bounding box center and point cloud cluster center throughout experiment 5.}
+	\label{fig:ex5_pc_dist}
+\end{figure}
+Figure \ref{fig:issues_ex5} shows an image along with the corresponding point cloud for a case where no boat was detected during experiment 5. As seen in figure \ref{fig:sub_ex5_issue}, there are no boats detected in the background around the target boat in this case. 
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex5_miss.png}
+		\caption{Target boat not detected.}
+		\label{fig:sub_ex5_issue}
+	\end{subfigure}%
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex5_miss_pc.png}
+		\caption{Corresponding point cloud.}
+		\label{fig:sub_ex5_issue2}
+	\end{subfigure}
+	\caption{Target not detected in image in experiment 5.}
+	\label{fig:issues_ex5}
+\end{figure}
+The total number of point clouds, total number of detections and the fraction of boat detections in images over the total number of point clouds for experiment 5 is shown in table \ref{tab:exp5}.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{.7\linewidth}{L c}
+		\toprule
+		Number of point clouds & 94\\
+		\midrule
+		Number of detections & 33\\
+		\midrule
+		Detections/Point clouds & 0.3511 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Data from experiment 5.}
+	\label{tab:exp5}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Experiment 6}
+In experiment 6, the boat was passing across the sensor setup at a distance between approximately 45 to 65 meters in the $x$-direction. Figure \ref{fig:ex6_track} shows the recorded track for this experiment, and the calculated distance between the image detection bounding box projections and the point cloud cluster centers are displayed in figure \ref{fig:ex6_pc_dist}.  
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{fig/exp_6_track.eps}
+	\caption{Track generated by point cloud cluster center in experiment 6.}
+	\label{fig:ex6_track}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.7\linewidth]{fig/exp_6_dist_pr_pc.eps}
+	\caption{Distance between bounding box center and point cloud cluster center throughout experiment 6.}
+	\label{fig:ex6_pc_dist}
+\end{figure}
+Figure \ref{fig:issues_ex6} shows an example of an image where the target was not detected in the image, along with the corresponding point cloud. The target can be seen between bounding box number two and three in figure \ref{fig:sub_ex6_issue}, counting from the left.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex6_miss.png}
+		\caption{Target boat not detected.}
+		\label{fig:sub_ex6_issue}
+	\end{subfigure}%
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex6_miss_pc.png}
+		\caption{Corresponding point cloud.}
+		\label{fig:sub_ex6_issue2}
+	\end{subfigure}
+	\caption{Target not detected in image in experiment 6.}
+	\label{fig:issues_ex6}
+\end{figure}
+The total number of point clouds, total number of detections and the fraction of boat detections in images over the total number of point clouds for experiment 6 is shown in table \ref{tab:exp6}.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{.7\linewidth}{L c}
+		\toprule
+		Number of point clouds & 266\\
+		\midrule
+		Number of detections & 114\\
+		\midrule
+		Detections/Point clouds & 0.4286 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Data from experiment 6.}
+	\label{tab:exp6}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Experiment 7}
+In experiment 7, the boat moved in a circular pattern, as seen in the track in figure \ref{fig:ex7_track}. The start of the track, and the experiment, is the top most data point in figure \ref{fig:ex7_track}, subsequently entering the cicular pattern. The boat completed three full circles during the experiment. As seen in the track in figure \ref{fig:ex7_track}, the missed image detections occur at the same part of the track for each completed circle, at both sides of the circle lying on a ray originating in the origin, as well as at the top of the circle in figure \ref{fig:ex7_track}. The missed image detections at the start of the track is due to the boat not being fully in the field of view of the camera at the start of the recording. The calculated distance between the image detection bounding box projections and the point cloud cluster centers are displayed in figure \ref{fig:ex7_pc_dist}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.8\linewidth]{fig/exp_7_track.eps}
+	\caption{Track generated by point cloud cluster center in experiment 7.}
+	\label{fig:ex7_track}
+\end{figure}
+Figure \ref{fig:issues_ex7} shows an image and the corresponding point cloud where the boat was not detected at the far side of the circle from the sensors. As seen in figure \ref{fig:sub_ex7_issue}, this point appears to lie between two boats detected in the background.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex7_miss_first_circ.png}
+		\caption{Target boat not detected.}
+		\label{fig:sub_ex7_issue}
+	\end{subfigure}%
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex7_miss_first_circ_pc.png}
+		\caption{Corresponding point cloud.}
+		\label{fig:sub_ex7_issue2}
+	\end{subfigure}
+	\caption{Target not detected in image in experiment 7.}
+	\label{fig:issues_ex7}
+\end{figure}
+An example image and corresponding point cloud from the topmost part of the track in figure \ref{fig:ex7_track} is shown in figure \ref{fig:issues_ex7_2}. At this part of the track, the boat is between the two leftmost boats in the background of the image.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex7_miss_top.png}
+		\caption{Target boat not detected.}
+		\label{fig:sub_ex7_issue3}
+	\end{subfigure}%
+	\begin{subfigure}[t]{.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{fig/ex7_miss_top_pc.png}
+		\caption{Corresponding point cloud.}
+		\label{fig:sub_ex7_issue4}
+	\end{subfigure}
+	\caption{Another example of target not detected in image in experiment 7.}
+	\label{fig:issues_ex7_2}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.7\linewidth]{fig/exp_7_dist_pr_pc.eps}
+	\caption{Distance between bounding box center and point cloud cluster center throughout experiment 7.}
+	\label{fig:ex7_pc_dist}
+\end{figure}
+The total number of point clouds, total number of detections and the fraction of boat detections in images over the total number of point clouds for experiment 6 is shown in table \ref{tab:exp6}.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{.7\linewidth}{L c}
+		\toprule
+		Number of point clouds & 792\\
+		\midrule
+		Number of detections & 663\\
+		\midrule
+		Detections/Point clouds & 0.8371 \\
+		\bottomrule
+	\end{tabularx}
+	\caption{Data from experiment 7.}
+	\label{tab:exp7}
+\end{table}
 \cleardoublepage

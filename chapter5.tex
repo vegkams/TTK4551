@@ -28,7 +28,7 @@ The sensors were mounted on a simple rig custom made for the purpose by the work
 	\caption{The sensor rig, and its placement at the floating dock at Ravnkloa.}
 	\label{fig:sensors_ravnkloa}
 \end{figure}
-The target boat used in the experiments is a 17 feet long leisure craft, owned by two PhD students at NTNU.
+The target boat used in the experiments is a 5.1816 meters (17 imperial feet) long  leisure craft, owned by two PhD students at NTNU.
 The boat is shown in figure \ref{fig:boat} (the blue boat). The relative small size of the boat makes it a good test target for the proposed system, as detection of small leisure crafts will be important from a safety standpoint when an autonomous vessel is maneuvering in confined environments and close to shore, where such crafts are typically found.
 \begin{figure}
 	\centering
@@ -50,9 +50,9 @@ The maneuvers, with reference to the indices in figure \ref{fig:experiments}, we
 	\item Boat arriving head on, but from an angle relative to the center of the camera field of view. Speed approximately 1.5 meters/second.
 	\item Boat crossing in front of sensors, passing at a distance of 25 to 15 meters. Speed approximately 1 meter/second.
 	\item Boat crossing in front of sensors, passing at a distance of 25 to 45 meters. Speed approximately 1.5 meters/second.
-	\item Boat crossing in front of sensors, passing at a distance of 45 to 25 meters. Speed approximately 2.5 meters/second. The increased speed was an attempt to generate wakes, in order to analyse the effects of wakes in the lidar data. The imposed speed limit on the Nidelven river is 5 knots, or 2.57 meters/second, this pass was close to the legal speed limit on the river.
+	\item Boat crossing in front of sensors, passing at a distance of 45 to 25 meters. Speed approximately 2.5 meters/second. 
 	\item Boat crossing in front of sensors, passing at a distance of 45 to 65 meters. Speed approximately 1 meter/second.
 	\item Boat driving in circles in front of sensors, with a radius of approximately 10 meters, centered at a distance of 25 meters from the sensors. This provides a full 360$\degree$ view of the boat.
 \end{enumerate}
-For all experiments, lidar data was stored as a point cloud with a update frequency of 10 Hz, images was stored at a frame rate of 25 Hz, sensor rig GNSS position was stored at a frequency of 4 Hz, and target GNSS position, speed over ground and course over ground for the boat was stored at a frequency of 1 Hz. The GNSS position, speed and course over ground for the target was however not stored successfully, due to unknown errors. The system for gathering the data streamed via a mobile phone was tested beforehand, but it has become apparent that this testing was not sufficient. Since no positional data was produced for the target boat, no position ground truth for the experiments was generated.
+The increased speed in experiment 6 was an attempt to generate wakes, in order to analyse the effects of wakes in the lidar data, as well as testing how detection in images compare to detections in the lidar data for a faster moving target. The imposed speed limit on the Nidelven river is 5 knots, or 2.57 meters/second, so this pass was close to the legal speed limit on the river. For all experiments, lidar data was stored as a point cloud with a update frequency of 10 Hz, images was stored at a frame rate of 25 Hz, sensor rig GNSS position was stored at a frequency of 4 Hz, and target GNSS position, speed over ground and course over ground for the boat was stored at a frequency of 1 Hz. The GNSS position, speed and course over ground for the target was however not stored successfully, due to unknown errors. The system for gathering the data streamed via a mobile phone was tested beforehand, but it has become apparent that this testing was not sufficient. Since no positional data was produced for the target boat, no position ground truth for the experiments was generated.
 \cleardoublepage

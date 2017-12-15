@@ -9,7 +9,7 @@ The physical sensor setup used in the data collection is illustrated in figure \
     \caption{Sensor setup with physical connections.}
     \label{fig:sensor_setup}
 \end{figure}
-The camera used to gather image data is a commercial off-the-shelf action camera by Muvi, named Veho K2 Sport. The reasoning for using such a camera was the affordable price, relatively high resolution, and a wide angle of view. A serious drawback with such a camera for computer vision applications, however, is the fact that it only sends images as a steady stream over its HDMI interface, with little options for the user to control the capture of individual frames. Moreover, HDMI is not \todo{Kilde på at hdmi suger for real time CV} \\
+The camera used to gather image data is a commercial off-the-shelf action camera by Muvi, named Veho K2 Sport. The reasoning for using such a camera was the affordable price, relatively high resolution, and a wide angle of view. A serious drawback with such a camera for computer vision applications, however, is the fact that it only sends images as a steady stream over its HDMI interface, with little options for the user to control the capture of individual frames. Moreover, HDMI is not a standard input interface on most computers, so a HDMI-to-USB3 adapter was purchased in order to be able to input the video stream on the computer.\\
 \vspace{2mm}\\
 \noindent The specifications of the computer used in the data gathering is listed in table \ref{tab:comp_specs_laptop}.
 \begin{table}[H]
@@ -138,5 +138,5 @@ The numerical values for the intrinsic matrix was found using this routine as
 \end{bmatrix}
 \end{equation}  
 \subsection{Time Synchronization}
-Time delay between camera and imu, Kalibr calibration routine.
+As mentioned in section \ref{section:fusion}, the measurements from the camera need to be time synchronized with the other measurements, in order to associate a image frame with the data from the lidar and the IMU. blablabla....
 \cleardoublepage
