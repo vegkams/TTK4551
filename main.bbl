@@ -167,9 +167,6 @@
     \strng{fullhash}{RODJSHKJSSMSHZKAKABMBACFFL1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 10.1007/s11263-015-0816-y
-    \endverb
     \field{number}{3}
     \field{pages}{211\bibrangedash 252}
     \field{title}{{ImageNet Large Scale Visual Recognition Challenge}}
@@ -321,11 +318,39 @@
     \field{pages}{1097\bibrangedash 1105}
     \field{title}{ImageNet Classification with Deep Convolutional Neural
   Networks}
-    \verb{url}
-    \verb http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-co
-    \verb nvolutional-neural-networks.pdf
-    \endverb
     \field{year}{2012}
+  \endentry
+
+  \entry{DBLP:journals/corr/ZeilerF13}{article}{}
+    \name{author}{2}{}{%
+      {{hash=ZMD}{%
+         family={Zeiler},
+         familyi={Z\bibinitperiod},
+         given={Matthew\bibnamedelima D.},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=FR}{%
+         family={Fergus},
+         familyi={F\bibinitperiod},
+         given={Rob},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZMDFR1}
+    \strng{fullhash}{ZMDFR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1311.2901
+    \endverb
+    \field{title}{Visualizing and Understanding Convolutional Networks}
+    \verb{url}
+    \verb http://arxiv.org/abs/1311.2901
+    \endverb
+    \field{volume}{abs/1311.2901}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2013}
   \endentry
 
   \entry{dropout}{article}{}
@@ -401,6 +426,78 @@
     \field{year}{2006}
   \endentry
 
+  \entry{Goodfellow-et-al-2016}{book}{}
+    \name{author}{3}{}{%
+      {{hash=GI}{%
+         family={Goodfellow},
+         familyi={G\bibinitperiod},
+         given={Ian},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CA}{%
+         family={Courville},
+         familyi={C\bibinitperiod},
+         given={Aaron},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {MIT Press}%
+    }
+    \strng{namehash}{GIBYCA1}
+    \strng{fullhash}{GIBYCA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{note}{\url{http://www.deeplearningbook.org}}
+    \field{title}{Deep Learning}
+    \field{year}{2016}
+  \endentry
+
+  \entry{programming_ros}{book}{}
+    \name{author}{3}{}{%
+      {{hash=QM}{%
+         family={Quigley},
+         familyi={Q\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GB}{%
+         family={Gerkey},
+         familyi={G\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SWD}{%
+         family={Smart},
+         familyi={S\bibinitperiod},
+         given={W.\bibnamedelima D.},
+         giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {O'Reilly}%
+    }
+    \strng{namehash}{QMGBSWD1}
+    \strng{fullhash}{QMGBSWD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Programming Robots with ROS}
+    \field{year}{2015}
+  \endentry
+
+  \entry{BSD}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{howpublished}{\url{https://opensource.org/licenses/BSD-3-Clause}}
+    \field{note}{Accessed: 2017-12-06}
+    \field{title}{The 3-Clause BSD License}
+  \endentry
+
   \entry{modernCV}{book}{}
     \name{author}{2}{}{%
       {{hash=FM}{%
@@ -425,51 +522,6 @@
     \field{labeltitlesource}{title}
     \field{title}{Computer Vision, A Modern Approach}
     \field{year}{2012}
-  \endentry
-
-  \entry{CValg}{book}{}
-    \name{author}{1}{}{%
-      {{hash=SR}{%
-         family={Szeliski},
-         familyi={S\bibinitperiod},
-         given={Richard},
-         giveni={R\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Springer}%
-    }
-    \strng{namehash}{SR1}
-    \strng{fullhash}{SR1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Computer Vision, Algorithms and Applications}
-    \field{year}{2011}
-  \endentry
-
-  \entry{bayer1976color}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=BB}{%
-         family={Bayer},
-         familyi={B\bibinitperiod},
-         given={B.E.},
-         giveni={B\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Google Patents}%
-    }
-    \strng{namehash}{BB1}
-    \strng{fullhash}{BB1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{note}{US Patent 3,971,065}
-    \field{title}{Color imaging array}
-    \verb{url}
-    \verb https://www.google.com/patents/US3971065
-    \endverb
-    \field{year}{1976}
-    \warn{\item Invalid format of field 'month'}
   \endentry
 
   \entry{modsim}{book}{}
@@ -583,6 +635,212 @@
     \field{version}{63-9243 Rev B Mar 16}
   \endentry
 
+  \entry{GlennieVLP}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=GCL}{%
+         family={Glennie},
+         familyi={G\bibinitperiod},
+         given={C.\bibnamedelima L.},
+         giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Kusari},
+         familyi={K\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=FA}{%
+         family={Facchin},
+         familyi={F\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Copernicus GmbH}%
+    }
+    \strng{namehash}{GCLKAFA1}
+    \strng{fullhash}{GCLKAFA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{55\bibrangedash 60}
+    \field{title}{CALIBRATION AND STABILITY ANALYSIS OF THE VLP-16 LASER
+  SCANNER}
+    \field{volume}{XL-3/W4}
+    \list{location}{1}{%
+      {Gottingen}%
+    }
+    \field{year}{2016}
+  \endentry
+
+  \entry{ren15fasterrcnn}{article}{}
+    \name{author}{4}{}{%
+      {{hash=RS}{%
+         family={Ren},
+         familyi={R\bibinitperiod},
+         given={Shaoqing},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HK}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Kaiming},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=GR}{%
+         family={Girshick},
+         familyi={G\bibinitperiod},
+         given={Ross},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Jian},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RSHKGR+1}
+    \strng{fullhash}{RSHKGRSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{Faster R-CNN}: Towards Real-Time Object Detection with
+  Region Proposal Networks}
+    \field{journaltitle}{arXiv preprint arXiv:1506.01497}
+    \field{year}{2015}
+  \endentry
+
+  \entry{tangstad}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=TEJ}{%
+         family={Tangstad},
+         familyi={T\bibinitperiod},
+         given={Espen\bibnamedelima Johansen},
+         giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TEJ1}
+    \strng{fullhash}{TEJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Visual Detection of Maritime Vessels}
+    \list{institution}{2}{%
+      {Norwegian University of Science}%
+      {Technology}%
+    }
+    \field{type}{Master Thesis}
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{Girshick_2015_ICCV}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=GR}{%
+         family={Girshick},
+         familyi={G\bibinitperiod},
+         given={Ross},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GR1}
+    \strng{fullhash}{GR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{The IEEE International Conference on Computer Vision
+  (ICCV)}
+    \field{title}{Fast R-CNN}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Zeiler2014}{inbook}{}
+    \name{author}{2}{}{%
+      {{hash=ZMD}{%
+         family={Zeiler},
+         familyi={Z\bibinitperiod},
+         given={Matthew\bibnamedelima D.},
+         giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=FR}{%
+         family={Fergus},
+         familyi={F\bibinitperiod},
+         given={Rob},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \name{editor}{4}{}{%
+      {{hash=FD}{%
+         family={Fleet},
+         familyi={F\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=PT}{%
+         family={Pajdla},
+         familyi={P\bibinitperiod},
+         given={Tomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Schiele},
+         familyi={S\bibinitperiod},
+         given={Bernt},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=TT}{%
+         family={Tuytelaars},
+         familyi={T\bibinitperiod},
+         given={Tinne},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer International Publishing}%
+    }
+    \strng{namehash}{ZMDFR1}
+    \strng{fullhash}{ZMDFR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Computer Vision -- ECCV 2014: 13th European Conference,
+  Zurich, Switzerland, September 6-12, 2014, Proceedings, Part I}
+    \field{pages}{818\bibrangedash 833}
+    \field{title}{Visualizing and Understanding Convolutional Networks}
+    \field{year}{2014}
+  \endentry
+
+  \entry{VGG16}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SK}{%
+         family={Simonyan},
+         familyi={S\bibinitperiod},
+         given={Karen},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=ZA}{%
+         family={Zisserman},
+         familyi={Z\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SKZA1}
+    \strng{fullhash}{SKZA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1409.1556
+    \endverb
+    \field{title}{Very Deep Convolutional Networks for Large-Scale Image
+  Recognition}
+    \verb{url}
+    \verb http://arxiv.org/abs/1409.1556
+    \endverb
+    \field{volume}{abs/1409.1556}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2014}
+  \endentry
+
   \entry{faster_rcnn_git}{misc}{}
     \field{labeltitlesource}{title}
     \field{howpublished}{\url{https://github.com/ShaoqingRen/faster_rcnn}}
@@ -591,43 +849,78 @@
   Proposal Networks}
   \endentry
 
-  \entry{programming_ros}{book}{}
-    \name{author}{3}{}{%
-      {{hash=QM}{%
-         family={Quigley},
-         familyi={Q\bibinitperiod},
-         given={M.},
-         giveni={M\bibinitperiod},
+  \entry{jia2014caffe}{article}{}
+    \name{author}{8}{}{%
+      {{hash=JY}{%
+         family={Jia},
+         familyi={J\bibinitperiod},
+         given={Yangqing},
+         giveni={Y\bibinitperiod},
       }}%
-      {{hash=GB}{%
-         family={Gerkey},
-         familyi={G\bibinitperiod},
-         given={B.},
-         giveni={B\bibinitperiod},
-      }}%
-      {{hash=SWD}{%
-         family={Smart},
+      {{hash=SE}{%
+         family={Shelhamer},
          familyi={S\bibinitperiod},
-         given={W.\bibnamedelima D.},
-         giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod},
+         given={Evan},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=DJ}{%
+         family={Donahue},
+         familyi={D\bibinitperiod},
+         given={Jeff},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KS}{%
+         family={Karayev},
+         familyi={K\bibinitperiod},
+         given={Sergey},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Long},
+         familyi={L\bibinitperiod},
+         given={Jonathan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GR}{%
+         family={Girshick},
+         familyi={G\bibinitperiod},
+         given={Ross},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=GS}{%
+         family={Guadarrama},
+         familyi={G\bibinitperiod},
+         given={Sergio},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DT}{%
+         family={Darrell},
+         familyi={D\bibinitperiod},
+         given={Trevor},
+         giveni={T\bibinitperiod},
       }}%
     }
-    \list{publisher}{1}{%
-      {O'Reilly}%
-    }
-    \strng{namehash}{QMGBSWD1}
-    \strng{fullhash}{QMGBSWD1}
+    \strng{namehash}{JYSEDJ+1}
+    \strng{fullhash}{JYSEDJKSLJGRGSDT1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Programming Robots with ROS}
-    \field{year}{2015}
+    \field{title}{Caffe: Convolutional Architecture for Fast Feature Embedding}
+    \field{journaltitle}{arXiv preprint arXiv:1408.5093}
+    \field{year}{2014}
   \endentry
 
-  \entry{BSD}{misc}{}
+  \entry{caffe}{misc}{}
     \field{labeltitlesource}{title}
-    \field{howpublished}{\url{https://opensource.org/licenses/BSD-3-Clause}}
-    \field{note}{Accessed: 2017-12-06}
-    \field{title}{The 3-Clause BSD License}
+    \field{howpublished}{\url{http://caffe.berkeleyvision.org/}}
+    \field{note}{Accessed: 2017-12-17}
+    \field{title}{Caffe Deep Learning Framework, Online Documentation}
+  \endentry
+
+  \entry{caffe_for_faster_rcnn}{misc}{}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{https://github.com/ShaoqingRen/caffe/tree/faster-R-CNN}}
+    \field{note}{Accessed: 2017-12-17}
+    \field{title}{Caffe for Faster R-CNN}
   \endentry
 
   \entry{libuvc_camera}{misc}{}
@@ -675,30 +968,34 @@
     \field{title}{velodyne - ROS Wiki}
   \endentry
 
-  \entry{xsens_driver}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=FOSR}{%
-         family={Foundation},
-         familyi={F\bibinitperiod},
-         given={Open Source\bibnamedelima Robotics},
-         giveni={O\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim
-  R\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{FOSR1}
-    \strng{fullhash}{FOSR1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{howpublished}{\url{http://wiki.ros.org/xsens_driver}}
-    \field{note}{Accessed: 2017-12-06}
-    \field{title}{xsens\_driver - ROS Wiki}
-  \endentry
-
   \entry{rosbag}{misc}{}
     \field{labeltitlesource}{title}
     \field{howpublished}{\url{http://wiki.ros.org/rosbag}}
     \field{note}{Accessed: 2017-12-09}
     \field{title}{rosbag - ROS Wiki}
+  \endentry
+
+  \entry{ros_msgs}{misc}{}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv}}
+    \field{note}{Accessed: 2017-12-18}
+    \field{title}{ROS Tutorials: Creating a ROS msg and srv}
+  \endentry
+
+  \entry{camera_calibrator}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={MathWorks},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+  \field{howpublished}{\url{https://se.mathworks.com/help/vision/ref/cameracalibrator-app.html}}
+    \field{note}{Accessed: 2017-12-08}
+    \field{title}{Estimate geometric parameters of a single camera - MATLAB}
   \endentry
 
   \entry{flexCal}{article}{}
@@ -721,22 +1018,6 @@
   Intelligence}
     \field{year}{2000}
     \warn{\item Invalid format of field 'month'}
-  \endentry
-
-  \entry{camera_calibrator}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=M}{%
-         family={MathWorks},
-         familyi={M\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{M1}
-    \strng{fullhash}{M1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-  \field{howpublished}{\url{https://se.mathworks.com/help/vision/ref/cameracalibrator-app.html}}
-    \field{note}{Accessed: 2017-12-08}
-    \field{title}{Estimate geometric parameters of a single camera - MATLAB}
   \endentry
 
   \entry{3dvision}{book}{}

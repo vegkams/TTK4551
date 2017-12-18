@@ -9,109 +9,136 @@ The physical sensor setup used in the data collection is illustrated in figure \
     \caption{Sensor setup with physical connections.}
     \label{fig:sensor_setup}
 \end{figure}
-The camera used to gather image data is a commercial off-the-shelf action camera by Muvi, named Veho K2 Sport. The reasoning for using such a camera was the affordable price, relatively high resolution, and a wide angle of view. A serious drawback with such a camera for computer vision applications, however, is the fact that it only sends images as a steady stream over its HDMI interface, with little options for the user to control the capture of individual frames. Moreover, HDMI is not a standard input interface on most computers, so a HDMI-to-USB3 adapter was purchased in order to be able to input the video stream on the computer.\\
-\vspace{2mm}\\
-\noindent The specifications of the computer used in the data gathering is listed in table \ref{tab:comp_specs_laptop}.
+The camera used to gather image data is a commercial off-the-shelf action camera by Muvi, named Veho K2 Sport. The reasoning for using such a camera was the affordable price, relatively high resolution, and a wide angle of view. The specifications of the camera is presented in table \ref{tab:specs_camera}. The specifications are pulled from the cameras user manual.
 \begin{table}[H]
 	\centering
-	\begin{tabular}[H]{|c|c|}\hline
-	Model & HP zbook 15\\\hline
-	CPU & Intel Core i7-4800MQ 8$\times$2.7 GHz \\\hline
-	Memory & 8 GB RAM \\\hline
-	Graphics & Quadro K2100M/PCIe/SSE2 \\\hline
-	Storage & 250 GB Solid State HDD \\\hline
+	\begin{tabularx}{.7\linewidth}{L L}
+		\toprule
+		Model & MuVi Veho K2 Sport\\
+		\midrule
+		Resolution & $1920\times1080$ pixels (1080p), $1280\times960$ pixels (960p) or $1280\times720$ pixels (720p) \\
+		\midrule
+		Framerate @ 1080p &  24, 25, 48 or 50 frames per second\\
+		\midrule
+		Framerate @ 960p & 48 or 50 frames per second \\
+		\midrule
+		Framerate @ 720p & 50 or 100 frames per second \\
+		\midrule
+		Angle of view & 140$\degree$ (wide), 120$\degree$ (medium), 100$\degree$ (narrow) or 80$\degree$ (small)\\
+		\midrule
+		External connections & HDMI micro, Mini USB\\
+		\midrule
+		Internal storage & microSD card\\
+		\bottomrule
+	\end{tabularx}
+	\caption{MuVi Veho K2 Sport specifications.}
+	\label{tab:specs_camera}
+\end{table}
+The settings used throughout the project is resolution at 1080p, with a framerate of 25 frames per second, with a wide angle of view (140$\degree$). A drawback with such a camera for computer vision applications, however, is the fact that it only sends images as a steady stream over its HDMI interface, with little options for the user to control the capture of individual frames. Moreover, HDMI is not a standard input interface on most computers, so a HDMI-to-USB3 adapter was purchased in order to be able to input the video stream on the computer. The HDMI-to-USB3 adapter is a USB Capture HDMI Gen 2 by the manufacturer Magewell. Using the camera with this interface, there is a noticeable processing delay between the camera and the computer.\\
+\vspace{2mm}\\
+\noindent The specifications of the computer used in the data gathering is listed in table \ref{tab:comp_specs_laptop}, and the specifications for the computer used in post-processing is listed in table \ref{tab:comp_specs_desktop}.
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{.6\linewidth}{L L}
+	\toprule
+	Model & HP zbook 15\\
+	\midrule
+	CPU & Intel Core i7-4800MQ 8$\times$2.7 GHz \\
+	\midrule
+	Memory & 8 GB RAM \\
+	\midrule
+	Graphics & Quadro K2100M/PCIe/SSE2 \\
+	\midrule
+	Storage & 250 GB Solid State HDD \\
+	\midrule
 	Operating System & Linux Ubuntu 16.04 LTS (Xenial)\\
-	\hline
-	\end{tabular}
+	\bottomrule
+	\end{tabularx}
 	\caption{Laptop computer specifications.}
 	\label{tab:comp_specs_laptop}
 \end{table}
-The specifications for the computer used in post-processing is listed in table \ref{tab:comp_specs_desktop}.
+
 \begin{table}[H]
 	\centering
-	\begin{tabular}[H]{|c|c|}\hline
-		CPU & Intel Core i7-920 4$\times$2.67 GHz \\\hline
-		Memory & 16 GB RAM \\\hline
-		Graphics &  NVIDIA GeForce GTX 1070\\\hline
-		Storage & 250 GB Solid State HDD \\\hline
-		Operating System & Windows 10 Enterprise\\
-		\hline
-	\end{tabular}
+	\begin{tabularx}{.6\linewidth}{L L}
+		\toprule
+		CPU & Intel Core i7-920 4$\times$2.67 GHz \\\midrule
+		Memory & 16 GB RAM \\\midrule
+		Graphics &  NVIDIA GeForce GTX 1070\\\midrule
+		Storage & 250 GB Solid State HDD \\\midrule
+		Operating System & Microsoft Windows 10 Enterprise\\
+		\bottomrule
+	\end{tabularx}
 	\caption{Desktop computer specifications.}
 	\label{tab:comp_specs_desktop}
 \end{table}
 
-\section{Faster R-CNN}
-Introduce the framework of Faster R-CNN
-\subsection{Training and validation data}
-Describe the datasets used in training and validation (Espen Tangstads work basically)
-\subsection{Implementation Aspects}
-In order to run Faster R-CNN, there are some software requirements that need to be met. The steps are listed in the Github repository for the framework \cite{faster_rcnn_git}, and will be repeated here for convenience.
-Steps needed to run the Matlab implementation from https://github.com/ShaoqingRen/faster\_rcnn. Compiling Caffe with cuda for GTX1070, the link between caffe and Matlab (mex).
-\section{ROS Implementation}
-In order to capture, organize, timestamp and save the collected data, the open-source robotics framework of ROS was used. ROS, which is an abbreviation for Robot Operating System, is not, as the name might imply, a operating system, but a framework running on top of a traditional OS. The framework of ROS is based on several philosophical aspects \cite{programming_ros}:
-\begin{itemize}
-    \item \textit{Peer to peer}: A ROS system consists of several small programs (called nodes) connected to each other, continuously exchanging messages. Messages travel directly from one node to another.
-    \item \textit{Tools-based}: Complex ROS systems can be created from many small, generic programs. ROS does not have a integrated development and runtime environment, and tasks such as (but not limited to) navigating the source code tree, visualizing the system interconnections, generating documentation, and logging data are performed by separate programs.
-    \item \textit{Multilingual}: ROS software modules can be written in any language for which a \textit{client library} has been written. Client libraries exist for C++, Python, LISP, Java, JavaScript, MATLAB, Ruby, Haskell, R, and others. This provides flexibility for the programmer, in that he or she can choose the language they are most familiar with, or is best suited for the task, when creating new functionality. ROS achieves this multilinguality by enforcing a convention for serializing messages being passed between nodes.
-    \item \textit{Thin}: ROS conventions encourage developers to create standalone libraries and then wrap those libraries so that they can send and receive messages to and from other ROS modules. This allows reuse of software outside ROS, and simplifies automated testing using continuous integration tools.
-    \item \textit{Free and open source}: The core of ROS is released under the BSD license \cite{BSD}, which allows commercial and noncommercial use.
-\end{itemize}
-In ROS, \lstinline[basicstyle=\ttfamily]{roscore} is a service that provides connection information to nodes so that they can transmit messages to and from one another. Each node connects to \lstinline[basicstyle=\ttfamily]{roscore} on startup to register details of the messages it publishes, and the details of the messages to which it wishes to subscribe. \lstinline[basicstyle=\ttfamily]{roscore} is not a server in the traditional client/server sense, all messages are sent peer-to-peer between nodes. The \lstinline[basicstyle=\ttfamily]{roscore} service is only used by nodes to know where to find their peers. Due to this fact, every ROS system needs a running \lstinline[basicstyle=\ttfamily]{roscore}. Upon startup, every ROS node expects its process to have an environment variable \lstinline[basicstyle=\ttfamily]{ROS_MASTER_URI}, containing a string in the format \lstinline[basicstyle=\ttfamily]{http://hostname:portnumber}, to tell it where the \lstinline[basicstyle=\ttfamily]{roscore} service is running, and which port it is accessible on. The connection between nodes, and between individual nodes and \lstinline[basicstyle=\ttfamily]{roscore} is illustrated in figure \ref{fig:roscore}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.4\linewidth]{fig/roscore.png}
-    \caption{Roscore and its connection to other nodes in the system.}
-    \label{fig:roscore}
+\section{Visual Detection based on Faster R-CNN}
+The visual detection of boats in images used in this project is based on the framework of Faster R-CNN, developed by Ren et al. \cite{ren15fasterrcnn}. This framework was used due to the availability of pre-trained networks developed during a Master thesis project at NTNU \cite{tangstad}. A brief introduction to the framework of Faster R-CNN is given in this section, some background on how the implemented model was trained, and some details concerning the implementation of the network in MATLAB. For a detailed explanation of the full framework of Faster R-CNN the reader is referred to \cite{ren15fasterrcnn}.
+\subsection{Faster R-CNN}
+Faster R-CNN is a region-based CNN, employing \textit{Region Proposal Networks} (RPN) to form a single, unified network for object detection. Faster R-CNN is composed of two modules. The first module is a deep fully convolutional neural network which proposes regions, and the second module is the Fast R-CNN detector \cite{Girshick_2015_ICCV} that uses the proposed regions in classification. Figure \ref{fig:faster_r_cnn} illustrates the system of Faster R-CNN.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{fig/faster_r_cnn_layers.png}
+	\caption{Faster R-CNN as a single unified network for object detection. The figure is adapted from \cite{ren15fasterrcnn}.}
+	\label{fig:faster_r_cnn}
 \end{figure}
-The ephemeral connection between nodes and \lstinline[basicstyle=\ttfamily]{roscore} is illustrated by dashed lines, indicating periodic calls to \lstinline[basicstyle=\ttfamily]{roscore} to find peers, while the peer-to-peer message passing is illustrated by the solid line between the nodes.
-The main ROS client libraries are geared towards a UNIX/Linux platform, mainly due to the dependency on large collections of open-source software dependencies \todo{kilde}. Ubuntu Linux is a supported distribution, while others, such as Fedora Linux, Mac OS, and Windows, are designated as experimental and are supported by the community. Due to the simplicity of installation and "out-of-the-box" functionality of ROS on Ubuntu Linux, the most recent long-term supported version of ROS, ROS Kinetic, was installed on a laptop running Ubuntu 16.04 LTS, which was used as a platform for running the various sensor drivers and collecting the data.
+The Region Proposal Network takes an image of any size as inputs, feeding it through convolutional layers to generate feature maps. The area of activation is then fed into the RPN, which outputs object proposals in the form of rectangular regions, each with a objectness score. The objectness score is a measure of membership to a set of object classes versus background. The rectangular regions are subsequently fed into the classification layers where the classification score is obtained. In their paper, Ren et al. investigated two models for the classification network, the 5 convolutional layer deep Zeiler and Fergus model \cite{Zeiler2014} dubbed ZF-net, and the 16 convolutional layer deep Simonyan and Zisserman model \cite{VGG16}, dubbed VGG-16. In this project, the VGG-16 model is used, as this network achieved the best results in the Master thesis work of Tangstad \cite{tangstad}.
+\subsection{Training and validation data}
+Describe the datasets used in training and validation (Espen Tangstads work basically) \todo{Ikke ferdig}
+\subsection{Implementation Aspects}
+A complete MATLAB implementation of Faster R-CNN is available on Github. In order to run Faster R-CNN, there are some software requirements that need to be met. The steps are listed in the Github repository for the framework \cite{faster_rcnn_git}, and will be repeated here for convenience. The steps are setup-dependent, depending on whether or not the framework will be executing on a GPU or a CPU, and also on the version of GPU used. The Faster R-CNN implementation available at the Github repository uses Caffe \cite{jia2014caffe}, which is a deep-learning framework utilizing Nvidia CUDA for parallel computing, developed by Berkeley AI Research. Caffe is well documented online, with installation instructions, tutorials and more \cite{caffe}. 
+
+In order to use Faster R-CNN, a Caffe MEX file is needed. A MEX file is a dynamically linked subroutine that the MATLAB interpreter loads and executes, enabling MATLAB to utilize Caffe routines. A pre-compiled Caffe version for Nvidia CUDA version 6.5 is available in the repository, but for newer Nvidia GPUs a newer version of CUDA will need to be compiled along with Caffe. If a new compiling of Caffe is necessary, all the steps needed are provided in the Faster R-CNN branch of Caffe on Github \cite{caffe_for_faster_rcnn}. If a GPU is utilized for parallel computing, a GPU with minimum 8 Gigabytes of memory is needed to run the VGG-16 version. In this project Caffe was recompiled with CUDA version 9.0, due to CUDA version 6.5 not supporting the newer Pascal architecture on the Nvidia GTX 1070 graphics card used. MATLAB is also needed to run the Faster R-CNN implementation. Once all requirements are met, the steps necessary before testing are
+\begin{enumerate}
+	\item Run \lstinline[basicstyle=\ttfamily]{faster_rcnn_build.m}
+	\item Run \lstinline[basicstyle=\ttfamily]{startup.m}
+\end{enumerate}
+Once this is done, the user must provide a valid network (pre-trained networks are available on the Github repository), and the model is ready for use.
+\section{ROS Implementation}
+In order to capture, organize, timestamp and save the collected data, the open-source robotics framework of ROS was used. The main ROS client libraries are geared towards a UNIX/Linux platform, mainly due to the dependency on large collections of open-source software dependencies \todo{kilde}. Ubuntu Linux is a supported distribution, while others, such as Fedora Linux, Mac OS, and Windows, are designated as experimental and are supported by the community. Due to the simplicity of installation and "out-of-the-box" functionality of ROS on Ubuntu Linux, the most recent long-term supported version of ROS, ROS Kinetic, was installed on a laptop running Ubuntu 16.04 LTS, which was used as a platform for running the various sensor drivers and collecting the data.
 \subsection{ROS Nodes and Data Flow}
 An overview of the implemented sensor driver and data processing nodes is illustrated in figure \ref{fig:ros_nodes}.
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=.8\linewidth]{fig/ros.png}
     \caption{ROS nodes and topic flow.}
     \label{fig:ros_nodes}
 \end{figure}
-The lidar nodes, camera node and IMU node are all based on open-source ROS packages freely available from the ROS community. The camera driver used is the \\\lstinline[basicstyle=\ttfamily]{libuvc_camera} driver. This node reads the image stream from the camera over the USB port, providing a ROS interface for cameras meeting the USB Video Class standard \cite{libuvc_camera}. This node publishes messages containing an image corresponding to a single frame of the video stream, with a time stamp corresponding to the arrival time of the image frame over USB. The source code is available at the ROS device drivers repository \cite{ros_drivers}.\\
+The lidar nodes and the camera node are all based on open-source ROS packages freely available from the ROS community. The camera driver used is the \\\lstinline[basicstyle=\ttfamily]{libuvc_camera} driver. This node reads the image stream from the camera over the USB port, providing a ROS interface for cameras meeting the USB Video Class standard \cite{libuvc_camera}. This node publishes messages containing an image corresponding to a single frame of the video stream, with a time stamp corresponding to the arrival time of the image frame over USB. The source code is available at the ROS device drivers repository \cite{ros_drivers}.\\
 \vspace{2mm}\\
-\noindent The lidar nodes are in the \lstinline[basicstyle=\ttfamily]{velodyne_driver}-package from the ROS device drivers repository \cite{ros_drivers}. This package provides two nodes, the first is \lstinline[basicstyle=\ttfamily]{/velodyne_driver} for collecting all TCP packages sendt over ethernet from the lidar and publishing a message containing the raw data from a full 360-degree scan from the lidar. The second node, \lstinline[basicstyle=\ttfamily]{/velodyne_cloud}, transforms the raw data into a point cloud given in the frame of reference the user chooses (default \lstinline[basicstyle=\ttfamily]{/velodyne}, the sensor frame) in XYZ-coordinates. In addition to the coordinates of each point, the corresponding intensity of the reflected signal strength and the ring data is published \cite{velodyne_driver}.\\ 
+\noindent The lidar nodes are in the \lstinline[basicstyle=\ttfamily]{velodyne_driver}-package from the ROS device drivers repository \cite{ros_drivers}. This package provides two nodes, the first is \lstinline[basicstyle=\ttfamily]{/velodyne_driver} for collecting all TCP packages sendt over ethernet from the lidar and publishing a message containing the raw data from a full 360-degree scan from the lidar. The second node, \lstinline[basicstyle=\ttfamily]{/velodyne_cloud}, transforms the raw data into a point cloud given in the sensor frame in XYZ-coordinates, using the transformation in equation \ref{eq:simple_lidar} in section \ref{section:lidar_model}. In addition to the coordinates of each point, the corresponding intensity of the reflected signal strength and the ring data is published \cite{velodyne_dr<iver}.\\ 
 \vspace{2mm}\\
 \noindent The point cloud is then published as a ROS message. In addition to the coordinates of each point, the corresponding intensity of the reflected signal strength and the ring data is also included in this message \cite{velodyne_driver}.\\
-\vspace{2mm}\\
-\noindent The driver for the IMU is the \lstinline[basicstyle=\ttfamily]{xsens_driver} package \cite{xsens_driver}, which communicates with the Xsens IMU over USB, and publishes messages containing the measurements from the IMU and GNSS position measurements \cite{xsens_driver}.\\
-\vspace{2mm}\\
-\noindent The dummy AIS nodes in figure \ref{fig:ros_nodes} are nodes for receiving and processing GNSS-information received over the internet from a mobile phone, developed at NTNU by the Autosea-project \todo{siter autosea et eller annet}. These nodes are used for receiving and storing the position ground truth for the vessel used in the experiments along with all the other data. They provide raw data as an NMEA-0183 sentence, which is a standard defined by the National Maritime Electronics Association for communication between marine electronics, as well as speed over ground and GNSS position data.
-The details of messages passed between nodes in the system is given in table \ref{tab:topics}.
 \begin{table}[H]
 	\centering
-	\begin{tabularx}{\linewidth}{|c|L|}\hline
-		\textbf{Topic} & \textbf{Content} \\\hline
-		\lstinline[basicstyle=\ttfamily]{nmea\_msgs/Sentence} & GNSS Data as a String representing a NMEA0183 sentence \\\hline
-		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/NavSatFix} & Navigation Satellite fix specified using WGS 84 ellipsoid\\\hline
-		\lstinline[basicstyle=\ttfamily]{geometry\_msgs/TwistStamped} & Linear and angular velocity\\\hline
-		\lstinline[basicstyle=\ttfamily]{autosea\_msgs/AisDynamic} & AIS message generated from GNSS data\\\hline
-		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/TimeReference} & External time reference not actively synchronized with system time (i.e. GNSS time) \\\hline
-		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/PointCloud2} & Message containing point cloud data from the lidar \\\hline
-		\lstinline[basicstyle=\ttfamily]{velodyne\_msgs/VelodyneScan} & Message containing raw data from a 360$\deg$ lidar scan \\\hline
-		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/CompressedImage} & Message containing a compressed image in .JPEG format\\\hline
-		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/Imu} & Message containing raw measurements from the IMU\\\hline
+	\begin{tabularx}{.8\linewidth}{l L}\toprule
+		\textbf{Topic} & \textbf{Content} \\\midrule
+		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/PointCloud2} & Message containing point cloud data from the lidar \\\midrule
+		\lstinline[basicstyle=\ttfamily]{velodyne\_msgs/VelodyneScan} & Message containing raw data from a 360$\deg$ lidar scan \\\midrule
+		\lstinline[basicstyle=\ttfamily]{sensor\_msgs/CompressedImage} & Message containing a compressed image in .JPEG format\\\midrule
 		\end{tabularx}
 	\caption{ROS Topics used in data collection.}
 	\label{tab:topics}
 \end{table}
 \subsection{Rosbag}
-ROS provides a built-in set of tools for recording and playing back ROS topics, \lstinline[basicstyle=\ttfamily]{rosbag} \cite{rosbag}. This toolset stores the topics of interest, specified as parameters in the command-line, to a file of the ROS bag format, with extension .bag. This toolset provides a simple method for storing data from experiments, and the playback function provides the option to simulate sensor inputs to the system without actually reading sensors. A basic use case, where for example two topics named \lstinline[basicstyle=\ttfamily]{/imu_data} and \lstinline[basicstyle=\ttfamily]{/camera/image} are to be recorded, the proper command line input is 
+ROS provides a built-in set of tools for recording and playing back ROS topics, \lstinline[basicstyle=\ttfamily]{rosbag} \cite{rosbag}. This toolset stores the topics of interest, specified as parameters in the command-line, to a file of the ROS bag format, with extension .bag. This toolset provides a simple method for storing data from experiments, and the playback function provides the option to simulate sensor inputs to the system without actually reading sensors. A basic use case, where for example two topics named \lstinline[basicstyle=\ttfamily]{/velodyne_points} and \lstinline[basicstyle=\ttfamily]{/camera/image} are to be recorded, the proper command line input is 
 \begin{lstlisting}[basicstyle=\ttfamily]
-	$ rosbag record -o filename /imu_data /camera/image
+	$ rosbag record -o file /pointcloud /camera/image
 \end{lstlisting}
-where \lstinline[basicstyle=\ttfamily]{filename} is the user-specified filename for the .bag file. ROS appends the filename with the system time automatically. Rosbag was used in recording all experimental data.
+where \lstinline[basicstyle=\ttfamily]{file} is the user-specified filename for the .bag file. ROS appends the filename with the system time automatically. Rosbag was used in recording all experimental data.
 \subsection{MATLAB implementation}
-MATLAB provides ROS interfaces via the Robotics System Toolbox, making it possible to use ROS topics directly in MATLAB. 
+MATLAB provides ROS interfaces via the Robotics System Toolbox, making it possible to use ROS topics directly in MATLAB. The standard ROS message types are readily available, and custom ROS messages can easily be compiled provided the user supplies the messages in a folder following the ROS convention, with a \lstinline[basicstyle=\ttfamily]{package.xml} file listing all dependencies for the custom messages. The proper folder structure is shown in figure \ref{fig:ros_msg_folders}. For details on writing custom ROS messages and a corresponding \lstinline[basicstyle=\ttfamily]{package.xml} file, the reader is referred to the ROS documentation, available online \cite{ros_msgs}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=.5\linewidth]{fig/custom_message.png}
+	\caption{ROS custom message folder structure.}
+	\label{fig:ros_msg_folders}
+\end{figure}
+Building the custom messages can now be done by calling \lstinline[basicstyle=\ttfamily]{rosgenmsg} in the MATLAB terminal with the path to the custom message files as a input parameter. The MATLAB command window gives prompts on how to add the custom files to the Java class path and the MATLAB path, which must be done in order to use the custom messages.
 \section{Camera Calibration}
 \label{section:matlab_calibration}
-As explained in section \ref{section:intrinsic_params}, one needs the cameras intrinsic parameters in order to associate pixel coordinates with world coordinates. MATLABs Computer Vision System Toolbox includes the Camera Calibrator application, which was used in calibrating the camera. The Camera Calibrator application implements the calibration routine by Zhang \cite{flexCal}, described in appendix \ref{app:cam_calibration} \cite{camera_calibrator}. The steps taken for calibrating the camera using this application can be summarized as follows:
+As explained in section \ref{section:intrinsic_params}, one needs the cameras intrinsic parameters in order to associate pixel coordinates with world coordinates. MATLABs Computer Vision System Toolbox includes the Camera Calibrator application \cite{camera_calibrator}, which was used in calibrating the camera. The Camera Calibrator application implements the calibration routine by Zhang \cite{flexCal}, described in appendix \ref{app:cam_calibration}. The steps taken for calibrating the camera using this application can be summarized as follows:
 \begin{enumerate}
 	\item Prepare a checkerboard calibration pattern with known dimensions.
 	\item Capture 20-40 images of the checkerboard with the camera, from varying orientations.
@@ -153,5 +180,5 @@ The numerical values for the intrinsic matrix was found using this routine as
 \end{bmatrix}
 \end{equation}  
 \subsection{Time Synchronization}
-As mentioned in section \ref{section:fusion}, the measurements from the camera need to be time synchronized with the other measurements, in order to associate a image frame with the data from the lidar and the IMU. blablabla....
+\todo{Ikke ferdig, kanskje ikke nødvendig siden Kalibr-toolboxen ikke kunne brukes.}
 \cleardoublepage

@@ -14,106 +14,98 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.5}{\ignorespaces A neuron, alongside a simple neural network with a single hidden layer.\relax }}{8}{figure.2.5}
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.6}{\ignorespaces A CNN layer. The 3D input volume is transformed into a 3D volume of neuron activations.\relax }}{10}{figure.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces The pinhole camera model\relax }}{12}{figure.3.1}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces The three stages of a convolution layer.\relax }}{11}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Perspective effects.\relax }}{13}{figure.3.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces The Bayer filter overlaid a pixel array.\footnotemark \relax }}{14}{figure.3.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Coordinate systems\relax }}{15}{figure.3.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces The Velodyne VLP-16 lidar.\relax }}{19}{figure.3.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Lidar spherical coordinate system, with equivalent cartesian coordinates.\relax }}{20}{figure.3.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces The lidar cartesian coordinate frame, with angles from the spherical coordinate frame drawn in.\relax }}{21}{figure.3.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Reflector types used in calibrating the VLP-16 lidar. Image taken from \cite {velodyne_vlp16}.\relax }}{22}{figure.3.8}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Roscore and its connection to other nodes in the system.\relax }}{14}{figure.2.8}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Sensor setup with physical connections.\relax }}{23}{figure.4.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces The pinhole camera model\relax }}{16}{figure.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Roscore and its connection to other nodes in the system.\relax }}{26}{figure.4.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Coordinate systems\relax }}{17}{figure.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces ROS nodes and topic flow.\relax }}{26}{figure.4.3}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The Velodyne VLP-16 lidar.\relax }}{21}{figure.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Camera Calibration app showing an outlier image.\relax }}{29}{figure.4.4}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Lidar spherical coordinate system, with equivalent cartesian coordinates.\relax }}{22}{figure.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Distorted checkerboard image, along with the undistorted version.\relax }}{30}{figure.4.5}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The experiment site in downtown Trondheim. Image taken from Google Maps.\relax }}{32}{figure.5.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces The sensor rig, and its placement at the floating dock at Ravnkloa.\relax }}{32}{figure.5.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces The boat used as a target in the experiments.\relax }}{33}{figure.5.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces The recorded maneuvers overlaid a satellite image of Ravnkloa. Satellite image taken from Google maps.\relax }}{34}{figure.5.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces The lidar cartesian coordinate frame, with angles from the spherical coordinate frame drawn in.\relax }}{22}{figure.3.5}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces The lidar point cloud including surroundings at Ravnkloa, projected down to the xy-plane.\relax }}{38}{figure.6.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Sensor setup with physical connections.\relax }}{25}{figure.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces The first return from the lidar, along with the corresponding detections in the image.\relax }}{40}{figure.6.2}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Faster R-CNN as a single unified network for object detection. The figure is adapted from \cite {ren15fasterrcnn}.\relax }}{28}{figure.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Track generated by point cloud cluster center in experiment 1.\relax }}{40}{figure.6.3}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces ROS nodes and topic flow.\relax }}{30}{figure.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Missed detection in experiment 1.\relax }}{41}{figure.6.4}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces ROS custom message folder structure.\relax }}{31}{figure.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Distance between bounding box center and point cloud cluster center throughout experiment 1.\relax }}{41}{figure.6.5}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Camera Calibration app showing an outlier image.\relax }}{32}{figure.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Track generated by point cloud cluster center in experiment 2.\relax }}{42}{figure.6.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Distance between bounding box center and point cloud cluster center throughout experiment 2.\relax }}{43}{figure.6.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Two examples of multiple ships being detected and classified as one.\relax }}{43}{figure.6.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Track generated by point cloud cluster center in experiment 3.\relax }}{44}{figure.6.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Background confusing the detection of the target in the image in experiment 3.\relax }}{45}{figure.6.10}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Distance between bounding box center and point cloud cluster center throughout experiment 3.\relax }}{45}{figure.6.11}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Track generated by point cloud cluster center in experiment 4.\relax }}{46}{figure.6.12}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Distance between bounding box center and point cloud cluster center throughout experiment 4.\relax }}{47}{figure.6.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Background confusing the detection of the target in the image in experiment 4.\relax }}{47}{figure.6.14}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Track generated by point cloud cluster center in experiment 5.\relax }}{48}{figure.6.15}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Distance between bounding box center and point cloud cluster center throughout experiment 5.\relax }}{49}{figure.6.16}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Target not detected in image in experiment 5.\relax }}{49}{figure.6.17}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Track generated by point cloud cluster center in experiment 6.\relax }}{50}{figure.6.18}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Distance between bounding box center and point cloud cluster center throughout experiment 6.\relax }}{51}{figure.6.19}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.20}{\ignorespaces Target not detected in image in experiment 6.\relax }}{51}{figure.6.20}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.21}{\ignorespaces Track generated by point cloud cluster center in experiment 7.\relax }}{52}{figure.6.21}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.22}{\ignorespaces Target not detected in image in experiment 7.\relax }}{53}{figure.6.22}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.23}{\ignorespaces Another example of target not detected in image in experiment 7.\relax }}{53}{figure.6.23}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.24}{\ignorespaces Distance between bounding box center and point cloud cluster center throughout experiment 7.\relax }}{54}{figure.6.24}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Distorted checkerboard image, along with the undistorted version.\relax }}{33}{figure.4.6}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.1}{\ignorespaces A single point cloud from experiment 3, with the ray corresponding to the center of the bounding box detected in the image projected out in the scene.\relax }}{56}{figure.7.1}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The experiment site in downtown Trondheim. Image taken from Google Maps.\relax }}{36}{figure.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Image with bounding boxes and scores corresponding to the point cloud in figure \ref {fig:example_ex3_pc}.\relax }}{56}{figure.7.2}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The sensor rig, and its placement at the floating dock at Ravnkloa.\relax }}{36}{figure.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Two examples of multiple ships being detected and classified as one.\relax }}{57}{figure.7.3}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The boat used as a target in the experiments.\relax }}{37}{figure.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The recorded maneuvers overlaid a satellite image of Ravnkloa. Satellite image taken from Google maps.\relax }}{38}{figure.5.4}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The lidar point cloud including surroundings at Ravnkloa, projected down to the xy-plane.\relax }}{42}{figure.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces The data post-processing pipeline.\relax }}{43}{figure.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Point cloud cluster, with image detection drawn in.\relax }}{43}{figure.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Corresponding image from the camera, with bounding boxes corresponding to detected boats overlaid.\relax }}{44}{figure.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces The first return from the lidar, along with the corresponding detections in the image.\relax }}{45}{figure.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Track generated by point cloud cluster center in experiment 1.\relax }}{46}{figure.6.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Missed detection in experiment 1.\relax }}{46}{figure.6.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Track generated by point cloud cluster center in experiment 2.\relax }}{47}{figure.6.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Two examples of multiple ships being detected and classified as one.\relax }}{48}{figure.6.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Track generated by point cloud cluster center in experiment 3.\relax }}{49}{figure.6.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Background confusing the detection of the target in the image in experiment 3.\relax }}{49}{figure.6.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Track generated by point cloud cluster center in experiment 4.\relax }}{50}{figure.6.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Background confusing the detection of the target in the image in experiment 4.\relax }}{51}{figure.6.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Track generated by point cloud cluster center in experiment 5.\relax }}{52}{figure.6.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Target not detected in image in experiment 5.\relax }}{52}{figure.6.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Track generated by point cloud cluster center in experiment 6.\relax }}{53}{figure.6.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Target not detected in image in experiment 6.\relax }}{54}{figure.6.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Track generated by point cloud cluster center in experiment 7.\relax }}{55}{figure.6.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Target not detected in image in experiment 7.\relax }}{55}{figure.6.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.20}{\ignorespaces Another example of target not detected in image in experiment 7.\relax }}{56}{figure.6.20}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Two examples of multiple ships being detected and classified as one.\relax }}{59}{figure.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Test\relax }}{60}{figure.7.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Examples of radial distortion. \footnotemark \relax }}{68}{figure.A.1}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Examples of radial distortion. \footnotemark \relax }}{70}{figure.A.1}
