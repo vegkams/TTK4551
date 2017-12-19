@@ -1,7 +1,7 @@
 %===================================== CHAP 2 =================================
 \graphicspath{{fig/}}
 \chapter{Sensor Models}
-In this section, mathematical models relating measurements from the two exteroceptive sensors used in the project to world coordinates are presented. In order to associate measurements from one sensor to the other, as well as measurements from the sensors with a common world coordinate frame, a mathematical model describing this relationship is needed.
+In this chapter, mathematical models relating measurements from the two exteroceptive sensors used in the project to world coordinates are presented. In order to associate measurements from one sensor to the other, as well as measurements from the sensors with a common world coordinate frame, a mathematical model describing this relationship is needed.
 \section{Image Formation}
 Camera systems have found a wide array of applications since its invention, and are today widely used in industry. Application areas range from surveillance (CCTV), to image acquisition in scientific exploration of the earth, oceans and space. In recent years, there has been a drive towards utilizing cameras for automatic object detection and recognition, made possible through advances in computing power and algorithms \todo{kilde}. There is a drive towards more and more autonomous operation of vehicles, and camera systems play an integral part in the sensing of the environment necessary for safe autonomous operation \todo{kilde}. This section presents the pinhole camera model, and how to relate image coordinates to world coordinates through transformations. The theory presented in this section is largely based on chapter 1 in \cite{modernCV}.
 \subsection{The Pinhole Camera Model}
@@ -210,7 +210,7 @@ R_{i}\cos{\beta_i}\cos{\alpha}\\
 R_{i}\sin{\beta_i}
 \end{bmatrix}
 \end{equation}
-Here, $\alpha$ is the azimuth angle in the scan, and $\beta_i$ is the angle of the $i^{\text{th}}$ vertical laser measured from the horizon. The superscript $l$ denotes the cartesian frame centered in the lidar. $R_{i}$ is the range measured at the given azimuth and elevation angle. This model assumes that the range measurement $R_{i}$ reported by the lidar is exact, as well as that the angles $\beta_i$ and $\alpha$ are known with perfect accuracy, which is not the case. Glennie et al. \cite{GlennieVLP} did a calibration and stability analysis of the VLP-16 lidar, where six calibration parameters for each laser was identified. The proposed model was given as
+Here, $\alpha$ is the azimuth angle in the scan, and $\beta_i$ is the angle of the $i^{\text{th}}$ vertical laser measured from the horizon. The superscript $l$ denotes the cartesian frame centered in the lidar. $R_{i}$ is the range measured at the given azimuth and elevation angle. This model assumes that the range measurement $R_{i}$ reported by the lidar is exact, as well as that the angles $\beta_i$ and $\alpha$ are known with perfect accuracy, which is generally not the case. Glennie et al. \cite{GlennieVLP} did a calibration and stability analysis of the VLP-16 lidar, where six calibration parameters for each laser was identified. The proposed model was given as
 \begin{equation*}
 \mathbf{P}^{l}_{ij}=\begin{bmatrix}
 (s^iR_i+D_o^i)\cos{\beta_i}(\sin{\alpha}\cos{\delta_i}-\cos{\alpha}\sin{\delta_i})-H_o^i(\cos{\alpha}\cos{\delta_i}+\sin{\alpha}\sin{\delta_i})\\

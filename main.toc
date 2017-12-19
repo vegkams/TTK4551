@@ -6,13 +6,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Table of Contents}{iv}{chapter*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Tables}{v}{chapter*.6}
+\contentsline {chapter}{Abbreviations}{v}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Figures}{viii}{chapter*.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Abbreviations}{ix}{section*.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Notation}{x}{section*.9}
+\contentsline {chapter}{Notation}{vi}{section*.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
@@ -20,107 +16,107 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Review}{1}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Contributions}{1}{section.1.3}
+\contentsline {section}{\numberline {1.3}Report outline}{3}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Report outline}{1}{section.1.4}
+\contentsline {chapter}{\numberline {2}Background Theory}{5}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Theory}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Sensor Fusion}{5}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Sensor Fusion}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Computer Vision}{7}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Computer Vision}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Spatial Image Filtering}{8}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Spatial Image Filtering}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Convolutional Neural Nets for Object Recognition}{9}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Convolutional Neural Nets for Object Recognition}{7}{subsection.2.2.2}
+\contentsline {subsubsection}{Neural Networks}{10}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Neural Networks}{8}{section*.11}
+\contentsline {subsubsection}{Convolutional Neural Nets}{11}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Convolutional Neural Nets}{9}{section*.12}
+\contentsline {subsubsection}{Training a Neural Net}{14}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Training a Neural Net}{12}{section*.13}
+\contentsline {section}{\numberline {2.3}Robot Operating System}{15}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Robot Operating System}{13}{section.2.3}
+\contentsline {chapter}{\numberline {3}Sensor Models}{17}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Sensor Models}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Image Formation}{17}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Image Formation}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}The Pinhole Camera Model}{17}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}The Pinhole Camera Model}{15}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Intrinsic and Extrinsic Parameters}{18}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Intrinsic and Extrinsic Parameters}{16}{subsection.3.1.2}
+\contentsline {subsubsection}{Homogeneous Coordinates and Rigid Transformations}{19}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Homogeneous Coordinates and Rigid Transformations}{17}{section*.16}
+\contentsline {subsubsection}{Intrinsic Parameters}{20}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Intrinsic Parameters}{18}{section*.17}
+\contentsline {subsubsection}{Extrinsic Parameters}{21}{section*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Extrinsic Parameters}{19}{section*.18}
+\contentsline {section}{\numberline {3.2}Lidar}{22}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Lidar}{20}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Velodyne VLP-16 Lidar Specifications}{22}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Velodyne VLP-16 Lidar Specifications}{20}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Lidar Sensor Model}{23}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Lidar Sensor Model}{21}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Coordinate Transformation}{26}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Coordinate Transformation}{24}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}The Lidar Point Cloud}{26}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}The Lidar Point Cloud}{24}{subsection.3.2.4}
+\contentsline {chapter}{\numberline {4}Method}{27}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Method}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Sensors, Hardware and Processing Pipeline}{27}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Sensors, Hardware and Processing Pipeline}{25}{section.4.1}
+\contentsline {section}{\numberline {4.2}Visual Detection based on Faster R-CNN}{29}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Visual Detection based on Faster R-CNN}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Faster R-CNN}{29}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Faster R-CNN}{27}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Training and validation data}{30}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Training and validation data}{28}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Implementation Aspects}{30}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Implementation Aspects}{28}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}ROS Implementation}{31}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}ROS Implementation}{29}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}ROS Nodes and Data Flow}{31}{subsection.4.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}ROS Nodes and Data Flow}{29}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Rosbag}{32}{subsection.4.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Rosbag}{30}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}MATLAB implementation}{33}{subsection.4.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.3}MATLAB implementation}{31}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}Camera Calibration}{33}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Camera Calibration}{31}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Time Synchronization}{35}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Time Synchronization}{33}{subsection.4.4.1}
+\contentsline {chapter}{\numberline {5}Experiments}{37}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Experiments}{35}{chapter.5}
+\contentsline {section}{\numberline {5.1}Performed Maneuvers}{39}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Performed Maneuvers}{37}{section.5.1}
+\contentsline {chapter}{\numberline {6}Results}{43}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Results}{41}{chapter.6}
+\contentsline {section}{\numberline {6.1}Post-processing}{43}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Post-processing}{41}{section.6.1}
+\contentsline {section}{\numberline {6.2}Metrics}{46}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Metrics}{44}{section.6.2}
+\contentsline {section}{\numberline {6.3}Experimental Results}{47}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Experimental Results}{45}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Experiment 1}{47}{subsection.6.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.1}Experiment 1}{45}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Experiment 2}{49}{subsection.6.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.2}Experiment 2}{47}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Experiment 3}{50}{subsection.6.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.3}Experiment 3}{48}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Experiment 4}{52}{subsection.6.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.4}Experiment 4}{50}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Experiment 5}{53}{subsection.6.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.5}Experiment 5}{51}{subsection.6.3.5}
+\contentsline {subsection}{\numberline {6.3.6}Experiment 6}{55}{subsection.6.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.6}Experiment 6}{53}{subsection.6.3.6}
+\contentsline {subsection}{\numberline {6.3.7}Experiment 7}{56}{subsection.6.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.7}Experiment 7}{54}{subsection.6.3.7}
+\contentsline {subsection}{\numberline {6.3.8}Faster R-CNN Performance}{58}{subsection.6.3.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3.8}Faster R-CNN Performance}{56}{subsection.6.3.8}
+\contentsline {chapter}{\numberline {7}Discussion}{61}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Discussion}{59}{chapter.7}
+\contentsline {subsection}{\numberline {7.0.1}Detection of Boats in Images}{61}{subsection.7.0.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusion}{61}{chapter.8}
+\contentsline {chapter}{\numberline {8}Conclusion}{65}{chapter.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Appendix}{67}{appendix.A}
 \defcounter {refsection}{0}\relax 

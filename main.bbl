@@ -17,6 +17,430 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
+  \entry{Siciliano:2007:SHR:1209344}{book}{}
+    \name{author}{2}{}{%
+      {{hash=SB}{%
+         family={Siciliano},
+         familyi={S\bibinitperiod},
+         given={Bruno},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=KO}{%
+         family={Khatib},
+         familyi={K\bibinitperiod},
+         given={Oussama},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag New York, Inc.}%
+    }
+    \strng{namehash}{SBKO1}
+    \strng{fullhash}{SBKO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{isbn}{354023957X}
+    \field{title}{Springer Handbook of Robotics}
+    \list{location}{1}{%
+      {Secaucus, NJ, USA}%
+    }
+    \field{year}{2007}
+  \endentry
+
+  \entry{STILLER2000389}{article}{}
+    \name{author}{4}{}{%
+      {{hash=SC}{%
+         family={Stiller},
+         familyi={S\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Hipp},
+         familyi={H\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=RC}{%
+         family={Rössig},
+         familyi={R\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=EA}{%
+         family={Ewald},
+         familyi={E\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{Multisensor obstacle detection and tracking, Stereo vision, Laser
+  scanner, Driver assistance, Autonomous driving}
+    \strng{namehash}{SCHJRC+1}
+    \strng{fullhash}{SCHJRCEA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{5}
+    \field{pages}{389 \bibrangedash  396}
+    \field{title}{Multisensor obstacle detection and tracking}
+    \field{volume}{18}
+    \field{journaltitle}{Image and Vision Computing}
+    \field{year}{2000}
+  \endentry
+
+  \entry{sensorfusion_spatio_temporal}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=MM}{%
+         family={Mahlisch},
+         familyi={M\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Schweiger},
+         familyi={S\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RW}{%
+         family={Ritter},
+         familyi={R\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=DK}{%
+         family={Dietmayer},
+         familyi={D\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MMSRRW+1}
+    \strng{fullhash}{MMSRRWDK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2006 IEEE Intelligent Vehicles Symposium}
+    \field{pages}{424\bibrangedash 429}
+    \field{title}{Sensorfusion Using Spatio-Temporal Aligned Video and Lidar
+  for Improved Vehicle Detection}
+    \field{year}{2006}
+  \endentry
+
+  \entry{machine_learning}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BCM}{%
+         family={Bishop},
+         familyi={B\bibinitperiod},
+         given={Christopher\bibnamedelima M.},
+         giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{BCM1}
+    \strng{fullhash}{BCM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{1st ed. 2006. Corr. 2nd printing}
+    \field{series}{Information science and statistics}
+    \field{title}{Pattern Recognition and Machine Learning}
+    \field{year}{2006}
+  \endentry
+
+  \entry{CValg}{book}{}
+    \name{author}{1}{}{%
+      {{hash=SR}{%
+         family={Szeliski},
+         familyi={S\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{SR1}
+    \strng{fullhash}{SR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Computer Vision, Algorithms and Applications}
+    \field{year}{2011}
+  \endentry
+
+  \entry{Aufrere}{article}{}
+    \name{author}{6}{}{%
+      {{hash=AR}{%
+         family={Aufr\`{e}re},
+         familyi={A\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gowdy},
+         familyi={G\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={Mertz},
+         familyi={M\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=TC}{%
+         family={Thorpe},
+         familyi={T\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WC}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=YT}{%
+         family={Yata},
+         familyi={Y\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \keyw{Perception for collision avoidance and autonomous driving}
+    \strng{namehash}{ARGJMC+1}
+    \strng{fullhash}{ARGJMCTCWCYT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{5}
+    \field{pages}{1149 \bibrangedash  1161}
+    \field{title}{Perception for collision avoidance and autonomous driving}
+    \field{volume}{13}
+    \field{journaltitle}{Mechatronics}
+    \field{year}{2003}
+  \endentry
+
+  \entry{Cho_multisensor_fusion}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=CH}{%
+         family={Cho},
+         familyi={C\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=SYW}{%
+         family={Seo},
+         familyi={S\bibinitperiod},
+         given={Y.\bibnamedelima W.},
+         giveni={Y\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=KBVKV}{%
+         family={Kumar},
+         familyi={K\bibinitperiod},
+         given={B.\bibnamedelima V. K.\bibnamedelima V.},
+         giveni={B\bibinitperiod\bibinitdelim V\bibinitperiod
+  K\bibinitperiod\bibinitdelim V\bibinitperiod},
+      }}%
+      {{hash=RRR}{%
+         family={Rajkumar},
+         familyi={R\bibinitperiod},
+         given={R.\bibnamedelima R.},
+         giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CHSYWKBVKV+1}
+    \strng{fullhash}{CHSYWKBVKVRRR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2014 IEEE International Conference on Robotics and
+  Automation (ICRA)}
+    \field{pages}{1836\bibrangedash 1843}
+    \field{title}{A multi-sensor fusion system for moving object detection and
+  tracking in urban driving environments}
+    \field{year}{2014}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{ROB:ROB20312}{article}{}
+    \name{author}{3}{}{%
+      {{hash=PC}{%
+         family={Premebida},
+         familyi={P\bibinitperiod},
+         given={Cristiano},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LO}{%
+         family={Ludwig},
+         familyi={L\bibinitperiod},
+         given={Oswaldo},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=NU}{%
+         family={Nunes},
+         familyi={N\bibinitperiod},
+         given={Urbano},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Subscription Services, Inc., A Wiley Company}%
+    }
+    \strng{namehash}{PCLONU1}
+    \strng{fullhash}{PCLONU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{9}
+    \field{pages}{696\bibrangedash 711}
+    \field{title}{LIDAR and vision-based pedestrian detection system}
+    \field{volume}{26}
+    \field{journaltitle}{Journal of Field Robotics}
+    \field{year}{2009}
+  \endentry
+
+  \entry{weigel_vehicle_tracking}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=WH}{%
+         family={Weigel},
+         familyi={W\bibinitperiod},
+         given={H.},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=LP}{%
+         family={Lindner},
+         familyi={L\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WG}{%
+         family={Wanielik},
+         familyi={W\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WHLPWG1}
+    \strng{fullhash}{WHLPWG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{2009 IEEE Intelligent Vehicles Symposium}
+    \field{pages}{513\bibrangedash 520}
+    \field{title}{Vehicle tracking with lane assignment by camera and lidar
+  sensor fusion}
+    \field{year}{2009}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{ROB:ROB20371}{article}{}
+    \name{author}{9}{}{%
+      {{hash=WMT}{%
+         family={Wolf},
+         familyi={W\bibinitperiod},
+         given={Michael\bibnamedelima T.},
+         giveni={M\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=AC}{%
+         family={Assad},
+         familyi={A\bibinitperiod},
+         given={Christopher},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=KY}{%
+         family={Kuwata},
+         familyi={K\bibinitperiod},
+         given={Yoshiaki},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={Howard},
+         familyi={H\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AH}{%
+         family={Aghazarian},
+         familyi={A\bibinitperiod},
+         given={Hrand},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=ZD}{%
+         family={Zhu},
+         familyi={Z\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LT}{%
+         family={Lu},
+         familyi={L\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=TOA}{%
+         family={Trebi-Ollennu},
+         familyi={T\bibinitperiod-O\bibinitperiod},
+         given={Ashitey},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Huntsberger},
+         familyi={H\bibinitperiod},
+         given={Terry},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Subscription Services, Inc., A Wiley Company}%
+    }
+    \strng{namehash}{WMTACKY+1}
+    \strng{fullhash}{WMTACKYHAAHZDLTTOAHT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{6}
+    \field{pages}{819\bibrangedash 833}
+    \field{title}{360-degree visual detection and target tracking on an
+  autonomous surface vehicle}
+    \field{volume}{27}
+    \field{journaltitle}{Journal of Field Robotics}
+    \field{year}{2010}
+  \endentry
+
+  \entry{ROB:ROB20367}{article}{}
+    \name{author}{3}{}{%
+      {{hash=EL}{%
+         family={Elkins},
+         familyi={E\bibinitperiod},
+         given={Les},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Sellers},
+         familyi={S\bibinitperiod},
+         given={Drew},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=MWR}{%
+         family={Monach},
+         familyi={M\bibinitperiod},
+         given={W.\bibnamedelima Reynolds},
+         giveni={W\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Wiley Subscription Services, Inc., A Wiley Company}%
+    }
+    \strng{namehash}{ELSDMWR1}
+    \strng{fullhash}{ELSDMWR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{6}
+    \field{pages}{790\bibrangedash 818}
+    \field{title}{The Autonomous Maritime Navigation (AMN) project: Field
+  tests, autonomous and cooperative behaviors, data fusion, sensors, and
+  vehicles}
+    \field{volume}{27}
+    \field{journaltitle}{Journal of Field Robotics}
+    \field{year}{2010}
+  \endentry
+
   \entry{sensorFusion1}{book}{}
     \name{author}{1}{}{%
       {{hash=KW}{%
@@ -402,28 +826,6 @@
     \field{journaltitle}{CoRR}
     \field{eprinttype}{arXiv}
     \field{year}{2012}
-  \endentry
-
-  \entry{machine_learning}{book}{}
-    \name{author}{1}{}{%
-      {{hash=BCM}{%
-         family={Bishop},
-         familyi={B\bibinitperiod},
-         given={Christopher\bibnamedelima M.},
-         giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Springer}%
-    }
-    \strng{namehash}{BCM1}
-    \strng{fullhash}{BCM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{edition}{1st ed. 2006. Corr. 2nd printing}
-    \field{series}{Information science and statistics}
-    \field{title}{Pattern Recognition and Machine Learning}
-    \field{year}{2006}
   \endentry
 
   \entry{Goodfellow-et-al-2016}{book}{}
