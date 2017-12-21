@@ -1,16 +1,16 @@
 %===================================== CHAP 4 =================================
 
-\chapter{Method}
+\chapter{Hardware, Software, and Implementation}
 \section{Sensors, Hardware and Processing Pipeline}
-The physical sensor setup used in the data collection is illustrated in figure \ref{fig:sensor_setup}. A HP zbook 15 running Ubuntu 16.04 with ROS was used as a data collection platform.
+The physical sensor setup used in the data collection is illustrated in figure \ref{fig:sensor_setup}. A HP ZBook 15 running Ubuntu 16.04 with ROS was used as a data collection platform.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\linewidth]{fig/sensor_setup.png}
+    \includegraphics[width=.8\linewidth]{fig/sensor_setup.pdf}
     \caption{Sensor setup with physical connections.}
     \label{fig:sensor_setup}
 \end{figure}
-The camera used to gather image data is a commercial off-the-shelf action camera by Muvi, named Veho K2 Sport. The reasoning for using such a camera was the affordable price, relatively high resolution, and a wide angle of view. The specifications of the camera is presented in table \ref{tab:specs_camera}. The specifications are pulled from the cameras user manual.
-\begin{table}[H]
+The camera used to gather image data is a commercial off-the-shelf action camera by Muvi, named Veho K2 Sport. The reasoning for using such a camera was the affordable price, relatively high resolution, and a wide angle of view. The specifications of the camera is presented in table \ref{tab:specs_camera}. The specifications are pulled from the user manual.
+\begin{table}
 	\centering
 	\begin{tabularx}{.7\linewidth}{L L}
 		\toprule
@@ -37,7 +37,7 @@ The camera used to gather image data is a commercial off-the-shelf action camera
 The settings used throughout the project is resolution at 1080p, with a framerate of 25 frames per second, with a wide angle of view (140$\degree$). A drawback with such a camera for computer vision applications, however, is the fact that it only sends images as a steady stream over its HDMI interface, with little options for the user to control the capture of individual frames. Moreover, HDMI is not a standard input interface on most computers, so a HDMI-to-USB3 adapter was purchased in order to be able to input the video stream on the computer. The HDMI-to-USB3 adapter is a USB Capture HDMI Gen 2 by the manufacturer Magewell. Using the camera with this interface, there is a noticeable processing delay between the camera and the computer.\\
 \vspace{2mm}\\
 \noindent The specifications of the computer used in the data gathering is listed in table \ref{tab:comp_specs_laptop}, and the specifications for the computer used in post-processing is listed in table \ref{tab:comp_specs_desktop}.
-\begin{table}[H]
+\begin{table}
 	\centering
 	\begin{tabularx}{.6\linewidth}{L L}
 	\toprule
@@ -58,7 +58,7 @@ The settings used throughout the project is resolution at 1080p, with a framerat
 	\label{tab:comp_specs_laptop}
 \end{table}
 
-\begin{table}[H]
+\begin{table}
 	\centering
 	\begin{tabularx}{.6\linewidth}{L L}
 		\toprule
@@ -83,34 +83,34 @@ Faster R-CNN is a region-based CNN, employing \textit{Region Proposal Networks} 
 	\caption{Faster R-CNN as a single unified network for object detection. The figure is adapted from \cite{ren15fasterrcnn}.}
 	\label{fig:faster_r_cnn}
 \end{figure}
-The Region Proposal Network takes an image of any size as inputs, feeding it through convolutional layers to generate feature maps. The area of activation is then fed into the RPN, which outputs object proposals in the form of rectangular regions, each with a objectness score. The objectness score is a measure of membership to a set of object classes versus background. The rectangular regions are subsequently fed into the classification layers where the classification score is obtained. In their paper, Ren et al. investigated two models for the classification network, the 5 convolutional layer deep Zeiler and Fergus model \cite{Zeiler2014} dubbed ZF-net, and the 16 convolutional layer deep Simonyan and Zisserman model \cite{VGG16}, dubbed VGG-16. In this project, the VGG-16 model is used, as this network achieved the best results in the Master thesis work of Tangstad \cite{tangstad}.
+The Region Proposal Network takes an image of any size as inputs, feeding it through convolutional layers to generate feature maps. The area of activation is then fed into the RPN, which outputs object proposals in the form of rectangular regions, each with a objectness score. The objectness score is a measure of membership to a set of object classes versus background. The rectangular regions are subsequently fed into the classification layers where the classification score is obtained. An important feature of Faster R-CNN is that the RPN shares convolutional layers with the object detection networks, reducing the cost for computing proposals, making it attractive for real-time applications, such as remote sensing for an ASV. In their paper, Ren et al. investigated two models for the classification network, the 5 convolutional layer deep Zeiler and Fergus model \cite{Zeiler2014} dubbed ZF-net, and the 16 convolutional layer deep Simonyan and Zisserman model \cite{VGG16}, dubbed VGG-16. In this project, the VGG-16 model is used, as this network achieved the best results in the Master thesis work of Tangstad \cite{tangstad}. 
 \subsection{Training and validation data}
-The network used in the project is the best-performing model developed in Tangstads thesis work \cite{tangstad}. This model is trained as a single-class classifier, 
+The network used in the project is the best-performing model developed in Tangstads thesis work. This model is trained as a single-class classifier, trained in detecting boats in images. The network was trained using the 2007 and 2012 VOC (Visual Object Challenge) \cite{voc} dataset and a selection of images pulled from the image database imagenet \cite{imagenet_cvpr09}. In the images used from these image sets, the only ground-truth label and bounding boxes are of the boat-class. In addition, a custom dataset was generated during the thesis work, with images of boats from the Trondheim harbor and at open sea, which was included in the training and test sets. For details on the training, and the performance of the trained network, the reader is referred to  \cite{tangstad}.
 \subsection{Implementation Aspects}
 A complete MATLAB implementation of Faster R-CNN is available on Github. In order to run Faster R-CNN, there are some software requirements that need to be met. The steps are listed in the Github repository for the framework \cite{faster_rcnn_git}, and will be repeated here for convenience. The steps are setup-dependent, depending on whether or not the framework will be executing on a GPU or a CPU, and also on the version of GPU used. The Faster R-CNN implementation available at the Github repository uses Caffe \cite{jia2014caffe}, which is a deep-learning framework utilizing Nvidia CUDA for parallel computing, developed by Berkeley AI Research. Caffe is well documented online, with installation instructions, tutorials and more \cite{caffe}. 
 
-In order to use Faster R-CNN, a Caffe MEX file is needed. A MEX file is a dynamically linked subroutine that the MATLAB interpreter loads and executes, enabling MATLAB to utilize Caffe routines. A pre-compiled Caffe version for Nvidia CUDA version 6.5 is available in the repository, but for newer Nvidia GPUs a newer version of CUDA will need to be compiled along with Caffe. If a new compiling of Caffe is necessary, all the steps needed are provided in the Faster R-CNN branch of Caffe on Github \cite{caffe_for_faster_rcnn}. If a GPU is utilized for parallel computing, a GPU with minimum 8 Gigabytes of memory is needed to run the VGG-16 version. In this project Caffe was recompiled with CUDA version 9.0, due to CUDA version 6.5 not supporting the newer Pascal architecture on the Nvidia GTX 1070 graphics card used. MATLAB is also needed to run the Faster R-CNN implementation. Once all requirements are met, the steps necessary before testing are
+In order to use Faster R-CNN, a Caffe MEX file is needed. A MEX file is a dynamically linked subroutine that the MATLAB interpreter loads and executes, enabling MATLAB to utilize Caffe routines. A pre-compiled Caffe version for Nvidia CUDA version 6.5 is available in the repository, but for newer Nvidia GPUs a newer version of CUDA will need to be compiled along with Caffe. If a new compiling of Caffe is necessary, all the steps needed are provided in the Faster R-CNN branch of Caffe on Github \cite{caffe_for_faster_rcnn}. If a GPU is utilized for parallel computing, a GPU with minimum 8 GB of memory is needed to run the VGG-16 version. In this project Caffe was recompiled with CUDA version 9.0, due to CUDA version 6.5 not supporting the newer Pascal architecture on the Nvidia GTX 1070 graphics card used. MATLAB is also needed to run the Faster R-CNN implementation. Once all requirements are met, the steps necessary before testing are
 \begin{enumerate}
 	\item Run \lstinline[basicstyle=\ttfamily]{faster_rcnn_build.m}
 	\item Run \lstinline[basicstyle=\ttfamily]{startup.m}
 \end{enumerate}
 Once this is done, the user must provide a valid network (pre-trained networks are available on the Github repository), and the model is ready for use.
 \section{ROS Implementation}
-In order to capture, organize, timestamp and save the collected data, the open-source robotics framework of ROS was used. The main ROS client libraries are geared towards a UNIX/Linux platform, mainly due to the dependency on large collections of open-source software dependencies \todo{kilde}. Ubuntu Linux is a supported distribution, while others, such as Fedora Linux, Mac OS, and Windows, are designated as experimental and are supported by the community. Due to the simplicity of installation and "out-of-the-box" functionality of ROS on Ubuntu Linux, the most recent long-term supported version of ROS, ROS Kinetic, was installed on a laptop running Ubuntu 16.04 LTS, which was used as a platform for running the various sensor drivers and collecting the data.
+In order to capture, organize, timestamp and save the collected data, the open-source robotics framework of ROS was used. Ubuntu Linux is a supported OS, while others, such as Fedora Linux, Mac OS, and Windows, are designated as experimental and are supported by the community. Due to the simplicity of installation and "out-of-the-box" functionality of ROS on Ubuntu Linux, the most recent long-term supported version of ROS, ROS Kinetic, was installed on a laptop running Ubuntu 16.04 LTS, which was used as a platform for running the various sensor drivers and collecting the data.
 \subsection{ROS Nodes and Data Flow}
 An overview of the implemented sensor driver and data processing nodes is illustrated in figure \ref{fig:ros_nodes}.
 \begin{figure}
     \centering
-    \includegraphics[width=.8\linewidth]{fig/ros.png}
+    \includegraphics[width=\linewidth]{fig/ros.png}
     \caption{ROS nodes and topic flow.}
     \label{fig:ros_nodes}
 \end{figure}
 The lidar nodes and the camera node are all based on open-source ROS packages freely available from the ROS community. The camera driver used is the \\\lstinline[basicstyle=\ttfamily]{libuvc_camera} driver. This node reads the image stream from the camera over the USB port, providing a ROS interface for cameras meeting the USB Video Class standard \cite{libuvc_camera}. This node publishes messages containing an image corresponding to a single frame of the video stream, with a time stamp corresponding to the arrival time of the image frame over USB. The source code is available at the ROS device drivers repository \cite{ros_drivers}.\\
 \vspace{2mm}\\
-\noindent The lidar nodes are in the \lstinline[basicstyle=\ttfamily]{velodyne_driver}-package from the ROS device drivers repository \cite{ros_drivers}. This package provides two nodes, the first is \lstinline[basicstyle=\ttfamily]{/velodyne_driver} for collecting all TCP packages sendt over ethernet from the lidar and publishing a message containing the raw data from a full 360-degree scan from the lidar. The second node, \lstinline[basicstyle=\ttfamily]{/velodyne_cloud}, transforms the raw data into a point cloud given in the sensor frame in XYZ-coordinates, using the transformation in equation \ref{eq:simple_lidar} in section \ref{section:lidar_model}. In addition to the coordinates of each point, the corresponding intensity of the reflected signal strength and the ring data is published \cite{velodyne_dr<iver}.\\ 
+\noindent The lidar nodes are in the \lstinline[basicstyle=\ttfamily]{velodyne_driver}-package from the ROS device drivers repository \cite{ros_drivers}. This package provides two nodes, the first is \lstinline[basicstyle=\ttfamily]{/velodyne_driver} for collecting all TCP packages sendt over ethernet from the lidar and publishing a message containing the raw data from a full 360-degree scan from the lidar. The second node, \lstinline[basicstyle=\ttfamily]{/velodyne_cloud}, transforms the raw data into a point cloud given in the sensor frame in Cartesian coordinates, using the transformation given in (\ref{eq:simple_lidar}) in section \ref{section:lidar_model}. In addition to the coordinates of each point, the corresponding intensity of the reflected signal strength and the ring data is published \cite{velodyne_driver}.\\ 
 \vspace{2mm}\\
 \noindent The point cloud is then published as a ROS message. In addition to the coordinates of each point, the corresponding intensity of the reflected signal strength and the ring data is also included in this message \cite{velodyne_driver}.\\
-\begin{table}[H]
+\begin{table}[!htb]
 	\centering
 	\begin{tabularx}{.8\linewidth}{l L}\toprule
 		\textbf{Topic} & \textbf{Content} \\\midrule
@@ -180,5 +180,5 @@ The numerical values for the intrinsic matrix was found using this routine as
 \end{bmatrix}
 \end{equation}  
 \subsection{Time Synchronization}
-\todo{Ikke ferdig, kanskje ikke nødvendig siden Kalibr-toolboxen ikke kunne brukes.}
+As briefly mentioned in section \ref{section:fusion}, the data collected from the lidar and the camera must be synchronized in time in order to be used in a sensor fusion framework. The camera used in this project does not give the user the option to control the capture of individual frames. The image stream from the camera is processed in the Magewell HDMI-to-USB3 adapter, also outside of the users control. Due to this, there is no way to timestamp the images on capture time with any reasonable accuracy with the given hardware. In the setup used for this project however, the sensors will be stationary, and the boat used in the experiments will be moving slowly, so the impact of the lack of time synchronization is believed to be small enough to not influence the experiments in a significant way.
 \cleardoublepage

@@ -10,7 +10,6 @@
 \usepackage{subcaption}
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
-\usepackage{interval}
 \usepackage{colortbl}
 \usepackage{booktabs}
 \usepackage[Lenny]{fncychap}
@@ -24,6 +23,22 @@
     filecolor=black,%
     linkcolor=black,%
     urlcolor=black
+}
+\usepackage{xparse}
+
+\NewDocumentCommand{\INTERVALINNARDS}{ m m }{
+	#1 {,} #2
+}
+\NewDocumentCommand{\interval}{ s m >{\SplitArgument{1}{,}}m m o }{
+	\IfBooleanTF{#1}{
+		\left#2 \INTERVALINNARDS #3 \right#4
+	}{
+		\IfValueTF{#5}{
+			#5{#2} \INTERVALINNARDS #3 #5{#4}
+		}{
+			#2 \INTERVALINNARDS #3 #4
+		}
+	}
 }
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{fancyhdr}

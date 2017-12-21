@@ -1,14 +1,14 @@
 %===================================== CHAP 3 =================================
 
-\chapter{Background Theory}
-In this chapter \todo{introduser kapittel}
+\chapter{Background and Theory}
+In this chapter an introduction to sensor fusion is given, as well as some theoretical background related to computer vision, neural networks, and the application of convolutional neural networks for object classification in images. At the end, a brief introduction to the framework of the Robot Operating System is given.
 \section{Sensor Fusion}
 \label{section:fusion}
-Robots and autonomous vehicles, be it a car or a ship, operate in unstructured environments, environments that are unpredictable. While robots working on a assembly line work in very structured, predictable environments, a vessel attempting to atonomously navigate a busy shipping lane has to rely on sensor inputs in order to make sense of its environment, and navigate safely. In sensing its environment, a vessel might use various sensors, such as radar(s), cameras, sonars or laser range finders. The different sensors typically give a incomplete and imperfect view of the surrounding world. Sensor data fusion is the process of combining such mutually complementary sensor information in such a way that a better understanding of the surroundings can be achieved \cite{sensorFusion1}.
+Autonomous vehicles, be it a car or a ship, operate in unstructured environments, environments that are unpredictable. While robots working on a assembly line work in very structured, predictable environments, a vessel attempting to autonomously navigate a busy shipping lane has to rely on sensor inputs in order to make sense of its environment, and navigate safely. In sensing its environment, a vessel might use various sensors, such as radar(s), cameras, sonars or laser range finders. The different sensors typically give an incomplete and imperfect view of the surrounding world. Sensor data fusion is the process of combining such mutually complementary sensor information in such a way that a better understanding of the surroundings can be achieved \cite{sensorFusion1}.
 The U.S. Joint Directors of Laboratories (JDL) Data Fusion Working Group developed a process model in 1985 for characterizing hierarchical levels of fusion processing, categorized fusion functions, and candidate algorithm approaches, and is the most widely used system for categorizing data fusion-related functions \cite{JDLFusion}. The model is illustrated in figure \ref{fig:jdl_fusion}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=.8\linewidth]{fig/JDLfusion.png}
+    \includegraphics[width=\linewidth]{fig/JDLfusion.pdf}
     \caption{The Joint Directors of Laboratories data fusion model.}
     \label{fig:jdl_fusion}
 \end{figure}
@@ -27,7 +27,7 @@ The models different levels do not represent a process flow, but rather provides
 \end{enumerate}This project aims to prepare the processing pipeline leading to fusion of measurements from a lidar with measurements from a camera. A lidar provides excellent range information, but has limits with regard to object recognition. A camera, on the other hand, is good for object recognition but has limits to the high resolution range information. The two sensors exhibit complementary properties, and combining (fusing) the measurements from both sensors can achieve more specific inferences about the surroundings than using a single, independent sensor. In order to associate measurements from the lidar and the camera to the external world, fusion with an INS is necessary, to be able to associate the (moving) coordinate frames of the sensors with a common world frame. Moreover, to be able to associate measurements from one sensor with the other, they need to be synchronized in time.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Computer Vision}
-Computer vision is a field of engineering and science concerned with extracting useful information from images. This has proved to be a challenging task, and it is still today an active field of research. Visual data is very complex, and the same object represented by two different images could be perceived very differently by a computer based on variations such as changes in illumination, partial occlusion of objects, changes in orientation, deformation and so on. Such variations are illustrated in figure \ref{fig:cv_challenges}. Despite these challenges, the recent advancements made within the field of deep learning, and deep convolutional neural nets in particular, has significantly improved the ability of computers to recognize objects in images. The ImageNet Large Scale Visual Recognition Challenge has been run annually since 2010, and is a benchmark in object category classification and detection on hundreds of object categories and millions of images \cite{ILSVRC15}. The results of the top 5 classification errors from the challenges up until 2016 is shown in figure \ref{fig:imagenet_top_5}. 
+Computer vision is a field of engineering and science concerned with extracting useful information from images. This has proved to be a challenging task, and it is still today an active field of research. Visual data is very complex, and the same object represented by two different images could be perceived very differently by a computer based on variations such as changes in illumination, partial occlusion of objects, changes in orientation, deformation and so on. Such variations are illustrated in figure \ref{fig:cv_challenges}. Despite these challenges, the recent advancements made within the field of deep learning, and deep convolutional neural nets in particular, has significantly improved the ability of computers to recognize objects in images \cite{LeCun2015deepL}. The ImageNet Large Scale Visual Recognition Challenge has been run annually since 2010, and is a benchmark in object category classification and detection on hundreds of object categories and millions of images \cite{ILSVRC15}. The results of the top-5 classification errors from the challenges up until 2016 is shown in figure \ref{fig:imagenet_top_5}. The top-5 error rate is the fraction of test images for which the correct label is not among the five labels considered most probable by the classifier.
 \begin{figure}[H]
     \centering
     \includegraphics[width=.8\linewidth]{fig/challenges.jpeg}
@@ -44,15 +44,15 @@ Computer vision is a field of engineering and science concerned with extracting 
 \footnotetext{Image courtesy: https://www.dsiac.org/resources/journals/dsiac/winter-2017-volume-4-number-1/real-time-situ-intelligent-video-analytics}
 As seen in figure \ref{fig:imagenet_top_5}, deep learning algorithms dominate the field of object category classification and detection, even outperforming humans with state-of-the-art deep convolutional neural nets. This section will introduce some necessary basic image processing operations, and give a brief introduction to convolutional neural nets used for image object classification and detection.
 \subsection{Spatial Image Filtering}
-The term spatial in spatial image filtering refer to the image plane itself, and spatial image processing involves direct manipulation of the pixels themselves in the image, in contrast to other methods operating in a transform domain such as the frequency plane. A spatial filter consists of a \textit{kernel} (also called a mask, neighborhood, template or window) (typically rectangular), and a \textit{predefined operation} that is performed on the pixels in the image encompassed by the neighborhood \cite{digImage}. Filtering the image creates a new pixel with coordinates equal to the center of the neighborhood, with value given by the predefined operation performed on the pixels in the neighborhood. Spatial filtering of an image of size $M\times N$ with a filter of size $m\times n$ is given by
+The term spatial in spatial image filtering refer to the image plane itself, and spatial image processing involves direct manipulation of the pixels themselves in the image, in contrast to other methods operating in a transform domain such as the frequency plane. A spatial filter consists of a \textit{kernel} (also called a mask, neighborhood, template or window) (typically rectangular), and a \textit{predefined operation} that is performed on the pixels in the image encompassed by the neighborhood \cite{digImage}. Filtering the image creates a new image where the pixel with coordinates equal to the center of the kernel gets its value from the predefined operation performed on the pixels within the kernel. Spatial filtering of an image of size $M\times N$ with a filter of size $m\times n$ can be expressed in terms of a convolution
 \begin{equation}
 \label{eq:spatial_filt}
     g(x,y)=w(x,y)*f(x,y)=\sum^{a}_{s=-a}\sum^{b}_{t=-b}w(s,t)f(x-s,y-t)
 \end{equation}
-where $a=\frac{m-1}{2}$ and $b=\frac{n-1}{2}$, $w(s,t)$ is the filter kernel, with its center at $w(0,0)$ aligned with the pixel at location $(x,y)$. $g(x,y)$ is the response of the filter at location $(x,y)$. $*$ denotes the convolution operator. $x$ and $y$ are varied such that each pixel in the image is visited. In other words, spatial filtering of an image with a kernel of size $m\times n$ corresponds to convolving the image with the kernel. The filter and the corresponding image pixels for a given $(x,y)$ are illustrated in figure \ref{fig:spatial_filter}. The filter kernel used in this illustration is $3\times3$ pixels.
+where $a=\frac{m-1}{2}$ and $b=\frac{n-1}{2}$, $w(s,t)$ is the filter kernel, with its center at $w(0,0)$ aligned with the pixel at location $(x,y)$. The response of the filter at location $(x,y)$ is given bt $g(x,y)$. The operator $*$ denotes the convolution operator. $x$ and $y$ are varied such that each pixel in the image is visited. In other words, spatial filtering of an image with a kernel of size $m\times n$ corresponds to convolving the image with the kernel. The filter and the corresponding image pixels for a given $(x,y)$ are illustrated in figure \ref{fig:spatial_filter}. The filter kernel used in this illustration is $3\times3$ pixels.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.8\linewidth]{fig/digimageproc.png}
+	\includegraphics[width=\linewidth]{fig/digimageproc.pdf}
 	\caption{}
 	\label{fig:spatial_filter}
 \end{figure}
@@ -64,7 +64,7 @@ A convolutional neural net, abbreviated CNN, is a neural network designed for ob
 	\item The adaptation of powerful GPU processing implementations, making training of very large models tractable.
 	\item Better model regularization strategies, such as dropout, to prevent overfitting \cite{dropout}.
 \end{enumerate}
-In a classifier using classical computer vision techniques, features are extracted from an image, for example using a histogram of oriented gradients, and the extracted features are subsequently used to train a classifier such as a support-vector machine. In a convolutional neural network, on the other hand, the features are hidden, and feature extraction and classification is performed in a single pipeline. Features in a CNN are generated via one or several layers of filter convolutions, which generates a set of abstract sub-images from the input image. For the user, a CNN classifier appears as a "black box" where the internal workings of the feature extraction and classification are largely hidden. In order to understand how a convolutional neural net works, some basic concepts need to be introduced. The following sections first introduce the neuron and the concept of a neural network followed by a short discussion on how they are trained, then a brief introduction to convolutional neural nets will be given. The derivations and notation is largely based on that given in \cite{machine_learning} for the conventional neural network, while the convolutional neural network part is based on \cite{Goodfellow-et-al-2016}.
+In a classifier using classical computer vision techniques, features are extracted from an image, for example using a histogram of oriented gradients, and the extracted features are subsequently used to train a classifier such as a support-vector machine. In a convolutional neural network, on the other hand, the features are hidden, and feature extraction and classification is performed in a single pipeline. Features in a CNN are generated via one or several layers of filter convolutions, which generates a set of abstract sub-images from the input image. For the user, a CNN classifier appears as a "black box" where the internal workings of the feature extraction and classification are largely hidden. In order to understand how a convolutional neural net works, some basic concepts need to be introduced. The following sections first introduce the neuron and the concept of a neural network, followed by a introduction to convolutional neural nets. Lastly, a short introduction to training a neural network is given. The derivations and notation is largely based on that given in \cite{machine_learning} for the conventional neural network, while the convolutional neural network part is based on \cite{Goodfellow-et-al-2016}.
 \subsubsection{Neural Networks}
 In linear regression, a model can be considered as a linear combination of fixed nonlinear functions of the input variables, on the form
 \begin{equation}
@@ -75,13 +75,13 @@ where $\phi_j(\mathbf{x})$ are known as the nonlinear \textit{basis functions}. 
 	\centering
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{fig/neural.png}
+		\includegraphics[width=\linewidth]{fig/neural.pdf}
 		\caption{A neuron, with its inputs,\\ bias and output.}
 		\label{fig:neuron}
 	\end{subfigure}%
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{fig/layers.png}
+		\includegraphics[width=\linewidth]{fig/layers.pdf}
 		\caption{A simple neural network.}
 		\label{fig:layers}
 	\end{subfigure}
@@ -92,7 +92,7 @@ The basic neural network can be described as a series of functional transformati
 \begin{equation}
 a_j = b_j^{1}+\sum_{i=1}^{D}w_{ji}^{1}x_i
 \end{equation}
-where $j=1,\dots,M$, $b_j^1$ is a bias, the parameters $w_{ji}^1$ are the weights, and the superscript 1 indicates that the corresponding parameters are the parameters of the first layer in the network. The result of this weighted sum of the inputs, $a_j$ is known as the activation. Each $a_j$ is then transformed via a nonlinear, differentiable activation function, $z_j\sigma(a_j)$, which is then input to the next layer in the network. Figure \ref{fig:neuron} illustrates this process for a single neuron. The quantities $z_j$ are referred to as \textit{hidden units}, and the corresponding layers are referred to as \textit{hidden layers}. The nonlinear functions $\sigma(\cdot)$ are generally chosen to be sigmoidal functions such as the logistic sigmoid function
+where $j=1,\dots,M$, $b_j^1$ is a bias, the parameters $w_{ji}^1$ are the weights, and the superscript 1 indicates that the corresponding parameters are the parameters of the first layer in the network. The result of this weighted sum of the inputs, $a_j$ is known as the activation. Each $a_j$ is then transformed via a nonlinear, differentiable activation function, $z_j=\sigma(a_j)$, which is then input to the next layer in the network. Figure \ref{fig:neuron} illustrates this process for a single neuron. The quantities $z_j$ are referred to as \textit{hidden units}, and the corresponding layers are referred to as \textit{hidden layers}. A popular choice for the nonlinear functions $\sigma(\cdot)$ are sigmoidal functions such as the logistic sigmoid function
 \begin{equation}
 \sigma(a)=\frac{1}{1+\exp(-a)}
 \end{equation}
@@ -104,23 +104,23 @@ where $k=1,\dots,M$ and $K$ is the total number of outputs. This corresponds to 
 \subsubsection{Convolutional Neural Nets}
 A convolutional neural net or ConvNet, abbreviated CNN, is similar to ordinary neural networks in that they are made up of neurons that have learnable biases and weights. What distincts it from ordinary neural nets is that it assumes that the input data has a grid-like topology, such as an image being a 3D grid of pixels, where the depth is represented by the color channels in the image. As the name implies, the CNN employs convolution in one or more of the layers in the network, and the layers have neurons arranged in 3 dimensions. A traditional neural network use matrix multiplication by a matrix of parameters, with a separate parameter describing the interactions between each input unit and each output unit, meaning that every input unit interacts with every output unit. CNNs however, have \textit{sparse} interactions, accomplished by using kernels which are smaller than the input for holding the weights, which are convolved with the input. This drastically reduces the parameters in the network compared to the traditional network using matrix multiplication. If there are $m$ inputs and $n$ outputs, the matrix multiplication approach requires $m\times n$ parameters. For an input such as an image, which can have thousands or millions of pixels, the number of parameters needed become very large. In a CNN, the number of connections for each output is limited by the kernel size and number of kernels \cite{Goodfellow-et-al-2016}. 
 
-CNNs also employ parameter sharing, where the same parameter is used for more than one output in the model. This is accomplised by the convolution operation, where each member of the kernel is used at every position of the input. This means that rather than learning a separate set of parameters for every location, only one set is learned, further reducing the number of parameters needed in the model. A simple representation of a layer in a convolutional neural net is shown in figure \ref{fig:conv}. The neurons (indicated by white circles) arranged in depth in the output activation layer are connected to the same inputs through different kernels, while all neurons at the same depth share kernel parameters. As indicated in the figure, a single layer may consist of several filter kernels.
+CNNs employ parameter sharing, where the same parameter is used for more than one output in the model. This is accomplised by the convolution operation, where each member of the kernel is used at every position of the input. This means that rather than learning a separate set of parameters for every location, only one set is learned, further reducing the number of parameters needed in the model. A simple representation of a layer in a convolutional neural net is shown in figure \ref{fig:conv}. The neurons (indicated by white circles) arranged in depth in the output activation layer are connected to the same inputs through different kernels, while all neurons at the same depth share kernel parameters. As indicated in the figure, a single layer may consist of several filter kernels.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=.7\linewidth]{fig/conv_simple.png}
 	\caption{A CNN layer. The 3D input volume is transformed into a 3D volume of neuron activations.}
     \label{fig:conv}
 \end{figure}
-A typical layer of a CNN consists of three stages; convolution, detection and pooling, illustrated in figure \ref{fig:conv_layer} \cite{Goodfellow-et-al-2016}.
+A typical layer of a CNN consists of three stages; convolution, detection and pooling, illustrated in figure \ref{fig:conv_layer}. Some terminology considers each stage in \ref{fig:conv_layer} as a separate layer in its own right, so the definition of what constitutes a convolutional layer may vary \cite{Goodfellow-et-al-2016}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=.4\linewidth]{fig/conv.png}
+	\includegraphics[width=.4\linewidth]{fig/conv.pdf}
 	\caption{The three stages of a convolution layer.}
 	\label{fig:conv_layer}
 \end{figure}
 The convolution stage performs several convolutions in parallel to produce a set of linear activations. At the next stage, the linear activations are run through a nonlinear activation function, in a similar fashion as for the traditional neural network. In the pooling stage, a \textit{pooling function} is used to modify the output layer, replacing the output of the net by a summary statistic of the nearby outputs. As an example, the max pooling operation reports the maximum output within a rectangular region. Other examples are the average of a rectangular region, or a weighted average based on the distance from the central pixel.
 
-A convolutional layer can be described by four \textit{hyperparameters}. The term \textit{hyperparameter} is used to distinguish them from the model parameters (weights and biases), and they are not subject to optimization. The four hyperparameters are
+A convolutional layer can be described by four \textit{hyperparameters}. The term \textit{hyperparameter} is used to distinguish them from the model parameters (weights and biases), and they are not subject to optimization during training. The four hyperparameters are
 \begin{enumerate}
 	\item The number of kernels, $K$.
 	\item The spatial extent of the filter kernel, $F$.
@@ -153,12 +153,12 @@ Taking the negative logarithm of the corresponding likelihood function gives the
 \label{eq:error_nn}
 E(\mathbf{w})=-\sum_{n=1}^{N}\sum_{k=1}^{K}\{t_{nk}\ln y_{nk}+(1-t_{nk})\ln(1-y_{nk})\}
 \end{equation}
-where $y_{nk}$ denotes $y_k(\mathbf{x}_n,\mathbf{w})$. Training the network consists of finding a weight vector $\mathbf{w}$ that minimizes equation \ref{eq:error_nn}. This is done by taking small steps in weight space from $\mathbf{w}$ to $\mathbf{w}+\delta\mathbf{w}$ such that the gradient of the error function vanishes, minimizing the error function:
+where $y_{nk}$ denotes $y_k(\mathbf{x}_n,\mathbf{w})$. Training the network consists of finding a weight vector $\mathbf{w}$ that minimizes (\ref{eq:error_nn}). This is done by taking small steps in weight space from $\mathbf{w}$ to $\mathbf{w}+\delta\mathbf{w}$ such that the gradient of the error function vanishes, minimizing the error function:
 \begin{equation}
 \label{eq:error_gradient}
 \nabla E(\mathbf{w})=0
 \end{equation}
-The error function has a nonlinear dependence on the weights and biases, and so there may be many local minima where the gradient of the error function is zero. An analytical solution of equation \ref{eq:error_gradient} is typically unobtainable, so the typical approach is to use iterative numerical procedures \cite{machine_learning}. One approach is to use a combination of error backpropagation and stochastic gradient descent, where the error gradient calculated at the output is propagated back through the network, giving the partial derivative of the error for each hidden unit. In stochastic gradient descent, the weights are updated based on one data point at a time, according to 
+The error function has a nonlinear dependence on the weights and biases, and so there may be many local minima where the gradient of the error function is zero. An analytical solution of (\ref{eq:error_gradient}) is typically unobtainable, so the typical approach is to use iterative numerical procedures \cite{machine_learning}. One approach is to use a combination of error backpropagation and stochastic gradient descent, where the error gradient calculated at the output is propagated back through the network, giving the partial derivative of the error for each hidden unit. In stochastic gradient descent, the weights are updated based on one data point at a time, according to 
 \begin{equation}
 w_{ji}^{\l}\rightarrow w_{ji}^{\l}-\eta \frac{\partial E_n(\mathbf{w})}{\partial w_{ji}^{l}}
 \end{equation}

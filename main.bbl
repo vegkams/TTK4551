@@ -512,6 +512,43 @@
     \field{year}{2008}
   \endentry
 
+  \entry{LeCun2015deepL}{article}{}
+    \name{author}{3}{}{%
+      {{hash=LY}{%
+         family={LeCun},
+         familyi={L\bibinitperiod},
+         given={Yann},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=BY}{%
+         family={Bengio},
+         familyi={B\bibinitperiod},
+         given={Yoshua},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=HG}{%
+         family={Hinton},
+         familyi={H\bibinitperiod},
+         given={Geoffrey},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Nature Publishing Group, a division of Macmillan Publishers Limited. All
+  Rights Reserved. SN -}%
+    }
+    \strng{namehash}{LYBYHG1}
+    \strng{fullhash}{LYBYHG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{436 EP \bibrangedash }
+    \field{title}{Deep learning}
+    \field{volume}{521}
+    \field{journaltitle}{Nature}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{ILSVRC15}{article}{}
     \name{author}{12}{}{%
       {{hash=RO}{%
@@ -1243,6 +1280,101 @@
     \field{year}{2014}
   \endentry
 
+  \entry{voc}{article}{}
+    \name{author}{5}{}{%
+      {{hash=EM}{%
+         family={Everingham},
+         familyi={E\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=VGL}{%
+         family={Van\bibnamedelima Gool},
+         familyi={V\bibinitperiod\bibinitdelim G\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=WCKI}{%
+         family={Williams},
+         familyi={W\bibinitperiod},
+         given={C.\bibnamedelima K.\bibnamedelima I.},
+         giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim
+  I\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Winn},
+         familyi={W\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=ZA}{%
+         family={Zisserman},
+         familyi={Z\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{VOC}
+    \strng{namehash}{EMVGLWCKI+1}
+    \strng{fullhash}{EMVGLWCKIWJZA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Visual Object Classes Challenge 2012 Dataset (VOC2012)
+  VOCtrainval_11-May-2012.tar}
+    \verb{url}
+    \verb http://host.robots.ox.ac.uk/pascal/VOC/voc2012/
+    \endverb
+    \field{year}{2012}
+  \endentry
+
+  \entry{imagenet_cvpr09}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=DJ}{%
+         family={Deng},
+         familyi={D\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DW}{%
+         family={Dong},
+         familyi={D\bibinitperiod},
+         given={W.},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Socher},
+         familyi={S\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LLJ}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={L.-J.},
+         giveni={L\bibinitperiod-J\bibinitperiod},
+      }}%
+      {{hash=LK}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=FFL}{%
+         family={Fei-Fei},
+         familyi={F\bibinitperiod-F\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJDWSR+1}
+    \strng{fullhash}{DJDWSRLLJLKFFL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{CVPR09}
+    \field{title}{{ImageNet: A Large-Scale Hierarchical Image Database}}
+    \field{year}{2009}
+  \endentry
+
   \entry{faster_rcnn_git}{misc}{}
     \field{labeltitlesource}{title}
     \field{howpublished}{\url{https://github.com/ShaoqingRen/faster_rcnn}}
@@ -1420,6 +1552,156 @@
   Intelligence}
     \field{year}{2000}
     \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Wilthil2017}{inbook}{}
+    \name{author}{3}{}{%
+      {{hash=WEF}{%
+         family={Wilthil},
+         familyi={W\bibinitperiod},
+         given={Erik\bibnamedelima F.},
+         giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=FAL}{%
+         family={Fl{\aa}ten},
+         familyi={F\bibinitperiod},
+         given={Andreas\bibnamedelima L.},
+         giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=BEF}{%
+         family={Brekke},
+         familyi={B\bibinitperiod},
+         given={Edmund\bibnamedelima F.},
+         giveni={E\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+    }
+    \name{editor}{3}{}{%
+      {{hash=FTI}{%
+         family={Fossen},
+         familyi={F\bibinitperiod},
+         given={Thor\bibnamedelima I.},
+         giveni={T\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+      {{hash=PKY}{%
+         family={Pettersen},
+         familyi={P\bibinitperiod},
+         given={Kristin\bibnamedelima Y.},
+         giveni={K\bibinitperiod\bibinitdelim Y\bibinitperiod},
+      }}%
+      {{hash=NH}{%
+         family={Nijmeijer},
+         familyi={N\bibinitperiod},
+         given={Henk},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer International Publishing}%
+    }
+    \strng{namehash}{WEFFALBEF1}
+    \strng{fullhash}{WEFFALBEF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Safe navigationNavigation and guidance of an autonomous surface vehicle
+  (ASV) Autonomous Surface Vehicles (ASV) depends on automatic sensor fusion
+  methods capable of discovering static and moving obstacles in the vicinity of
+  the ASV. A key component in such a system is a method for target
+  trackingTarget tracking . In this paper, we report a complete radar tracking
+  system based on the classical probabilistic data associationProbabilistic
+  data association filter (PDAF) PDAF . The tracking system is tested on real
+  radar data recorded in Trondheimsfjorden, Norway.%
+    }
+    \field{booktitle}{Sensing and Control for Autonomous Vehicles: Applications
+  to Land, Water and Air Vehicles}
+    \field{pages}{269\bibrangedash 288}
+    \field{title}{A Target Tracking System for ASV Collision Avoidance Based on
+  the PDAF}
+    \list{location}{1}{%
+      {Cham}%
+    }
+    \field{year}{2017}
+  \endentry
+
+  \entry{furgale_iros13}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=FP}{%
+         family={Furgale},
+         familyi={F\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Rehder},
+         familyi={R\bibinitperiod},
+         given={Joern},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Siegwart},
+         familyi={S\bibinitperiod},
+         given={Roland},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FPRJSR1}
+    \strng{fullhash}{FPRJSR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the IEEE/RSJ International Conference on
+  Intelligent Robots and Systems (IROS)}
+    \field{pages}{1280\bibrangedash 1286}
+    \field{title}{Unified Temporal and Spatial Calibration for Multi-Sensor
+  Systems}
+    \list{location}{1}{%
+      {Tokyo, Japan}%
+    }
+    \field{year}{2013}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{DBLP:journals/corr/DhallCRK17}{article}{}
+    \name{author}{4}{}{%
+      {{hash=DA}{%
+         family={Dhall},
+         familyi={D\bibinitperiod},
+         given={Ankit},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CK}{%
+         family={Chelani},
+         familyi={C\bibinitperiod},
+         given={Kunal},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=RV}{%
+         family={Radhakrishnan},
+         familyi={R\bibinitperiod},
+         given={Vishnu},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=KKM}{%
+         family={Krishna},
+         familyi={K\bibinitperiod},
+         given={K.\bibnamedelima M.},
+         giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DACKRV+1}
+    \strng{fullhash}{DACKRVKKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1705.09785
+    \endverb
+    \field{title}{LiDAR-Camera Calibration using 3D-3D Point correspondences}
+    \verb{url}
+    \verb http://arxiv.org/abs/1705.09785
+    \endverb
+    \field{volume}{abs/1705.09785}
+    \field{journaltitle}{CoRR}
+    \field{eprinttype}{arXiv}
+    \field{year}{2017}
   \endentry
 
   \entry{3dvision}{book}{}

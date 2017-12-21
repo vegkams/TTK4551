@@ -2,6 +2,10 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: biblatex.bst
 Database file #1: main-blx.bib
 Database file #2: mylib.bib
+"{" immediately follows a field name---line 658 of file mylib.bib
+ :  @INPROCEEDINGS
+ :                {7500585,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "velodyne_dr<iver"
 Biblatex version: 3.8
-(There was 1 warning)
+(There was 1 error message)

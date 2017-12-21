@@ -1,9 +1,9 @@
 %===================================== CHAP 2 =================================
 \graphicspath{{fig/}}
 \chapter{Sensor Models}
-In this chapter, mathematical models relating measurements from the two exteroceptive sensors used in the project to world coordinates are presented. In order to associate measurements from one sensor to the other, as well as measurements from the sensors with a common world coordinate frame, a mathematical model describing this relationship is needed.
+In this chapter, mathematical models relating sensor measurements to world coordinates are presented. In order to associate measurements from one sensor to the other, as well as measurements from the sensors with a common world coordinate frame, a mathematical model describing this relationship is needed.
 \section{Image Formation}
-Camera systems have found a wide array of applications since its invention, and are today widely used in industry. Application areas range from surveillance (CCTV), to image acquisition in scientific exploration of the earth, oceans and space. In recent years, there has been a drive towards utilizing cameras for automatic object detection and recognition, made possible through advances in computing power and algorithms \todo{kilde}. There is a drive towards more and more autonomous operation of vehicles, and camera systems play an integral part in the sensing of the environment necessary for safe autonomous operation \todo{kilde}. This section presents the pinhole camera model, and how to relate image coordinates to world coordinates through transformations. The theory presented in this section is largely based on chapter 1 in \cite{modernCV}.
+Camera systems have found a wide array of applications since its invention, and are today widely used in industry. Application areas range from surveillance (CCTV), to image acquisition in scientific exploration of the earth, oceans and space.  This section presents the pinhole camera model, and how to relate image coordinates to world coordinates through transformations. The theory presented in this section is largely based on chapter 1 in \cite{modernCV}.
 \subsection{The Pinhole Camera Model}
 \label{section:pinhole}
 The pinhole camera model was first proposed by Brunelleschi in the early fifteenth century \cite{modernCV}. Consider a rectangular box with a translucent plate at one end. At the opposite end there is a small pinhole, small enough so that exactly one ray of light would pass through the translucent plate, the pinhole, and some scene point. The distance between the pinhole and the translucent plate is called the \textit{focal length}, denoted \textit{f}. This is of course impossible in reality, as the pinhole will have a finite, though small size. As such, each point in the image plane will collect light from a cone of rays. A real camera will also be equipped with lenses, which complicates the simple model of rays passing through a hole. Still, the pinhole camera model is mathematically convenient, and often provides an acceptable approximation of the imaging process. The pinhole perspective projection model is illustrated in figure \ref{fig:pinhole_model}.
@@ -25,7 +25,7 @@ The world and camera coordinate systems are related by a set of physical paramet
     \caption{Coordinate systems}
     \label{fig:image_coordinates}
 \end{figure}
-In figure \ref{fig:image_coordinates}, $^nO$ denotes the origin of the normalized image plane, $^iO$ is the origin of the physical image plane, $^wO$ is the origin of the world frame, and $^cO$ is the origin of the camera 3D frame. Since $^cO$, $^c\hat{p}$ and $^cP$ in figure \ref{fig:image_coordinates} are collinear, we have that $\overrightarrow{^cO\hat{p}}=\lambda\overrightarrow{^cOP}$ for some constant $\lambda$ such that
+In figure \ref{fig:image_coordinates}, $O^n$ denotes the origin of the normalized image plane, $O^i$ is the origin of the physical image plane, $O^w$ is the origin of the world frame, and $O^c$ is the origin of the camera 3D frame. Since $O^c$, $\hat{p}^c$ and $P^c$ in figure \ref{fig:image_coordinates} are collinear, we have that $\overrightarrow{O\hat{p}^c}=\lambda\overrightarrow{OP^c}$ for some constant $\lambda$ such that
 \begin{equation}
 \begin{cases}
     \hat{x}=\lambda X \\
@@ -33,7 +33,7 @@ In figure \ref{fig:image_coordinates}, $^nO$ denotes the origin of the normalize
     1 = \lambda Z
 \end{cases}
 \end{equation}
-which gives the following relation between the normalized plane coordinates $^n\hat{p}$ and the coordinates of the point $^cP$
+which gives the following relation between the normalized plane coordinates $\hat{p}^n$ and the coordinates of the point $P^c$
 \begin{equation}
 \label{eq:perspectiveproj}
     \begin{cases}
@@ -63,10 +63,10 @@ where $\mathbf{P}^a$ and $\mathbf{P}^b$ are now vectors in $\mathbb{R}^4$. There
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Intrinsic Parameters}
 \label{section:intrinsic_params}
-Using homogeneous coordinates, equation \ref{eq:perspectiveproj} can be rewritten as
+Using homogeneous coordinates, (\ref{eq:perspectiveproj}) can be rewritten as
 \begin{equation}
 \label{eq:homo}
-\mathbf{\hat{p}}^n=\frac{1}{Z}\begin{bmatrix}\mathbf{I}^{3\times3} & \mathbf{0}^{3\times1}\end{bmatrix}^c\mathbf{P}
+\mathbf{\hat{p}}^n=\frac{1}{Z}\begin{bmatrix}\mathbf{I}^{3\times3} & \mathbf{0}^{3\times1}\end{bmatrix}\mathbf{P}^c
 \end{equation}
 where $\mathbf{I}^{3\times3}$ is the 3-by-3 identity matrix, and $\mathbf{\hat{p}}^n\triangleq \begin{bmatrix}\hat{x}&\hat{y}&1\end{bmatrix}^T$ is the homogeneous coordinate vector of the projection $\hat{p}$ of the point $P$ into the normalized image plane, and $\mathbf{P}^c$ is the homogeneous coordinate vector of the point $P$ in the camera coordinate frame. The following section relates the homogeneous coordinates of the normalized image plane to those of the physical image plane. The physical retina of a camera is located at a distance $f\neq1$ from the pinhole (this assumes that the camera is focused at infinity, so that the physical distance from the pinhole to the image plane equals the focal length), and the physical image point $p$ is usually expressed in pixel units. In addition to this, pixels may be rectangular instead of square, introducing two additional scale parameters $k$ and $l$, such that
 \begin{equation}
@@ -76,7 +76,7 @@ where $\mathbf{I}^{3\times3}$ is the 3-by-3 identity matrix, and $\mathbf{\hat{p
     y=lf\frac{Y}{Z}=kf\hat{y}
     \end{cases}
 \end{equation}
-We have that $f$ represents a distance, in meters say, and a pixel has dimensions $\frac{1}{k}\times\frac{1}{l}$, where $k$ and $l$ are expressed in $\frac{\text{pixel}}{m}$. The parameters can be replaced by a magnification $\alpha=kf$ and $\beta=lf$ expressed in pixels. In general the origin of the physical image plane is in a corner $c$ of the physical image plane (often the upper left corner, but this may vary) and not at it's center, and the center of the CCD matrix typically does not coincide with the image center $c_0$. This adds two more parameters $x_0$ and $y_0$ that define the position of $c_0$ in pixel units in the physical image coordinate system. Equation \ref{eq:physical_plane_scaled} is then replaced by
+We have that $f$ represents a distance, in meters say, and a pixel has dimensions $\frac{1}{k}\times\frac{1}{l}$, where $k$ and $l$ are expressed in pixel/m. The parameters can be replaced by a magnification $\alpha=kf$ and $\beta=lf$ expressed in pixels. In general the origin of the physical image plane is in a corner $c$ of the physical image plane (often the upper left corner, but this may vary) and not at it's center, and the center of the CCD matrix typically does not coincide with the image center $c_0$. This adds two more parameters $x_0$ and $y_0$ that define the position of $c_0$ in pixel units in the physical image coordinate system. (\ref{eq:physical_plane_scaled}) is then replaced by
 \begin{equation}
 \label{eq:physical_plane_scaled_and_translated}
     \begin{cases}
@@ -84,7 +84,7 @@ We have that $f$ represents a distance, in meters say, and a pixel has dimension
     y=\beta\hat{y}+y_0
     \end{cases}
 \end{equation}
-This assumes that the angle between the image axes equals exactly 90 degrees. In reality, however, the image plane axes may be skewed, such that the angle between the image plane axes is $\theta\neq90\degree$. In this case, equation \ref{eq:physical_plane_scaled_and_translated} is replaced by
+This assumes that the angle between the image axes equals exactly 90 degrees. In reality, however, the image plane axes may be skewed, such that the angle between the image plane axes is $\theta\neq90\degree$. In this case, (\ref{eq:physical_plane_scaled_and_translated}) is replaced by
 \begin{equation}
 \label{eq:physical_plane_scewed}
     \begin{cases}
@@ -92,28 +92,28 @@ This assumes that the angle between the image axes equals exactly 90 degrees. In
     y=\frac{\beta}{\sin{\theta}}\hat{y}+y_0
     \end{cases}
 \end{equation}
-In matrix form, equation \ref{eq:physical_plane_scewed} can be written as
+In matrix form, (\ref{eq:physical_plane_scewed}) can be written as
 \begin{equation}
 \label{eq:calibr}
     \mathbf{p}=\mathcal{K}\mathbf{\hat{p}}, \quad \mathbf{p}=\begin{bmatrix}x\\y\\1\end{bmatrix},\quad \mathcal{K}\overset{\text{def}}{=}\begin{bmatrix}\alpha & -\alpha\cot{\theta} & x_0\\0 & \frac{\beta}{\sin{\theta}} & y_0\\0 & 0 & 1\end{bmatrix}
 \end{equation}
-The matrix $\mathcal{K}$ is called the \textit{calibration matrix} of the camera. Putting the equations \ref{eq:homo} and \ref{eq:calibr} together, we obtain
+The matrix $\mathcal{K}$ is called the \textit{calibration matrix} of the camera. Putting (\ref{eq:homo}) and (\ref{eq:calibr}) together, we obtain
 \begin{equation}
 \label{eq:intrinsics}
     \mathbf{p}^i=\frac{1}{Z}\mathcal{K}\begin{bmatrix}\mathbf{I}^{3\times3} & \mathbf{0}^{3\times1}\end{bmatrix}\mathbf{P}^c=\frac{1}{Z}\mathcal{M}\mathbf{P}^c,\quad \text{where}\quad \mathcal{M}\overset{\text{def}}{=}\begin{bmatrix}\mathcal{K} & \mathbf{0}^{3\times1}\end{bmatrix}
 \end{equation}
 The parameters $\alpha$, $\beta$, $\theta$, $x_0$ and $y_0$ are called the \textit{intrinsic parameters} of the camera, typically obtained through a calibration procedure like the one described in section \ref{app:cam_calibration}.
 \subsubsection{Extrinsic Parameters}
-Equation \ref{eq:intrinsics} is written in a coordinate frame rigidly attached to the camera. However, for applications like autonomous vehicles, where the vehicle itself moves in some inertial coordinate system, we can express equation \ref{eq:intrinsics} in some world coordinate system using a rigid homogeneous transformation. The change of coordinates between the camera frame and the world frame can be expressed as presented in equation \ref{eq:homo_trans}:
+Equation (\ref{eq:intrinsics}) is written in a coordinate frame rigidly attached to the camera. However, for applications like autonomous vehicles, where the vehicle itself moves in some inertial coordinate system, we can express equation \ref{eq:intrinsics} in some world coordinate system using a rigid homogeneous transformation. The change of coordinates between the camera frame and the world frame can be expressed as presented in (\ref{eq:homo_trans}):
 \begin{equation}
     \mathbf{P}^c=\begin{bmatrix}\mathcal{R} & \mathbf{t}\\ \mathbf{0}^T & 1\end{bmatrix}\mathbf{P}^w
 \end{equation}
-Here, $\mathbf{P}^w$ represents the point $P$ in some world coordinate frame $w$. Substituting this into equation \ref{eq:intrinsics} yields
+Here, $\mathbf{P}^w$ represents the point $P$ in some world coordinate frame $w$. Substituting this into (\ref{eq:intrinsics}) yields
 \begin{equation}
 \label{eq:extrinsics}
-    \mathbf{p}^i=\frac{1}{Z}\mathcal{M}{}^w\mathbf{P},\quad \text{where}\quad \mathcal{M}=\mathcal{K}\begin{bmatrix}\mathcal{R} & \mathbf{t}\end{bmatrix}
+    \mathbf{p}^i=\frac{1}{Z}\mathcal{M}\mathbf{P}^w,\quad \text{where}\quad \mathcal{M}=\mathcal{K}\begin{bmatrix}\mathcal{R} & \mathbf{t}\end{bmatrix}
 \end{equation}
-Knowing $\mathcal{M}$ determines the position of the camera's optical center in the world coordinate frame $w$. A rotation matrix $\mathcal{R}$ is defined by three independent parameters (such as Euler angles), and together with the translation vector $\mathbf{t}$ defines six \textit{extrinsic parameters} that define the position and orientation of the camera relative to the world coordinate frame. The depth $Z$ in equation \ref{eq:extrinsics} is dependent on $\mathcal{M}$ and $\mathbf{P}^w$, which can be seen directly from the equation. If we denote the three rows of $\mathcal{M}$ as $\mathbf{m}_1^T$, $\mathbf{m}_2^t$ and $\mathbf{m}_3^T$, it follows that $Z=\mathbf{m}_1^T\cdot {}^w\mathbf{P}$. It's important to note that the matrix $\mathcal{M}$ is only defined up to scale, and multiplying $\mathcal{M}$ by a arbitrary constant $\lambda\neq0$ does not change the resulting image coordinates since
+Knowing $\mathcal{M}$ determines the position of the camera's optical center in the world coordinate frame $w$. A rotation matrix $\mathcal{R}$ is defined by three independent parameters (such as Euler angles), and together with the translation vector $\mathbf{t}$ defines six \textit{extrinsic parameters} that define the position and orientation of the camera relative to the world coordinate frame. The depth $Z$ in (\ref{eq:extrinsics}) is dependent on $\mathcal{M}$ and $\mathbf{P}^w$, which can be seen directly from the equation. If we denote the three rows of $\mathcal{M}$ as $\mathbf{m}_1^T$, $\mathbf{m}_2^T$ and $\mathbf{m}_3^T$, it follows that $Z=\mathbf{m}_1^T\cdot\mathbf{P}^w$. It's important to note that the matrix $\mathcal{M}$ is only defined up to scale, and multiplying $\mathcal{M}$ by a arbitrary constant $\lambda\neq0$ does not change the resulting image coordinates since
 \begin{equation}
 \begin{cases}
     {}^i x=\frac{\mathbf{m}_1^T\cdot {}^w\mathbf{P}}{\mathbf{m}_3^T\cdot {}^w\mathbf{P}}\\
@@ -131,7 +131,7 @@ The intrinsic parameters are typically found through a calibration routine, whil
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LIDAR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lidar}
-A lidar is an \textit{active} electro-optical sensor that sends out a laser pulse, and subsequently measures the parameters of the return signal bounced off some object. The lidar is known under several names, some examples being ladar, lidar, LIDAR, LADAR or laser radar. The term lidar is the most common, and will be used throughout this report. Lidars have seen a growing range of applications in recent years, with the current drive towards autonomous, driverless cars as a significant driving factor \todo{Kilde}. In a lidar, a waveform generator generates a laser waveform. Depending on the type of lidar, the setup can include a single laser or a master oscillator with multiple lasers or laser amplifiers. There are many types of lidars, however this report focuses on a particular type of 3D lidar with a rotating detector array, which measures azimuth and elevation angle, and range. 
+A lidar is an \textit{active} electro-optical sensor that sends out a laser pulse, and subsequently measures the parameters of the return signal bounced off some object. The lidar is known under several names, some examples being ladar, lidar, LIDAR, LADAR or laser radar. The term lidar is the most common, and will be used throughout this report. In a lidar, a waveform generator generates a laser waveform. Depending on the type of lidar, the setup can include a single laser or a master oscillator with multiple lasers or laser amplifiers. There are many types of lidars, however this report focuses on a particular type of 3D lidar with a rotating detector array, which measures azimuth and elevation angle, and range. 
 
 The measurement is performed by the laser pulse being guided through transmit optics, traversing some medium, typically atmosphere, to a target. The laser pulse bounces off the target, and traverses the media again until receive optics captures the reflected pulse, guiding it to a detector or a detector array \cite{SpieLidar}. The laser and detector arrays rotate, taking multiple measurements as it scans the full 360 degree field of view. The range to a target can be determined based on the travel time of the laser pulse by
 \begin{equation}
@@ -201,7 +201,7 @@ The range returned by the Velodyne VLP-16 lidar is measured along a beam at know
 	\caption{The lidar cartesian coordinate frame, with angles from the spherical coordinate frame drawn in.}
 	\label{fig:lidar_frames}
 \end{figure}
-A single reflection from the lidar can be represented in a cartesian coordinate frame centered in the lidar, shown in figure \ref{fig:lidar_frames}, using the transformation given in equation \ref{eq:spheric_to_cartesian} as:
+A single reflection from the lidar can be represented in a cartesian coordinate frame centered in the lidar, shown in figure \ref{fig:lidar_frames}, using the transformation given in (\ref{eq:spheric_to_cartesian}) as:
 \begin{equation}
 \label{eq:simple_lidar}
 \mathbf{P}^{l}_{ij}=\begin{bmatrix}
@@ -219,7 +219,7 @@ Here, $\alpha$ is the azimuth angle in the scan, and $\beta_i$ is the angle of t
 \end{bmatrix}
 \end{equation*}
 where the calibration parameters are given in table \ref{tab:lidar_calib}.
-\begin{table}[H]
+\begin{table}
 	\centering
 	\begin{tabularx}{.6\linewidth}{L L}
 		\toprule
@@ -241,7 +241,7 @@ where the calibration parameters are given in table \ref{tab:lidar_calib}.
 	\caption{Lidar calibration parameters.}
 	\label{tab:lidar_calib}
 \end{table}
-Note that $\beta_i$ and $\alpha$ in table \ref{tab:lidar_calib} correspond to $\beta_i$ and $\alpha$ in equation \ref{eq:simple_lidar}. The Velodyne VLP-16 comes pre-calibrated from the factory, and Glennie et al. found that the factory supplied calibration is whithin the stated 3 cm ranging accuracy \cite{GlennieVLP}.
+Note that $\beta_i$ and $\alpha$ in table \ref{tab:lidar_calib} correspond to $\beta_i$ and $\alpha$ in (\ref{eq:simple_lidar}). The Velodyne VLP-16 comes pre-calibrated from the factory, and Glennie et al. found that the factory supplied calibration is whithin the stated 3 cm ranging accuracy \cite{GlennieVLP}. Given the fact that the factory calibration is accurate, no additional geometric calibration of the lidar is done in this project.
 \subsection{Coordinate Transformation}
 In order to use the measurements in conjunction with other measurements, such as those from a camera, they must be transformed to some common coordinate frame. As described in section \ref{section:transformations}, the measurement from the lidar can be transformed to another frame of reference by a rotation followed by a translation. If a navigation system gives the translation $\mathbf{t}^{w}_{wl}$ and the rotation $\mathcal{R}^{w}_{l}$ from the lidar frame to the world frame, the lidar measurement can be written in the world frame as
 \begin{equation}
@@ -260,7 +260,7 @@ For an entire 360$\degree$ scan, the measurement returned by the lidar can be re
 \mathbf{z}^{w}_{i1} & \mathbf{z}^{w}_{i2} & \dots & \mathbf{z}^{w}_{ij}
 \end{bmatrix}
 \end{equation}
-where, as before, $i$ denotes the index of the vertical laser (from 1 to 16 for the velodyne VLP-16), and $j$ is the index of the asimuth angle in the right-open interval $\interval[open right]{0\degree}{360\degree}$. When the Velodyne VLP-16 rotates at 10 Hz, $j$ ranges from 1 to 1800. $\mathbf{Z}^w$ represents a \textit{point cloud} made by a full rotation of the lidar, decomposed in the cartesian world frame.
+where, as before, $i$ denotes the index of the vertical laser (from 1 to 16 for the velodyne VLP-16), and $j$ is the index of the asimuth angle in the right-open interval $\interval[{0\degree,360\degree})$. When the Velodyne VLP-16 rotates at 10 Hz, $j$ ranges from 1 to 1800. $\mathbf{Z}^w$ represents a \textit{point cloud} made by a full rotation of the lidar, decomposed in the cartesian world frame.
 
 
 \cleardoublepage
